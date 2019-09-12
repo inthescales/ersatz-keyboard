@@ -22,11 +22,11 @@ Pod::Spec.new do |s|
 keyboard implementations in Swift.
                        DESC
 
-  s.homepage         = 'https://github.com/UnifyBadPirate/tasty-keyboard'
+  s.homepage         = 'https://github.com/UnifyBadPirate/tasty-imitation-keyboard'
   s.screenshots     = 'https://github.com/UnifyBadPirate/tasty-imitation-keyboard/raw/master/Screenshot-Portrait.png', 'https://github.com/UnifyBadPirate/tasty-imitation-keyboard/raw/master/Screenshot-Landscape.png'
   s.license          = { :type => 'BSD3', :file => 'LICENSE' }
   s.author           = { 'UnifyBadPirate' => 'kevin@unify.id' }
-  s.source           = { :git => 'https://github.com/UnifyBadPirate/tasty-keyboard.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/UnifyBadPirate/tasty-imitation-keyboard.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
   s.swift_versions = ['4.2','5.0']
