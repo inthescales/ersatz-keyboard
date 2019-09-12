@@ -29,9 +29,9 @@ open class TastyKeyboardViewController: UIInputViewController {
     
     let backspaceDelay: TimeInterval = 0.5
     let backspaceRepeat: TimeInterval = 0.07
-    var keyboard: Keyboard!
+    public var keyboard: Keyboard!
     var forwardingView: ForwardingView!
-    var layout: KeyboardLayout?
+    public var layout: KeyboardLayout?
     var heightConstraint: NSLayoutConstraint?
     
     var bannerView: ExtraView?
@@ -61,7 +61,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     var autoPeriodState: AutoPeriodState = .noSpace
     var lastCharCountInBeforeContext: Int = 0
     
-    var shiftState: ShiftState {
+    public var shiftState: ShiftState {
         didSet {
             switch shiftState {
             case .disabled:
@@ -202,11 +202,11 @@ open class TastyKeyboardViewController: UIInputViewController {
         return darkMode
     }
     
-    func solidColorMode() -> Bool {
+    public func solidColorMode() -> Bool {
         return UIAccessibility.isReduceTransparencyEnabled
     }
     
-    func isPortrait() -> Bool
+    public func isPortrait() -> Bool
     {
         let size = UIScreen.main.bounds.size
         if size.width > size.height {
@@ -286,7 +286,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         }
     }
     
-    func height(orientationIsPortrait isPortrait: Bool, withTopBanner: Bool) -> CGFloat {
+    public func height(orientationIsPortrait isPortrait: Bool, withTopBanner: Bool) -> CGFloat {
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         
         // AB: consider re-enabling this when interfaceOrientation actually breaks
@@ -322,7 +322,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     //    super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     //}
     
-    func setupKeys() {
+    open func setupKeys() {
         if self.layout == nil {
             return
         }
@@ -863,16 +863,16 @@ open class TastyKeyboardViewController: UIInputViewController {
     // MOST COMMONLY EXTENDABLE METHODS //
     //////////////////////////////////////
     
-    class var layoutClass: KeyboardLayout.Type { get { return KeyboardLayout.self }}
-    class var layoutConstants: LayoutConstants.Type { get { return LayoutConstants.self }}
-    class var globalColors: GlobalColors.Type { get { return GlobalColors.self }}
+    open class var layoutClass: KeyboardLayout.Type { get { return KeyboardLayout.self }}
+    open class var layoutConstants: LayoutConstants.Type { get { return LayoutConstants.self }}
+    open class var globalColors: GlobalColors.Type { get { return GlobalColors.self }}
     
-    func keyPressed(_ key: Key) {
+    open func keyPressed(_ key: Key) {
         self.textDocumentProxy.insertText(key.outputForCase(self.shiftState.uppercase()))
     }
     
     // a banner that sits in the empty space on top of the keyboard
-    func createBanner() -> ExtraView? {
+    open func createBanner() -> ExtraView? {
         // note that dark mode is not yet valid here, so we just put false for clarity
         //return ExtraView(globalColors: self.dynamicType.globalColors, darkMode: false, solidColorMode: self.solidColorMode())
         return nil

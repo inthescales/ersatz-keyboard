@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TastyKeyboard
 
 /*
 This is the demo banner. The banner is needed so that the top row popups have somewhere to go. Might as well fill it

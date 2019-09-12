@@ -10,12 +10,12 @@ import Foundation
 
 var counter = 0
 
-enum ShiftState {
+public enum ShiftState {
     case disabled
     case enabled
     case locked
     
-    func uppercase() -> Bool {
+    public func uppercase() -> Bool {
         switch self {
         case .disabled:
             return false
@@ -27,10 +27,10 @@ enum ShiftState {
     }
 }
 
-class Keyboard {
-    var pages: [Page] = []
+public class Keyboard {
+    public var pages: [Page] = []
     
-    func add(key: Key, row: Int, page: Int) {
+    public func add(key: Key, row: Int, page: Int) {
         if self.pages.count <= page {
             for _ in self.pages.count...page {
                 self.pages.append(Page())
@@ -41,10 +41,10 @@ class Keyboard {
     }
 }
 
-class Page {
-    var rows: [[Key]] = []
+public class Page {
+    public var rows: [[Key]] = []
     
-    func add(key: Key, row: Int) {
+    public func add(key: Key, row: Int) {
         if self.rows.count <= row {
             for _ in self.rows.count...row {
                 self.rows.append([])
@@ -55,8 +55,8 @@ class Page {
     }
 }
 
-class Key: Hashable {
-    enum KeyType {
+public class Key: Hashable {
+    public enum KeyType {
         case character
         case specialCharacter
         case shift
@@ -70,14 +70,14 @@ class Key: Hashable {
         case other
     }
     
-    var type: KeyType
-    var uppercaseKeyCap: String?
-    var lowercaseKeyCap: String?
-    var uppercaseOutput: String?
-    var lowercaseOutput: String?
-    var toMode: Int? //if the key is a mode button, this indicates which page it links to
+    public var type: KeyType
+    public var uppercaseKeyCap: String?
+    public var lowercaseKeyCap: String?
+    public var uppercaseOutput: String?
+    public var lowercaseOutput: String?
+    public var toMode: Int? //if the key is a mode button, this indicates which page it links to
     
-    var isCharacter: Bool {
+    public var isCharacter: Bool {
         get {
             switch self.type {
             case
@@ -91,7 +91,7 @@ class Key: Hashable {
         }
     }
     
-    var isSpecial: Bool {
+    public var isSpecial: Bool {
         get {
             switch self.type {
             case .shift:
@@ -112,14 +112,14 @@ class Key: Hashable {
         }
     }
     
-    var hasOutput: Bool {
+    public var hasOutput: Bool {
         get {
             return (self.uppercaseOutput != nil) || (self.lowercaseOutput != nil)
         }
     }
     
     // TODO: this is kind of a hack
-    var hashValue: Int
+    public var hashValue: Int
     
     init(_ type: KeyType) {
         self.type = type
@@ -127,7 +127,7 @@ class Key: Hashable {
         counter += 1
     }
     
-    func hash(into hasher: inout Hasher)
+    public func hash(into hasher: inout Hasher)
     {
         hasher.combine(self.hashValue)
     }
@@ -142,14 +142,14 @@ class Key: Hashable {
         self.toMode = key.toMode
     }
     
-    func setLetter(_ letter: String) {
+    public func setLetter(_ letter: String) {
         self.lowercaseOutput = letter.lowercased()
         self.uppercaseOutput = letter.uppercased()
         self.lowercaseKeyCap = self.lowercaseOutput
         self.uppercaseKeyCap = self.uppercaseOutput
     }
     
-    func outputForCase(_ uppercase: Bool) -> String {
+    public func outputForCase(_ uppercase: Bool) -> String {
         if uppercase {
             return uppercaseOutput ?? lowercaseOutput ?? ""
         }
@@ -158,7 +158,7 @@ class Key: Hashable {
         }
     }
     
-    func keyCapForCase(_ uppercase: Bool) -> String {
+    public func keyCapForCase(_ uppercase: Bool) -> String {
         if uppercase {
             return uppercaseKeyCap ?? lowercaseKeyCap ?? ""
         }
@@ -168,6 +168,6 @@ class Key: Hashable {
     }
 }
 
-func ==(lhs: Key, rhs: Key) -> Bool {
+public func ==(lhs: Key, rhs: Key) -> Bool {
     return lhs.hashValue == rhs.hashValue
 }

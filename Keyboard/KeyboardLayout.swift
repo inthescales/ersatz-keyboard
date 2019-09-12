@@ -9,7 +9,7 @@
 import UIKit
 
 // TODO: need to rename, consolidate, and define terms
-class LayoutConstants: NSObject {
+public class LayoutConstants: NSObject {
     class var landscapeRatio: CGFloat { get { return 2 }}
     
     // side edges increase on 6 in portrait
@@ -157,7 +157,7 @@ class LayoutConstants: NSObject {
     }
 }
 
-class GlobalColors: NSObject {
+public class GlobalColors: NSObject {
     class var lightModeRegularKey: UIColor { get { return UIColor.white }}
     class var darkModeRegularKey: UIColor { get { return UIColor.white.withAlphaComponent(CGFloat(0.3)) }}
     class var darkModeSolidColorRegularKey: UIColor { get { return UIColor(red: CGFloat(83)/CGFloat(255), green: CGFloat(83)/CGFloat(255), blue: CGFloat(83)/CGFloat(255), alpha: 1) }}
@@ -254,12 +254,12 @@ extension CGSize: Hashable {
 }
 
 // handles the layout for the keyboard, including key spacing and arrangement
-class KeyboardLayout: NSObject, KeyboardKeyProtocol {
+public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     
     class var shouldPoolKeys: Bool { get { return true }}
     
     var layoutConstants: LayoutConstants.Type
-    var globalColors: GlobalColors.Type
+    public var globalColors: GlobalColors.Type
     
     unowned var model: Keyboard
     unowned var superview: UIView
@@ -293,7 +293,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         self.initialized = true
     }
     
-    func viewForKey(_ model: Key) -> KeyboardKey? {
+    public func viewForKey(_ model: Key) -> KeyboardKey? {
         return self.modelToView[model]
     }
     

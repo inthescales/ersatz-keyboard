@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TastyKeyboard
 
 /*
 This is the demo keyboard. If you're implementing your own keyboard, simply follow the example here and then
@@ -19,7 +20,7 @@ class Catboard: TastyKeyboardViewController {
     
     let takeDebugScreenshot: Bool = false
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    required init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         UserDefaults.standard.register(defaults: [kCatTypeEnabled: true])
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -27,7 +28,7 @@ class Catboard: TastyKeyboardViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func keyPressed(_ key: Key) {
         let textDocumentProxy = self.textDocumentProxy
         

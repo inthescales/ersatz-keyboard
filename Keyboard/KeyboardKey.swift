@@ -24,7 +24,7 @@ enum VibrancyType {
     case darkRegular
 }
 
-class KeyboardKey: UIControl {
+open class KeyboardKey: UIControl {
     
     weak var delegate: KeyboardKeyProtocol?
     
@@ -72,19 +72,19 @@ class KeyboardKey: UIControl {
     
     var popupDirection: Direction?
     
-    override var isEnabled: Bool { didSet { updateColors() }}
-    override var isSelected: Bool {
+    override open var isEnabled: Bool { didSet { updateColors() }}
+    override open var isSelected: Bool {
         didSet {
             updateColors()
         }
     }
-    override var isHighlighted: Bool {
+    override open var isHighlighted: Bool {
         didSet {
             updateColors()
         }
     }
     
-    override var frame: CGRect {
+    override open var frame: CGRect {
         didSet {
             self.redrawText()
         }
@@ -178,16 +178,16 @@ class KeyboardKey: UIControl {
         }
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("NSCoding not supported")
     }
     
-    override func setNeedsLayout() {
+    override open func setNeedsLayout() {
         return super.setNeedsLayout()
     }
     
     var oldBounds: CGRect?
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         self.layoutPopupIfNeeded()
         
         let boundingBox = (self.popup != nil ? self.bounds.union(self.popup!.frame) : self.bounds)

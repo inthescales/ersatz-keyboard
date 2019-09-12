@@ -1,0 +1,16 @@
+PODS:
+  - TastyKeyboard (1.0.3)
+
+DEPENDENCIES:
+  - TastyKeyboard (from `.`)
+
+EXTERNAL SOURCES:
+  TastyKeyboard:
+    :path: "."
+
+SPEC CHECKSUMS:
+  TastyKeyboard: c58a29a3e5ca4076732b8875ea04809d3e06f0c6
+
+PODFILE CHECKSUM: a85b1b6e31f484ec3ceea1180394bb36e5a98f83
+
+COCOAPODS: 1.7.5
