@@ -28,7 +28,13 @@ Based on [Project by Archagon](https://github.com/archagon/tasty-imitation-keybo
 
 ## Current State
 
-Updated for iOS 13 and Swift 4.2 / Swift 5.0 - No other major changes from original build
+* Updated for iOS 13 and Swift 4.2 / Swift 5.0
+* Updated to use cocoapod instead of framework
+
+### Todo
+
+* Go through API and make sure that extensible methods are properly marked "open" and "public" as need for reuse, currently only opened those used in demo app
+* Document a little better
 
 ## Cocoapod Integration
 
@@ -41,7 +47,7 @@ Updated for iOS 13 and Swift 4.2 / Swift 5.0 - No other major changes from origi
     end
     ```
 
-1. In your keyboard view controller subclass `TastyKeyboardViewController`
+2. In your keyboard view controller subclass `TastyKeyboardViewController`
 
     ```swift
     import UIKit
@@ -52,7 +58,7 @@ Updated for iOS 13 and Swift 4.2 / Swift 5.0 - No other major changes from origi
     }
     ```
 
-1. There is no step 3
+3. There is no step 3
 
 ## Build Instructions
 
