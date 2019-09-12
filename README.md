@@ -69,4 +69,4 @@ Please consult [the project wiki](https://github.com/archagon/tasty-imitation-ke
 
 ## License
 
-This project is licensed under the 3-clause ("New") BSD license. Go Bears!
+This project is licensed under the 3-clause ("New") BSD license. Go Beers!
