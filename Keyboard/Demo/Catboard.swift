@@ -10,12 +10,12 @@ import UIKit
 
 /*
 This is the demo keyboard. If you're implementing your own keyboard, simply follow the example here and then
-set the name of your KeyboardViewController subclass in the Info.plist file.
+set the name of your TastyKeyboardViewController subclass in the Info.plist file.
 */
 
 let kCatTypeEnabled = "kCatTypeEnabled"
 
-class Catboard: KeyboardViewController {
+class Catboard: TastyKeyboardViewController {
     
     let takeDebugScreenshot: Bool = false
     

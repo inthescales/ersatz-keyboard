@@ -19,12 +19,12 @@ import UIKit
 
 var traitPollingTimer: CADisplayLink?
 
-extension KeyboardViewController {
+extension TastyKeyboardViewController {
     
     func addInputTraitsObservers() {
         // note that KVO doesn't work on textDocumentProxy, so we have to poll
         traitPollingTimer?.invalidate()
-        traitPollingTimer = UIScreen.main.displayLink(withTarget: self, selector: #selector(KeyboardViewController.pollTraits))
+        traitPollingTimer = UIScreen.main.displayLink(withTarget: self, selector: #selector(TastyKeyboardViewController.pollTraits))
         traitPollingTimer?.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
     }
     
