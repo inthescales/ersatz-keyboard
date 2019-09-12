@@ -420,13 +420,13 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         }
         
         for (model, key) in self.modelToView {
-            self.updateKeyCap(key, model: model, fullReset: fullReset, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: shiftState)
+            try! self.updateKeyCap(key, model: model, fullReset: fullReset, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: shiftState)
         }
         
         CATransaction.commit()
     }
     
-    func updateKeyCap(_ key: KeyboardKey, model: Key, fullReset: Bool, uppercase: Bool, characterUppercase: Bool, shiftState: ShiftState) {
+    func updateKeyCap(_ key: KeyboardKey, model: Key, fullReset: Bool, uppercase: Bool, characterUppercase: Bool, shiftState: ShiftState) throws {
         if fullReset {
             // font size
             switch model.type {
@@ -474,7 +474,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             if model.type == Key.KeyType.settings {
                 if let imageKey = key as? ImageKey {
                     if imageKey.image == nil {
-                        let gearImage = UIImage(named: "gear")
+                        let mainBundle = Bundle(for: DefaultSettings.self)
+                        guard let bundleURL = mainBundle.url(forResource: "TastyKeyboard", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else { throw TastyErrors.unableToLoadPodBundle }
+                        let gearImage = UIImage(named: "gear", in: bundle, compatibleWith: nil)
                         let settingsImageView = UIImageView(image: gearImage)
                         imageKey.image = settingsImageView
                     }

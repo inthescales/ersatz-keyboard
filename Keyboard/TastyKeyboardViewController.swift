@@ -9,6 +9,11 @@
 import UIKit
 import AudioToolbox
 
+public enum TastyErrors: Error {
+    case unableToLoadPodBundle
+    case unableToLoadNIB
+}
+
 let metrics: [String:Double] = [
     "topBanner": 30
 ]

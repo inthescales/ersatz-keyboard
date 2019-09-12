@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TastyKeyboard'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'Swift keyboard imitation of native keyboard'
 
 # This description is used to generate tags and improve search results.
@@ -34,10 +34,9 @@ keyboard implementations in Swift.
   s.source_files = 'Keyboard/*.swift'
   
   s.resource_bundles = {
-    'tasty-keyboard' => ['Keyboard/*.{xib,xcassets}']
+    'TastyKeyboard' => ['Keyboard/*.{xib,xcassets}']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'QuartzCore', 'Foundation', 'AudioToolbox'
 end
 

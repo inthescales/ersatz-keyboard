@@ -59,32 +59,31 @@ class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     
     required init(globalColors: GlobalColors.Type?, darkMode: Bool, solidColorMode: Bool) {
         super.init(globalColors: globalColors, darkMode: darkMode, solidColorMode: solidColorMode)
-        self.loadNib()
+        try! self.loadNib()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("loading from nib not supported")
     }
     
-    func loadNib() {
-        let assets = Bundle(for: type(of: self)).loadNibNamed("DefaultSettings", owner: self, options: nil)
-        
-        if (assets?.count ?? 0) > 0 {
-            if let rootView = assets?.first as? UIView {
-                rootView.translatesAutoresizingMaskIntoConstraints = false
-                self.addSubview(rootView)
-                
-                let left = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
-                let right = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1, constant: 0)
-                let top = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
-                let bottom = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0)
-                
-                self.addConstraint(left)
-                self.addConstraint(right)
-                self.addConstraint(top)
-                self.addConstraint(bottom)
-            }
-        }
+    func loadNib() throws {
+        let mainBundle = Bundle(for: DefaultSettings.self)
+        guard let bundleURL = mainBundle.url(forResource: "TastyKeyboard", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else { throw TastyErrors.unableToLoadPodBundle }
+        guard let assets = bundle.loadNibNamed("DefaultSettings", owner: self, options: nil) else { throw TastyErrors.unableToLoadNIB }
+        assert(assets.count > 0, "Unable to properly load DefaultSettings xib")
+        let rootView = assets.first as! UIView
+        rootView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(rootView)
+
+        let left = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1, constant: 0)
+        let top = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: rootView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0)
+
+        self.addConstraint(left)
+        self.addConstraint(right)
+        self.addConstraint(top)
+        self.addConstraint(bottom)
         
         self.tableView?.register(DefaultSettingsTableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView?.estimatedRowHeight = 44;
