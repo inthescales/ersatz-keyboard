@@ -427,6 +427,12 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     }
     
     func updateKeyCap(_ key: KeyboardKey, model: Key, fullReset: Bool, uppercase: Bool, characterUppercase: Bool, shiftState: ShiftState) throws {
+        if let custom = model.customRender {
+            custom(key, fullReset, uppercase, characterUppercase, shiftState)
+            updateKeyCapText(key, model: model, uppercase: uppercase, characterUppercase: characterUppercase)
+            return
+        }
+
         if fullReset {
             // font size
             switch model.type {
@@ -519,6 +525,11 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     ///////////////
     
     func setAppearanceForKey(_ key: KeyboardKey, model: Key, darkMode: Bool, solidColorMode: Bool) {
+        if let custom = model.customAppearance {
+            custom(key, darkMode, solidColorMode)
+            return
+        }
+
         if model.type == Key.KeyType.other {
             self.setAppearanceForOtherKey(key, model: model, darkMode: darkMode, solidColorMode: solidColorMode)
         }

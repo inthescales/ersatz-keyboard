@@ -166,6 +166,10 @@ public class Key: Hashable {
             return lowercaseKeyCap ?? uppercaseKeyCap ?? ""
         }
     }
+
+    public var customRender : ((_ key: KeyboardKey, _ fullReset: Bool, _ uppercase: Bool, _ characterUppercase: Bool, _ shiftState: ShiftState) -> (Void))?
+
+    public var customAppearance : ((_ key: KeyboardKey, _ darkMode: Bool, _ solidColorMode: Bool) -> (Void))?
 }
 
 public func ==(lhs: Key, rhs: Key) -> Bool {
