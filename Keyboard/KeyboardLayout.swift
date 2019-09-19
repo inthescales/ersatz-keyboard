@@ -172,12 +172,12 @@ public class GlobalColors: NSObject {
     
     class var lightModeUnderColor: UIColor { get { return UIColor(hue: (220/360.0), saturation: 0.04, brightness: 0.56, alpha: 1) }}
     class var darkModeUnderColor: UIColor { get { return UIColor(red: CGFloat(38.6)/CGFloat(255), green: CGFloat(18)/CGFloat(255), blue: CGFloat(39.3)/CGFloat(255), alpha: 0.4) }}
-    class var lightModeTextColor: UIColor { get { return UIColor.black }}
-    class var darkModeTextColor: UIColor { get { return UIColor.white }}
+    public class var lightModeTextColor: UIColor { get { return UIColor.black }}
+    public class var darkModeTextColor: UIColor { get { return UIColor.white }}
     class var lightModeBorderColor: UIColor { get { return UIColor(hue: (214/360.0), saturation: 0.04, brightness: 0.65, alpha: 1.0) }}
     class var darkModeBorderColor: UIColor { get { return UIColor.clear }}
     
-    class func regularKey(_ darkMode: Bool, solidColorMode: Bool) -> UIColor {
+    public class func regularKey(_ darkMode: Bool, solidColorMode: Bool) -> UIColor {
         if darkMode {
             if solidColorMode {
                 return self.darkModeSolidColorRegularKey
@@ -205,7 +205,7 @@ public class GlobalColors: NSObject {
         }
     }
     
-    class func specialKey(_ darkMode: Bool, solidColorMode: Bool) -> UIColor {
+    public class func specialKey(_ darkMode: Bool, solidColorMode: Bool) -> UIColor {
         if darkMode {
             if solidColorMode {
                 return self.darkModeSolidColorSpecialKey

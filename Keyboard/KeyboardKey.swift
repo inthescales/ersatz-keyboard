@@ -38,7 +38,7 @@ open class KeyboardKey: UIControl {
         }
     }
     
-    var color: UIColor { didSet { updateColors() }}
+    public var color: UIColor { didSet { updateColors() }}
     var underColor: UIColor { didSet { updateColors() }}
     var borderColor: UIColor { didSet { updateColors() }}
     var popupColor: UIColor { didSet { updateColors() }}
@@ -47,11 +47,11 @@ open class KeyboardKey: UIControl {
     var drawBorder: Bool { didSet { updateColors() }}
     var underOffset: CGFloat { didSet { updateColors() }}
     
-    var textColor: UIColor { didSet { updateColors() }}
-    var downColor: UIColor? { didSet { updateColors() }}
+    public var textColor: UIColor { didSet { updateColors() }}
+    public var downColor: UIColor? { didSet { updateColors() }}
     var downUnderColor: UIColor? { didSet { updateColors() }}
     var downBorderColor: UIColor? { didSet { updateColors() }}
-    var downTextColor: UIColor? { didSet { updateColors() }}
+    public var downTextColor: UIColor? { didSet { updateColors() }}
     
     var labelInset: CGFloat = 0 {
         didSet {

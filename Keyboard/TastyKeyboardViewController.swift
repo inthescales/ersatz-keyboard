@@ -703,7 +703,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         self.advanceToNextInputMode()
     }
     
-    @IBAction func toggleSettings() {
+    @IBAction open func toggleSettings() {
         // lazy load settings
         if self.settingsView == nil {
             if let aSettings = self.createSettings() {
@@ -879,7 +879,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     }
     
     // a settings view that replaces the keyboard when the settings button is pressed
-    func createSettings() -> ExtraView? {
+    open func createSettings() -> ExtraView? {
         // note that dark mode is not yet valid here, so we just put false for clarity
         let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
         settingsView.backButton?.addTarget(self, action: #selector(TastyKeyboardViewController.toggleSettings), for: UIControl.Event.touchUpInside)
