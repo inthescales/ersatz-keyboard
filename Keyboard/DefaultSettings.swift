@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum SettingsRow {
+    case toggle(_ title: String, setting: String, notes: String?)
+    case info(_ title: String, notes: String?)
+}
+
 open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView?
@@ -30,29 +35,19 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
     let cellLongLabelColorLight = UIColor.gray
     
     // TODO: these probably don't belong here, and also need to be localized
-    var settingsList: [(String, [String])] {
+    open var settingsList: [(String, [SettingsRow])] {
         get {
             return [
-                ("General Settings", [kAutoCapitalization, kPeriodShortcut, kKeyboardClicks]),
-                ("Extra Settings", [kSmallLowercase])
-            ]
-        }
-    }
-    var settingsNames: [String:String] {
-        get {
-            return [
-                kAutoCapitalization: "Auto-Capitalization",
-                kPeriodShortcut:  "“.” Shortcut",
-                kKeyboardClicks: "Keyboard Clicks",
-                kSmallLowercase: "Allow Lowercase Key Caps"
-            ]
-        }
-    }
-    var settingsNotes: [String: String] {
-        get {
-            return [
-                kKeyboardClicks: "Please note that keyboard clicks will work only if “Allow Full Access” is enabled in the keyboard settings. Unfortunately, this is a limitation of the operating system.",
-                kSmallLowercase: "Changes your key caps to lowercase when Shift is off, making it easier to tell what mode you are in."
+                ("General Settings", [
+                    .toggle("Auto-Capitalization", setting: kAutoCapitalization, notes: nil),
+                    .toggle("“.” Shortcut", setting: kPeriodShortcut, notes: nil),
+                    .toggle("Keyboard Clicks", setting: kKeyboardClicks, notes:
+                    "Please note that keyboard clicks will work only if “Allow Full Access” is enabled in the keyboard settings. Unfortunately, this is a limitation of the operating system.")
+                ]),
+                ("Extra Settings", [
+                    .toggle("Allow Lowercase Key Caps", setting: kSmallLowercase, notes:
+                    "Changes your key caps to lowercase when Shift is off, making it easier to tell what mode you are in.")
+                ])
             ]
         }
     }
@@ -122,22 +117,32 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? DefaultSettingsTableViewCell {
-            let key = self.settingsList[indexPath.section].1[indexPath.row]
-            
-            if cell.sw.allTargets.count == 0 {
-                cell.sw.addTarget(self, action: #selector(DefaultSettings.toggleSetting(_:)), for: UIControl.Event.valueChanged)
-            }
-            
-            cell.sw.isOn = UserDefaults.standard.bool(forKey: key)
-            cell.label.text = self.settingsNames[key]
-            cell.longLabel.text = self.settingsNotes[key]
-            
-            cell.backgroundColor = (self.darkMode ? cellBackgroundColorDark : cellBackgroundColorLight)
-            cell.label.textColor = (self.darkMode ? cellLabelColorDark : cellLabelColorLight)
-            cell.longLabel.textColor = (self.darkMode ? cellLongLabelColorDark : cellLongLabelColorLight)
+            let row = self.settingsList[indexPath.section].1[indexPath.row]
+            switch row {
+            case .toggle(let text, let key, let notes):
+                if cell.sw.allTargets.count == 0 {
+                    cell.sw.addTarget(self, action: #selector(DefaultSettings.didTap(_:)), for: UIControl.Event.valueChanged)
+                }
 
-            cell.changeConstraints()
-            
+                cell.sw.isHidden = false
+                cell.sw.isOn = UserDefaults.standard.bool(forKey: key)
+                cell.label.text = text
+                cell.longLabel.text = notes
+
+                cell.backgroundColor = (self.darkMode ? cellBackgroundColorDark : cellBackgroundColorLight)
+                cell.label.textColor = (self.darkMode ? cellLabelColorDark : cellLabelColorLight)
+                cell.longLabel.textColor = (self.darkMode ? cellLongLabelColorDark : cellLongLabelColorLight)
+                
+                cell.changeConstraints()
+            case .info(let title, notes: let notes):
+                cell.sw.isHidden = true
+                cell.label.text = title
+                cell.longLabel.text = notes
+                cell.backgroundColor = (self.darkMode ? cellBackgroundColorDark : cellBackgroundColorLight)
+                cell.label.textColor = (self.darkMode ? cellLabelColorDark : cellLabelColorLight)
+                cell.longLabel.textColor = (self.darkMode ? cellLongLabelColorDark : cellLongLabelColorLight)
+                cell.changeConstraints()
+            }
             return cell
         }
         else {
@@ -182,11 +187,15 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
         }
     }
     
-    @objc func toggleSetting(_ sender: UISwitch) {
+    @objc func didTap(_ sender: UISwitch) {
         if let cell = sender.superview as? UITableViewCell {
             if let indexPath = self.tableView?.indexPath(for: cell) {
-                let key = self.settingsList[indexPath.section].1[indexPath.row]
-                UserDefaults.standard.set(sender.isOn, forKey: key)
+                let row = self.settingsList[indexPath.section].1[indexPath.row]
+                switch row {
+                case .toggle(_, setting: let key, notes: _):
+                    UserDefaults.standard.set(sender.isOn, forKey: key)
+                case .info(_, _): break
+                }
             }
         }
     }
