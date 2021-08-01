@@ -1,22 +1,18 @@
-# Tasty Imitation Keyboard Cocoapod
+# Ersatz Keyboard
 
-A Swift 4.2 / 5.0 compatible imitation of the en-US Apple native keyboard.  Useful as a base for creating your own keyboard extensions.  Designed to be quick to integrate using Cocoapods.
+Ersatz Keyboard provides a framework that can be used to create custom keyboard extensions that resemble the built-in iOS keyboards.
 
-Based on [Project by Archagon](https://github.com/archagon/tasty-imitation-keyboard/) which sadly has been unmaintained for a few years.
+It is based on Archagon's [Tasty Imitation Keyboard](https://github.com/archagon/tasty-imitation-keyboard/), with changes from [Kevin Lohman's fork](https://github.com/UnifyBadPirate/tasty-imitation-keyboard).
 
-## Fantastic Additions
+This project is currently in development for use in another project.
 
-* Swift 4.2 / 5.0 Support
-* Cocoapod Spec / Integration
-
-## Original Fantastic Features
+## Features of the original
 
 * No bitmaps! Everything is rendered using CoreGraphics.
 * Dynamic layouts! All the keys are laid out programmatically, meaning that the keyboard is much easier to extend and will automatically work on devices of all sizes.
 * Auto-capitalization, period shortcut, keyboard clicks.
 * An extensible settings screen.
 * Dark mode and solid color mode.
-* This keyboard is an iOS8 extension
 
 ## Aged but relevant Screenshots
 
@@ -26,53 +22,6 @@ Based on [Project by Archagon](https://github.com/archagon/tasty-imitation-keybo
 
 ![Settings](./Settings-Portrait.png "Settings")
 
-## Current State
-
-* Updated for iOS 13 and Swift 4.2 / Swift 5.0
-* Updated to use cocoapod instead of framework
-
-### Todo
-
-* Go through API and make sure that extensible methods are properly marked "open" and "public" as need for reuse, currently only opened those used in demo app
-* Document a little better
-
-## Cocoapod Integration
-
-1. Add Pod target to your keyboard extension in .podfile
-
-    ```ruby
-    target 'keyboard-extension' do
-      project 'project/project.xcodeproj'
-      pod 'TastyKeyboard'
-    end
-    ```
-
-2. In your keyboard view controller subclass `TastyKeyboardViewController`
-
-    ```swift
-    import UIKit
-    import TastyKeyboard
-
-    class KeyboardViewController: TastyKeyboardViewController {
-      // ... Custom implementation here
-    }
-    ```
-
-3. There is no step 3
-
-## Build Instructions
-
-If you'd like to mess with TastyKeyboard, this repo has the original project and hosting app in it.  Clone the repo and:
-
-1. Edit Scheme for the Keyboard target and set the Executable to be HostingApp.app.
-2. Run the Keyboard target.
-3. Go to `Settings → General → Keyboard → Keyboards → Add New Keyboard` on your device and add the third-party keyboard.
-4. Go back to the app. You should be able to select the keyboard via the globe icon.
-
-## Other Stuff
-
-Please consult [the project wiki](https://github.com/archagon/tasty-imitation-keyboard/wiki) for technical details. You may find it handy if you're implementing your own keyboard!
-
 ## License
 
-This project is licensed under the 3-clause ("New") BSD license. Go Beers!
+This project is licensed under the 3-clause ("New") BSD license.
