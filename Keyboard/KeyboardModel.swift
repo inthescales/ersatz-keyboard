@@ -27,7 +27,7 @@ public enum ShiftState {
     }
 }
 
-public class Keyboard {
+open class Keyboard {
     public var pages: [Page] = []
     
     public func add(key: Key, row: Int, page: Int) {
@@ -39,6 +39,8 @@ public class Keyboard {
         
         self.pages[page].add(key: key, row: row)
     }
+
+    public init() {}
 }
 
 public class Page {
@@ -121,7 +123,7 @@ public class Key: Hashable {
     // TODO: this is kind of a hack
     public var hashValue: Int
     
-    init(_ type: KeyType) {
+    public init(_ type: KeyType) {
         self.type = type
         self.hashValue = counter
         counter += 1
@@ -132,7 +134,7 @@ public class Key: Hashable {
         hasher.combine(self.hashValue)
     }
     
-    convenience init(_ key: Key) {
+    convenience public init(_ key: Key) {
         self.init(key.type)
         
         self.uppercaseKeyCap = key.uppercaseKeyCap

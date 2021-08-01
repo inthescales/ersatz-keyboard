@@ -14,16 +14,11 @@ public enum TastyErrors: Error {
     case unableToLoadNIB
 }
 
-let metrics: [String:Double] = [
-    "topBanner": 30
-]
-func metric(_ name: String) -> CGFloat { return CGFloat(metrics[name]!) }
-
 // TODO: move this somewhere else and localize
-let kAutoCapitalization = "kAutoCapitalization"
-let kPeriodShortcut = "kPeriodShortcut"
-let kKeyboardClicks = "kKeyboardClicks"
-let kSmallLowercase = "kSmallLowercase"
+public let kAutoCapitalization = "kAutoCapitalization"
+public let kPeriodShortcut = "kPeriodShortcut"
+public let kKeyboardClicks = "kKeyboardClicks"
+public let kSmallLowercase = "kSmallLowercase"
 
 open class TastyKeyboardViewController: UIInputViewController {
     
@@ -36,8 +31,12 @@ open class TastyKeyboardViewController: UIInputViewController {
     
     var bannerView: ExtraView?
     var settingsView: ExtraView?
+
+    // MARK: - Metrics
+
+    open private(set) var topBannerHeight: CGFloat = 30.0
     
-    var currentMode: Int {
+    public var currentMode: Int {
         didSet {
             if oldValue != currentMode {
                 setMode(currentMode)
@@ -51,14 +50,14 @@ open class TastyKeyboardViewController: UIInputViewController {
         }
     }
     var backspaceDelayTimer: Timer?
-    var backspaceRepeatTimer: Timer?
+    public var backspaceRepeatTimer: Timer?
     
-    enum AutoPeriodState {
+    public enum AutoPeriodState {
         case noSpace
         case firstSpace
     }
     
-    var autoPeriodState: AutoPeriodState = .noSpace
+    public var autoPeriodState: AutoPeriodState = .noSpace
     var lastCharCountInBeforeContext: Int = 0
     
     public var shiftState: ShiftState {
@@ -241,7 +240,7 @@ open class TastyKeyboardViewController: UIInputViewController {
             self.setupKeys()
         }
         
-        self.bannerView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: metric("topBanner"))
+        self.bannerView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: topBannerHeight)
         
         let newOrigin = CGPoint(x: 0, y: self.view.bounds.height - self.forwardingView.bounds.height)
         self.forwardingView.frame.origin = newOrigin
@@ -307,7 +306,7 @@ open class TastyKeyboardViewController: UIInputViewController {
             canonicalLandscapeHeight = 162
         }
         
-        let topBannerHeight = (withTopBanner ? metric("topBanner") : 0)
+        let topBannerHeight = (withTopBanner ? topBannerHeight : 0)
         
         return CGFloat(isPortrait ? canonicalPortraitHeight + topBannerHeight : canonicalLandscapeHeight + topBannerHeight)
     }
@@ -582,7 +581,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         self.backspaceRepeatTimer = nil
     }
     
-    @objc func backspaceDown(_ sender: KeyboardKey) {
+    @objc open func backspaceDown(_ sender: KeyboardKey) {
         self.cancelBackspaceTimers()
         
         self.textDocumentProxy.deleteBackward()
@@ -592,7 +591,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         self.backspaceDelayTimer = Timer.scheduledTimer(timeInterval: backspaceDelay - backspaceRepeat, target: self, selector: #selector(TastyKeyboardViewController.backspaceDelayCallback), userInfo: nil, repeats: false)
     }
     
-    @objc func backspaceUp(_ sender: KeyboardKey) {
+    @objc open func backspaceUp(_ sender: KeyboardKey) {
         self.cancelBackspaceTimers()
     }
     
@@ -672,7 +671,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         }
     }
     
-    func updateKeyCaps(_ uppercase: Bool) {
+    open func updateKeyCaps(_ uppercase: Bool) {
         let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
         self.layout?.updateKeyCaps(false, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
     }
@@ -736,7 +735,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         }
     }
     
-    func updateCapsIfNeeded() {
+    public func updateCapsIfNeeded() {
         if self.shouldAutoCapitalize() {
             switch self.shiftState {
             case .disabled:
@@ -849,7 +848,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     }
     
     // this only works if full access is enabled
-    @objc func playKeySound() {
+    @objc public func playKeySound() {
         if !UserDefaults.standard.bool(forKey: kKeyboardClicks) {
             return
         }

@@ -63,8 +63,8 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
     
     func loadNib() throws {
         let mainBundle = Bundle(for: DefaultSettings.self)
-        guard let bundleURL = mainBundle.url(forResource: "TastyKeyboard", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else { throw TastyErrors.unableToLoadPodBundle }
-        guard let assets = bundle.loadNibNamed("DefaultSettings", owner: self, options: nil) else { throw TastyErrors.unableToLoadNIB }
+        //guard let bundleURL = mainBundle.url(forResource: "TastyKeyboard", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else { throw TastyErrors.unableToLoadPodBundle }
+        guard let assets = mainBundle.loadNibNamed("DefaultSettings", owner: self, options: nil) else { throw TastyErrors.unableToLoadNIB }
         assert(assets.count > 0, "Unable to properly load DefaultSettings xib")
         let rootView = assets.first as! UIView
         rootView.translatesAutoresizingMaskIntoConstraints = false
@@ -188,7 +188,8 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
     }
     
     @objc func didTap(_ sender: UISwitch) {
-        if let cell = sender.superview as? UITableViewCell {
+        // TODO(robin): Find a better way to get the appropriate option
+        if let cell = sender.superview?.superview as? UITableViewCell {
             if let indexPath = self.tableView?.indexPath(for: cell) {
                 let row = self.settingsList[indexPath.section].1[indexPath.row]
                 switch row {
@@ -232,9 +233,9 @@ class DefaultSettingsTableViewCell: UITableViewCell {
         self.label.tag = 2
         self.longLabel.tag = 3
 
-        self.addSubview(self.sw)
-        self.addSubview(self.label)
-        self.addSubview(self.longLabel)
+        self.contentView.addSubview(self.sw)
+        self.contentView.addSubview(self.label)
+        self.contentView.addSubview(self.longLabel)
         
         self.addConstraints()
     }

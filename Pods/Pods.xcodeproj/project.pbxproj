@@ -7,150 +7,151 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1815DD656322C83A0880356E30634C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE61B3E0F110BA670984DA92C7604089 /* Foundation.framework */; };
-		0B81EE0BFD97CBA2595BAD79EB851D85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE61B3E0F110BA670984DA92C7604089 /* Foundation.framework */; };
-		12A191F6785CEBD5CD0187362F1843E5 /* Pods-Keyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4049C97506515D8EF5BA74ABAEC9654 /* Pods-Keyboard-dummy.m */; };
-		1AE3FAD726658821B079F76E8B40226C /* TastyKeyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD523F439BB725FD8E7DAF497C237E16 /* TastyKeyboard-dummy.m */; };
-		1FB7CCF7BAF31B285BE91952C498A483 /* TastyKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5AE6FED51CB8B4FECCD8F35842F3D /* TastyKeyboardViewController.swift */; };
-		2925F01D40CE691893C885ECBDCBF50C /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67501DC3CCB975F8F8950D9CEFACA803 /* Shapes.swift */; };
-		2BA27CE915B719A5389D6E077BC0202E /* TastyKeyboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D79326689D8755D65BE06B02BC656625 /* TastyKeyboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D6CEF63E61AB5A2CCD77994291C6A09 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AAFD2F7CE2CC3F4C206580068FDC3 /* Utilities.swift */; };
-		40ADF45F4CCD003AA28F15C05E27179E /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA65352BF6FF894657B9305EE6171F /* KeyboardModel.swift */; };
-		49FBA1DFF91322EBE7F99CE309E92524 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4881E4375507210694D2598FB00388FF /* UIKit.framework */; };
-		5144D47242AEB46796F9EA64E52CAC0A /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA38C986CA7C6151565CE030D15B4A3 /* ExtraView.swift */; };
-		577AC62AC97760E994CD59F278020E75 /* Pods-Keyboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6011063886B4F56B1BC745F8C537848A /* Pods-Keyboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B80955E0224EF3F688999502412FA17 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016978A68E200BB9986F3F47E4A2DCC /* KeyboardInputTraits.swift */; };
-		6F8B1C63B16FF495895AC035FED177D8 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4742FF06D5E356724A641E5CC0F8A /* KeyboardLayout.swift */; };
-		72FFC1C97340310C8E47A099EF3FE6E3 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6EA98C763A4EDCE188071A187344B /* KeyboardKey.swift */; };
-		840AA7D2DB2A4A83EA38E3C78CAAADF1 /* Pods-HostingApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5832B9D66DBE204E8714B1BAB19CC176 /* Pods-HostingApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9245F9002D4987DEF4DC3A8F7BB446CB /* Pods-HostingApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD95CF2EFEDAD0EB8F4B2C050889677D /* Pods-HostingApp-dummy.m */; };
-		9665F26DC2D4944C80AB8EC3CB2D3D5F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EF47B33B5FB5A0C9E913D9E302376E /* AudioToolbox.framework */; };
-		9B2EA82A28B2D08337207350374FC3A7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F170FE04A2235C3806AEB694A9C4D8B /* Media.xcassets */; };
-		A5E8197C83B2BDDB674EBA196B48C2E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C784C2B8AA7AF8F27F5FED95B24FA65 /* QuartzCore.framework */; };
-		A7D2B6944DF06F548789403B9B58C7EC /* DefaultSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98AFE182875673510F853BE40408CCD /* DefaultSettings.xib */; };
-		B762B59BE7EF81026C634F22D35AFBCF /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900965948FAA18DE1E87956DEE9CBFF9 /* DefaultKeyboard.swift */; };
-		B996A779A9D47CBEE74D877A43E476E6 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCCD9752703689AE5D4BE6A9BB774C2 /* DefaultSettings.swift */; };
-		BD8ABF9C73D4053705269BAF8F6CE43B /* TastyKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 30882088DAB36851A3453D501D894640 /* TastyKeyboard.bundle */; };
-		DC3470AD297F1C8D733DBE1B2CA75DD7 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC109CC31604F4230EBFA68643F9A6 /* ForwardingView.swift */; };
-		E02EB8007B48C977B908B0617BB148C3 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5A71A08B4F4AAB649614E65271DC6 /* DirectionEnum.swift */; };
-		E1855C25FC9E3FBBABCD3CE893CD9EA2 /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F43F0E92056047CA2504DA6E5E94C30 /* KeyboardKeyBackground.swift */; };
-		E225717ABED1A10C644496D2EA98ABAD /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955FBAB82D777D0D921302E888D624C /* KeyboardConnector.swift */; };
-		EC400A1B8FBE91D36772C52A22C8243E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE61B3E0F110BA670984DA92C7604089 /* Foundation.framework */; };
-		F50C94C6BA1DF7FAE5C4289931E9D4E4 /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BD901DEFF75609C11B0EC5BE9E051 /* ImageKey.swift */; };
+		0670D620E1C6AA4020B83FFCCA6CE34C /* Pods-HostingApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5832B9D66DBE204E8714B1BAB19CC176 /* Pods-HostingApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06D6E6EF56950D5D22AA23991D3D3E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1FBD94342AF18E37DDCC1554034598 /* Foundation.framework */; };
+		11447001D4C217D3BB76C25DBCBF4AC9 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BE7700F3FC0AFE5116B4BB34B502B /* KeyboardLayout.swift */; };
+		13105EF80E2F33D6996FAE2E0B3A9438 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D91FC63005379BAC895FA3B04660E12 /* QuartzCore.framework */; };
+		2685D771D9C37A1AE8019EB60B903580 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808ABA6E2E2F5E22046B090C6EFACEA /* DefaultSettings.swift */; };
+		26F0BB4F807D3163C75AA1F36014FF09 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66698E3F146B91E851E0AA310390DD11 /* DirectionEnum.swift */; };
+		2BEF7F87E69307E263445FDFE2292427 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB19D00E5522580770784AB98CBB47C /* KeyboardInputTraits.swift */; };
+		2C26D96C4E1A39DD5FEE7181C0E3EA29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1FBD94342AF18E37DDCC1554034598 /* Foundation.framework */; };
+		379A6C58E011E1A1D531BA86487AC1E2 /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B02B4C2C257709A80C56DDA380D7180 /* ImageKey.swift */; };
+		3CE18C09843AEE5DDB35887A50DE1764 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160975033D5F4E5FF8F990F274638A21 /* Utilities.swift */; };
+		3CF9C0374603E99CCEB79B654A812D2E /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C840C39A6D9CFB3834700DF72D9D9DAB /* KeyboardKeyBackground.swift */; };
+		45197006C56F3C54BBEBEE8C35A1C174 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B795B8CAFA00FA05235E7F6B6006771A /* Shapes.swift */; };
+		46C65B3A38FC02B5E18E2E959098CDA6 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C34200F8F0D15B638BB91F4485AF82 /* ForwardingView.swift */; };
+		4C96E52E7C9A8A2E1FC95E6093E6D62E /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDDE3EEF95EFF6ED004DDBF839680D /* KeyboardModel.swift */; };
+		5ACE5604ADBC9E3D1FD6A4C58C5D28D8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD07E19422BBD2ADCFDB1B9F44A175C /* Media.xcassets */; };
+		64F9C12A02DF2D1BFE7BEB8EEF4B7CFD /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762FF391E13875741148DCE79F561D68 /* ExtraView.swift */; };
+		711FB31116392F298DEB1D0981A1559D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1FBD94342AF18E37DDCC1554034598 /* Foundation.framework */; };
+		9F900FA23B39B9E0B1BFFBA4FA41548E /* TastyKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 30882088DAB36851A3453D501D894640 /* TastyKeyboard.bundle */; };
+		AE64760B115CA2AD42AE9DBBF91833F7 /* Pods-Keyboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6011063886B4F56B1BC745F8C537848A /* Pods-Keyboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0AE8D814265ADF177978C255779B021 /* Pods-HostingApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD95CF2EFEDAD0EB8F4B2C050889677D /* Pods-HostingApp-dummy.m */; };
+		B4F99C1D73FC35FE4DA6E2223666E383 /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD817C41B14525BFB1851BF79E1EC218 /* DefaultKeyboard.swift */; };
+		B5656EA1F148D69EE8EDCDC312E270FA /* Pods-Keyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4049C97506515D8EF5BA74ABAEC9654 /* Pods-Keyboard-dummy.m */; };
+		B90AE720E82E4B4230ED4A57FD14BBC7 /* DefaultSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49BB1B3E392B5D57105B2A261297AEB8 /* DefaultSettings.xib */; };
+		C85C3545B4F4825DA648DDAFEE017A69 /* TastyKeyboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CDF5542498EFB33313C5100A57DB613 /* TastyKeyboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9701FD05977099BFC282377940B1968 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D821441DBA4C1C7A3B0C8A6CC591CE1 /* KeyboardKey.swift */; };
+		DF881919664E96B1B46A90BA918E451E /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBD6BB56CCF82362B8D63B0277DFA82 /* KeyboardConnector.swift */; };
+		E3B055E94E600FED5921E57396D6665C /* TastyKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2E1CA99AE9C349C1BFD8E793F8E5E /* TastyKeyboardViewController.swift */; };
+		F4A655AB655CD3167607F49BA66727B1 /* TastyKeyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD86ABE16976FEA15C21324C153D301 /* TastyKeyboard-dummy.m */; };
+		F94995C5A56063C2B60B639E34F6F3FD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528FD38DF0E5DAD554420ADDF205FC42 /* AudioToolbox.framework */; };
+		FE0672A0A2C3D10DA5353B67C9D57979 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D58048C0BB07B4F2568BD4A7EA245 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		068C62A86796A2625FC3CCB5821661B2 /* PBXContainerItemProxy */ = {
+		26132508620AF0DD88F9AAAEBC82185D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AB949BC7C7A4698A8B69F3BF30F92D95;
 			remoteInfo = TastyKeyboard;
 		};
-		730B10341886944C1B968482404C14F8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB949BC7C7A4698A8B69F3BF30F92D95;
-			remoteInfo = TastyKeyboard;
-		};
-		C77202F8E5DE23266881B6A43DECE9EF /* PBXContainerItemProxy */ = {
+		951FD3D77DBB444FCEB23F987B198974 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EEC758A4B3BBD79F492743889EE1070D;
 			remoteInfo = "TastyKeyboard-TastyKeyboard";
 		};
+		B00159B83A816AEF22D99495F65D1340 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB949BC7C7A4698A8B69F3BF30F92D95;
+			remoteInfo = TastyKeyboard;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01FF31B545508F551CF19E73A422A323 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		0BACF7838A583FA854C3E8EBBAC18100 /* TastyKeyboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TastyKeyboard.xcconfig; sourceTree = "<group>"; };
+		012021890E0DB45A8010A80E3C5F155D /* TastyKeyboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TastyKeyboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0D821441DBA4C1C7A3B0C8A6CC591CE1 /* KeyboardKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardKey.swift; path = Keyboard/KeyboardKey.swift; sourceTree = "<group>"; };
+		0EE2E1CA99AE9C349C1BFD8E793F8E5E /* TastyKeyboardViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TastyKeyboardViewController.swift; path = Keyboard/TastyKeyboardViewController.swift; sourceTree = "<group>"; };
 		0FE5B3896DD949FC04E0649ECD8AF2F7 /* Pods-Keyboard-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Keyboard-acknowledgements.plist"; sourceTree = "<group>"; };
-		12FC109CC31604F4230EBFA68643F9A6 /* ForwardingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForwardingView.swift; path = Keyboard/ForwardingView.swift; sourceTree = "<group>"; };
 		12FEFDD50E32D76846A323B77A79E7DC /* Pods-Keyboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Keyboard-Info.plist"; sourceTree = "<group>"; };
 		13F7E3D13583BCC0E8CE75C3B0C5BC1F /* Pods-HostingApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HostingApp.modulemap"; sourceTree = "<group>"; };
 		146AF83A0072CDA8499825F5DEC5AFB7 /* Pods-HostingApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HostingApp-frameworks.sh"; sourceTree = "<group>"; };
-		14EF47B33B5FB5A0C9E913D9E302376E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		160975033D5F4E5FF8F990F274638A21 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Keyboard/Utilities.swift; sourceTree = "<group>"; };
+		1CBD6BB56CCF82362B8D63B0277DFA82 /* KeyboardConnector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardConnector.swift; path = Keyboard/KeyboardConnector.swift; sourceTree = "<group>"; };
+		1D91FC63005379BAC895FA3B04660E12 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		21CD452AA6BD523F3CF742AFF2BF2C75 /* Pods-Keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Keyboard.debug.xcconfig"; sourceTree = "<group>"; };
-		2BF5A71A08B4F4AAB649614E65271DC6 /* DirectionEnum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DirectionEnum.swift; path = Keyboard/DirectionEnum.swift; sourceTree = "<group>"; };
+		2AD86ABE16976FEA15C21324C153D301 /* TastyKeyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TastyKeyboard-dummy.m"; sourceTree = "<group>"; };
 		30882088DAB36851A3453D501D894640 /* TastyKeyboard.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TastyKeyboard.bundle; path = "TastyKeyboard-TastyKeyboard.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C784C2B8AA7AF8F27F5FED95B24FA65 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		3DCCD9752703689AE5D4BE6A9BB774C2 /* DefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultSettings.swift; path = Keyboard/DefaultSettings.swift; sourceTree = "<group>"; };
-		4881E4375507210694D2598FB00388FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		4A5AAFD2F7CE2CC3F4C206580068FDC3 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Keyboard/Utilities.swift; sourceTree = "<group>"; };
+		38C34200F8F0D15B638BB91F4485AF82 /* ForwardingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForwardingView.swift; path = Keyboard/ForwardingView.swift; sourceTree = "<group>"; };
+		3D1FBD94342AF18E37DDCC1554034598 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		45C6D0DF8F44588008AC98F79EEE34E2 /* TastyKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TastyKeyboard.debug.xcconfig; sourceTree = "<group>"; };
+		492BE7700F3FC0AFE5116B4BB34B502B /* KeyboardLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayout.swift; path = Keyboard/KeyboardLayout.swift; sourceTree = "<group>"; };
+		49BB1B3E392B5D57105B2A261297AEB8 /* DefaultSettings.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DefaultSettings.xib; path = Keyboard/DefaultSettings.xib; sourceTree = "<group>"; };
+		4CB19D00E5522580770784AB98CBB47C /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardInputTraits.swift; path = Keyboard/KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		508709D7B110EB7EE187FAB48E25F987 /* Pods-HostingApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HostingApp-Info.plist"; sourceTree = "<group>"; };
+		528FD38DF0E5DAD554420ADDF205FC42 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		5832B9D66DBE204E8714B1BAB19CC176 /* Pods-HostingApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HostingApp-umbrella.h"; sourceTree = "<group>"; };
 		5C3333F6491BE9AC3692C196F9689288 /* TastyKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TastyKeyboard.framework; path = TastyKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FA38C986CA7C6151565CE030D15B4A3 /* ExtraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtraView.swift; path = Keyboard/ExtraView.swift; sourceTree = "<group>"; };
 		6011063886B4F56B1BC745F8C537848A /* Pods-Keyboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Keyboard-umbrella.h"; sourceTree = "<group>"; };
-		67501DC3CCB975F8F8950D9CEFACA803 /* Shapes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shapes.swift; path = Keyboard/Shapes.swift; sourceTree = "<group>"; };
-		72C4742FF06D5E356724A641E5CC0F8A /* KeyboardLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayout.swift; path = Keyboard/KeyboardLayout.swift; sourceTree = "<group>"; };
-		73B248A6409C49A4E90957004609EFBD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		61607950AA8B75F66A6C19876833762A /* TastyKeyboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TastyKeyboard.modulemap; sourceTree = "<group>"; };
+		66698E3F146B91E851E0AA310390DD11 /* DirectionEnum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DirectionEnum.swift; path = Keyboard/DirectionEnum.swift; sourceTree = "<group>"; };
+		762FF391E13875741148DCE79F561D68 /* ExtraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtraView.swift; path = Keyboard/ExtraView.swift; sourceTree = "<group>"; };
+		7B02B4C2C257709A80C56DDA380D7180 /* ImageKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageKey.swift; path = Keyboard/ImageKey.swift; sourceTree = "<group>"; };
+		7CDF5542498EFB33313C5100A57DB613 /* TastyKeyboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TastyKeyboard-umbrella.h"; sourceTree = "<group>"; };
 		86F24F842815BE3E4CE2C1C50095FF12 /* Pods-HostingApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HostingApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		87173E37DCA6B1BE114B3723B33E6F19 /* Pods-Keyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Keyboard.release.xcconfig"; sourceTree = "<group>"; };
-		89C5AE6FED51CB8B4FECCD8F35842F3D /* TastyKeyboardViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TastyKeyboardViewController.swift; path = Keyboard/TastyKeyboardViewController.swift; sourceTree = "<group>"; };
-		8AE1DE292D98EEFD16500CFA7BE2E3A4 /* TastyKeyboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TastyKeyboard-prefix.pch"; sourceTree = "<group>"; };
+		8808ABA6E2E2F5E22046B090C6EFACEA /* DefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultSettings.swift; path = Keyboard/DefaultSettings.swift; sourceTree = "<group>"; };
 		8DA1E630DBBC46AC7B6F9ECA4CC099ED /* Pods_HostingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HostingApp.framework; path = "Pods-HostingApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F170FE04A2235C3806AEB694A9C4D8B /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Keyboard/Media.xcassets; sourceTree = "<group>"; };
-		900965948FAA18DE1E87956DEE9CBFF9 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultKeyboard.swift; path = Keyboard/DefaultKeyboard.swift; sourceTree = "<group>"; };
-		90DC624956445A4D2885FC1BD59CB2D0 /* ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist"; sourceTree = "<group>"; };
-		991E49907C5ABFAC0E356F6B5CBA95D5 /* TastyKeyboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TastyKeyboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9BFA693AFC109B193BAA6A30FC9B4A1D /* TastyKeyboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TastyKeyboard-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F43F0E92056047CA2504DA6E5E94C30 /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardKeyBackground.swift; path = Keyboard/KeyboardKeyBackground.swift; sourceTree = "<group>"; };
-		A98AFE182875673510F853BE40408CCD /* DefaultSettings.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DefaultSettings.xib; path = Keyboard/DefaultSettings.xib; sourceTree = "<group>"; };
-		AD523F439BB725FD8E7DAF497C237E16 /* TastyKeyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TastyKeyboard-dummy.m"; sourceTree = "<group>"; };
-		B1C46CCC69B394EB04372771A8C579BF /* TastyKeyboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TastyKeyboard-Info.plist"; sourceTree = "<group>"; };
 		B405BE6A9716988ABB8A494DE26C6B40 /* Pods-HostingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HostingApp.release.xcconfig"; sourceTree = "<group>"; };
+		B795B8CAFA00FA05235E7F6B6006771A /* Shapes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shapes.swift; path = Keyboard/Shapes.swift; sourceTree = "<group>"; };
 		BC5B30D9FC48C52C3F1182EE0E3AF580 /* Pods_Keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Keyboard.framework; path = "Pods-Keyboard.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C016978A68E200BB9986F3F47E4A2DCC /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardInputTraits.swift; path = Keyboard/KeyboardInputTraits.swift; sourceTree = "<group>"; };
-		C25BD901DEFF75609C11B0EC5BE9E051 /* ImageKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageKey.swift; path = Keyboard/ImageKey.swift; sourceTree = "<group>"; };
+		C840C39A6D9CFB3834700DF72D9D9DAB /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardKeyBackground.swift; path = Keyboard/KeyboardKeyBackground.swift; sourceTree = "<group>"; };
+		CB6D58048C0BB07B4F2568BD4A7EA245 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CC7DD5D17B739DEAA58B52CB5ED9158B /* Pods-HostingApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HostingApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CCD6EA98C763A4EDCE188071A187344B /* KeyboardKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardKey.swift; path = Keyboard/KeyboardKey.swift; sourceTree = "<group>"; };
+		CCD07E19422BBD2ADCFDB1B9F44A175C /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Keyboard/Media.xcassets; sourceTree = "<group>"; };
+		CD817C41B14525BFB1851BF79E1EC218 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultKeyboard.swift; path = Keyboard/DefaultKeyboard.swift; sourceTree = "<group>"; };
 		CE617EB9BAF03D4EE7C83745C930B9A6 /* Pods-Keyboard-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Keyboard-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D4049C97506515D8EF5BA74ABAEC9654 /* Pods-Keyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Keyboard-dummy.m"; sourceTree = "<group>"; };
-		D79326689D8755D65BE06B02BC656625 /* TastyKeyboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TastyKeyboard-umbrella.h"; sourceTree = "<group>"; };
-		D955FBAB82D777D0D921302E888D624C /* KeyboardConnector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardConnector.swift; path = Keyboard/KeyboardConnector.swift; sourceTree = "<group>"; };
+		D71197FEAAE9E7BC732943C3F8C50435 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		DD95CF2EFEDAD0EB8F4B2C050889677D /* Pods-HostingApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HostingApp-dummy.m"; sourceTree = "<group>"; };
 		E43DA9F593773B699A58D8260787CACD /* Pods-Keyboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Keyboard.modulemap"; sourceTree = "<group>"; };
+		E4DDDE3EEF95EFF6ED004DDBF839680D /* KeyboardModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardModel.swift; path = Keyboard/KeyboardModel.swift; sourceTree = "<group>"; };
 		E90CD5F42C2DA34CBDF8E16D8F1840D4 /* Pods-HostingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HostingApp.debug.xcconfig"; sourceTree = "<group>"; };
-		EFAE43765306AB75D45C10E274172B5F /* TastyKeyboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TastyKeyboard.modulemap; sourceTree = "<group>"; };
-		EFBA65352BF6FF894657B9305EE6171F /* KeyboardModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardModel.swift; path = Keyboard/KeyboardModel.swift; sourceTree = "<group>"; };
-		FE61B3E0F110BA670984DA92C7604089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EB827D75A643DAF66C5EDD3EB0BE704D /* TastyKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TastyKeyboard.release.xcconfig; sourceTree = "<group>"; };
+		EE90C71096283AA2FCD212AE633FF33F /* TastyKeyboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TastyKeyboard-Info.plist"; sourceTree = "<group>"; };
+		FDE37EFB45D00890FB86189D3693BD08 /* ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist"; sourceTree = "<group>"; };
+		FE3E2AFCFB366364FDAB7F0965F41D73 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14E0829CED8BEABB5D95761556D390D4 /* Frameworks */ = {
+		0A503AC808C5B892518A4B362AC68FB8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B81EE0BFD97CBA2595BAD79EB851D85 /* Foundation.framework in Frameworks */,
+				F94995C5A56063C2B60B639E34F6F3FD /* AudioToolbox.framework in Frameworks */,
+				2C26D96C4E1A39DD5FEE7181C0E3EA29 /* Foundation.framework in Frameworks */,
+				13105EF80E2F33D6996FAE2E0B3A9438 /* QuartzCore.framework in Frameworks */,
+				FE0672A0A2C3D10DA5353B67C9D57979 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73F433E3336FC783E53891F4CD10ADB2 /* Frameworks */ = {
+		14BAFE750961E1E538BC7E07C4A9E611 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9665F26DC2D4944C80AB8EC3CB2D3D5F /* AudioToolbox.framework in Frameworks */,
-				EC400A1B8FBE91D36772C52A22C8243E /* Foundation.framework in Frameworks */,
-				A5E8197C83B2BDDB674EBA196B48C2E1 /* QuartzCore.framework in Frameworks */,
-				49FBA1DFF91322EBE7F99CE309E92524 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AB9EDA8E8903544A80C2A61E5A7A854 /* Frameworks */ = {
+		15E27A2C4C4CD6421A45CBF6E3B4F2B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1815DD656322C83A0880356E30634C /* Foundation.framework in Frameworks */,
+				06D6E6EF56950D5D22AA23991D3D3E74 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CCB9E8DB19D8859EF8C6DBDFC28BD7BD /* Frameworks */ = {
+		D49BCA320B70D6A1846F006C572E1A28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711FB31116392F298DEB1D0981A1559D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,13 +185,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5B2BF14BA63B042F5E8B8DA79FAF6F5F /* Resources */ = {
+		29625715A6B63DE1F471B362893E90EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A98AFE182875673510F853BE40408CCD /* DefaultSettings.xib */,
-				8F170FE04A2235C3806AEB694A9C4D8B /* Media.xcassets */,
+				49BB1B3E392B5D57105B2A261297AEB8 /* DefaultSettings.xib */,
+				CCD07E19422BBD2ADCFDB1B9F44A175C /* Media.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		5646559EB2330DB1174AC21CEE3C8293 /* TastyKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CD817C41B14525BFB1851BF79E1EC218 /* DefaultKeyboard.swift */,
+				8808ABA6E2E2F5E22046B090C6EFACEA /* DefaultSettings.swift */,
+				66698E3F146B91E851E0AA310390DD11 /* DirectionEnum.swift */,
+				762FF391E13875741148DCE79F561D68 /* ExtraView.swift */,
+				38C34200F8F0D15B638BB91F4485AF82 /* ForwardingView.swift */,
+				7B02B4C2C257709A80C56DDA380D7180 /* ImageKey.swift */,
+				1CBD6BB56CCF82362B8D63B0277DFA82 /* KeyboardConnector.swift */,
+				4CB19D00E5522580770784AB98CBB47C /* KeyboardInputTraits.swift */,
+				0D821441DBA4C1C7A3B0C8A6CC591CE1 /* KeyboardKey.swift */,
+				C840C39A6D9CFB3834700DF72D9D9DAB /* KeyboardKeyBackground.swift */,
+				492BE7700F3FC0AFE5116B4BB34B502B /* KeyboardLayout.swift */,
+				E4DDDE3EEF95EFF6ED004DDBF839680D /* KeyboardModel.swift */,
+				B795B8CAFA00FA05235E7F6B6006771A /* Shapes.swift */,
+				0EE2E1CA99AE9C349C1BFD8E793F8E5E /* TastyKeyboardViewController.swift */,
+				160975033D5F4E5FF8F990F274638A21 /* Utilities.swift */,
+				F3845E0E728A3AD35017CFC9E442D3ED /* Pod */,
+				29625715A6B63DE1F471B362893E90EE /* Resources */,
+				961EDDD6E312476119CD290E32AC72BB /* Support Files */,
+			);
+			name = TastyKeyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		65D2209B5229B9EFD241FD0EEC6E2C42 /* Targets Support Files */ = {
@@ -202,26 +229,28 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6A38BCF395559E69FF1CBC9D43EBD396 /* Pod */ = {
+		7EE283D4FDAB1E1E158FE6AA17684781 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				01FF31B545508F551CF19E73A422A323 /* LICENSE */,
-				73B248A6409C49A4E90957004609EFBD /* README.md */,
-				991E49907C5ABFAC0E356F6B5CBA95D5 /* TastyKeyboard.podspec */,
+				528FD38DF0E5DAD554420ADDF205FC42 /* AudioToolbox.framework */,
+				3D1FBD94342AF18E37DDCC1554034598 /* Foundation.framework */,
+				1D91FC63005379BAC895FA3B04660E12 /* QuartzCore.framework */,
+				CB6D58048C0BB07B4F2568BD4A7EA245 /* UIKit.framework */,
 			);
-			name = Pod;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		6B14EFBF9B5692DEEC10B82E6C34E15A /* Support Files */ = {
+		961EDDD6E312476119CD290E32AC72BB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				90DC624956445A4D2885FC1BD59CB2D0 /* ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist */,
-				EFAE43765306AB75D45C10E274172B5F /* TastyKeyboard.modulemap */,
-				0BACF7838A583FA854C3E8EBBAC18100 /* TastyKeyboard.xcconfig */,
-				AD523F439BB725FD8E7DAF497C237E16 /* TastyKeyboard-dummy.m */,
-				B1C46CCC69B394EB04372771A8C579BF /* TastyKeyboard-Info.plist */,
-				8AE1DE292D98EEFD16500CFA7BE2E3A4 /* TastyKeyboard-prefix.pch */,
-				D79326689D8755D65BE06B02BC656625 /* TastyKeyboard-umbrella.h */,
+				FDE37EFB45D00890FB86189D3693BD08 /* ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist */,
+				61607950AA8B75F66A6C19876833762A /* TastyKeyboard.modulemap */,
+				2AD86ABE16976FEA15C21324C153D301 /* TastyKeyboard-dummy.m */,
+				EE90C71096283AA2FCD212AE633FF33F /* TastyKeyboard-Info.plist */,
+				9BFA693AFC109B193BAA6A30FC9B4A1D /* TastyKeyboard-prefix.pch */,
+				7CDF5542498EFB33313C5100A57DB613 /* TastyKeyboard-umbrella.h */,
+				45C6D0DF8F44588008AC98F79EEE34E2 /* TastyKeyboard.debug.xcconfig */,
+				EB827D75A643DAF66C5EDD3EB0BE704D /* TastyKeyboard.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Pods/Target Support Files/TastyKeyboard";
@@ -247,7 +276,7 @@
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F54F8D1BAE05563F5D74EE5C3D0E79A9 /* iOS */,
+				7EE283D4FDAB1E1E158FE6AA17684781 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,72 +295,45 @@
 		E5D864ADEF6DE456716CB0FB49EFD3B5 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F888044772EFE981CBB63ED157C66949 /* TastyKeyboard */,
+				5646559EB2330DB1174AC21CEE3C8293 /* TastyKeyboard */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		F54F8D1BAE05563F5D74EE5C3D0E79A9 /* iOS */ = {
+		F3845E0E728A3AD35017CFC9E442D3ED /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				14EF47B33B5FB5A0C9E913D9E302376E /* AudioToolbox.framework */,
-				FE61B3E0F110BA670984DA92C7604089 /* Foundation.framework */,
-				3C784C2B8AA7AF8F27F5FED95B24FA65 /* QuartzCore.framework */,
-				4881E4375507210694D2598FB00388FF /* UIKit.framework */,
+				D71197FEAAE9E7BC732943C3F8C50435 /* LICENSE */,
+				FE3E2AFCFB366364FDAB7F0965F41D73 /* README.md */,
+				012021890E0DB45A8010A80E3C5F155D /* TastyKeyboard.podspec */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F888044772EFE981CBB63ED157C66949 /* TastyKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				900965948FAA18DE1E87956DEE9CBFF9 /* DefaultKeyboard.swift */,
-				3DCCD9752703689AE5D4BE6A9BB774C2 /* DefaultSettings.swift */,
-				2BF5A71A08B4F4AAB649614E65271DC6 /* DirectionEnum.swift */,
-				5FA38C986CA7C6151565CE030D15B4A3 /* ExtraView.swift */,
-				12FC109CC31604F4230EBFA68643F9A6 /* ForwardingView.swift */,
-				C25BD901DEFF75609C11B0EC5BE9E051 /* ImageKey.swift */,
-				D955FBAB82D777D0D921302E888D624C /* KeyboardConnector.swift */,
-				C016978A68E200BB9986F3F47E4A2DCC /* KeyboardInputTraits.swift */,
-				CCD6EA98C763A4EDCE188071A187344B /* KeyboardKey.swift */,
-				9F43F0E92056047CA2504DA6E5E94C30 /* KeyboardKeyBackground.swift */,
-				72C4742FF06D5E356724A641E5CC0F8A /* KeyboardLayout.swift */,
-				EFBA65352BF6FF894657B9305EE6171F /* KeyboardModel.swift */,
-				67501DC3CCB975F8F8950D9CEFACA803 /* Shapes.swift */,
-				89C5AE6FED51CB8B4FECCD8F35842F3D /* TastyKeyboardViewController.swift */,
-				4A5AAFD2F7CE2CC3F4C206580068FDC3 /* Utilities.swift */,
-				6A38BCF395559E69FF1CBC9D43EBD396 /* Pod */,
-				5B2BF14BA63B042F5E8B8DA79FAF6F5F /* Resources */,
-				6B14EFBF9B5692DEEC10B82E6C34E15A /* Support Files */,
-			);
-			name = TastyKeyboard;
-			path = ..;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CCB14F5F9A478AC474A4C7E461A62849 /* Headers */ = {
+		0326C36550CE64077B019FB6CF992091 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA27CE915B719A5389D6E077BC0202E /* TastyKeyboard-umbrella.h in Headers */,
+				C85C3545B4F4825DA648DDAFEE017A69 /* TastyKeyboard-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8C9005CAE92669A770EA4E1DD063360 /* Headers */ = {
+		334D05D250D36CA52FE33D517708C491 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				577AC62AC97760E994CD59F278020E75 /* Pods-Keyboard-umbrella.h in Headers */,
+				AE64760B115CA2AD42AE9DBBF91833F7 /* Pods-Keyboard-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E00BBD380A7940BE1590CA14322DABC6 /* Headers */ = {
+		B0AD7D2A20B81469D5A70169A5F4315A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840AA7D2DB2A4A83EA38E3C78CAAADF1 /* Pods-HostingApp-umbrella.h in Headers */,
+				0670D620E1C6AA4020B83FFCCA6CE34C /* Pods-HostingApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,17 +342,17 @@
 /* Begin PBXNativeTarget section */
 		0E8243F238710C8EB72F18AD06F335DF /* Pods-HostingApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFC8C0446C2FDEED7B6F2CF35B2A5459 /* Build configuration list for PBXNativeTarget "Pods-HostingApp" */;
+			buildConfigurationList = 3F92BCE48EAF146B07E5BCB3B4AE6B26 /* Build configuration list for PBXNativeTarget "Pods-HostingApp" */;
 			buildPhases = (
-				E00BBD380A7940BE1590CA14322DABC6 /* Headers */,
-				4F8AEB1003E1B006FF7823D7C4EB4A7B /* Sources */,
-				8AB9EDA8E8903544A80C2A61E5A7A854 /* Frameworks */,
-				05B088613A4CE0318FD4BCA955C10329 /* Resources */,
+				B0AD7D2A20B81469D5A70169A5F4315A /* Headers */,
+				7B17107F2556575094A2FCBEBE212D74 /* Sources */,
+				D49BCA320B70D6A1846F006C572E1A28 /* Frameworks */,
+				D7286BFB6E24245484F947DBF10090F0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3C29DAB2503F644017C08DC1CF4C6416 /* PBXTargetDependency */,
+				3040DCBA71DFE5F7B19587B35BB63CDC /* PBXTargetDependency */,
 			);
 			name = "Pods-HostingApp";
 			productName = "Pods-HostingApp";
@@ -359,17 +361,17 @@
 		};
 		AB949BC7C7A4698A8B69F3BF30F92D95 /* TastyKeyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4BBCDC1FC82A9542C3F9D280B503B102 /* Build configuration list for PBXNativeTarget "TastyKeyboard" */;
+			buildConfigurationList = 13D93A4BF51BFAF8BFA54A2A4C75DEBB /* Build configuration list for PBXNativeTarget "TastyKeyboard" */;
 			buildPhases = (
-				CCB14F5F9A478AC474A4C7E461A62849 /* Headers */,
-				FA1E564A230A807A5434935155041CE6 /* Sources */,
-				73F433E3336FC783E53891F4CD10ADB2 /* Frameworks */,
-				4906E438F76ABF4EC2843391AAA56FA5 /* Resources */,
+				0326C36550CE64077B019FB6CF992091 /* Headers */,
+				FD87A9A2826CF7F143E0EB09D6EBC950 /* Sources */,
+				0A503AC808C5B892518A4B362AC68FB8 /* Frameworks */,
+				8524B05B212FD692ACFBCE808C9A37F7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E1F4A7317C18997C975EF95EC906F25B /* PBXTargetDependency */,
+				AAA53159A8541722C578575875C5EC0B /* PBXTargetDependency */,
 			);
 			name = TastyKeyboard;
 			productName = TastyKeyboard;
@@ -378,17 +380,17 @@
 		};
 		B5685A94C6E63E4053CF76763A19B11E /* Pods-Keyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7540E337B6F34647A93BF5045B60D50B /* Build configuration list for PBXNativeTarget "Pods-Keyboard" */;
+			buildConfigurationList = A99EC4D50B5E270A8AA6C65766F3F996 /* Build configuration list for PBXNativeTarget "Pods-Keyboard" */;
 			buildPhases = (
-				D8C9005CAE92669A770EA4E1DD063360 /* Headers */,
-				1B1F139BEFF85D2DBA122A9E058D35DA /* Sources */,
-				14E0829CED8BEABB5D95761556D390D4 /* Frameworks */,
-				4C2885ECBA837D57751F4887C61E54A1 /* Resources */,
+				334D05D250D36CA52FE33D517708C491 /* Headers */,
+				7A34597657909F2FBDA67983015D2C7C /* Sources */,
+				15E27A2C4C4CD6421A45CBF6E3B4F2B9 /* Frameworks */,
+				99D563280E2C56AE55358C36BF651E42 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6A8A74CC0B79EC603228BB29A9DA7C4D /* PBXTargetDependency */,
+				5002E1C50B3AF7A08E6955D41339F6C7 /* PBXTargetDependency */,
 			);
 			name = "Pods-Keyboard";
 			productName = "Pods-Keyboard";
@@ -397,11 +399,11 @@
 		};
 		EEC758A4B3BBD79F492743889EE1070D /* TastyKeyboard-TastyKeyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7DC479E0F56F9C4C2024763300BB1A7 /* Build configuration list for PBXNativeTarget "TastyKeyboard-TastyKeyboard" */;
+			buildConfigurationList = E553A4841C1D536B1A14471B95083BF0 /* Build configuration list for PBXNativeTarget "TastyKeyboard-TastyKeyboard" */;
 			buildPhases = (
-				D0C7E07234AE4392D88D9562D0A5C841 /* Sources */,
-				CCB9E8DB19D8859EF8C6DBDFC28BD7BD /* Frameworks */,
-				12234BCE44FDDE819644D21EC64B53B0 /* Resources */,
+				6E0C4971E0D6A1AD5FA0713060416BBD /* Sources */,
+				14BAFE750961E1E538BC7E07C4A9E611 /* Frameworks */,
+				08C3A0ACE57EB789E07D91870016E24B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -427,6 +429,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 1A9080F89751D9F614EE22E68D0747B6 /* Products */;
@@ -442,31 +445,31 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		05B088613A4CE0318FD4BCA955C10329 /* Resources */ = {
+		08C3A0ACE57EB789E07D91870016E24B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B90AE720E82E4B4230ED4A57FD14BBC7 /* DefaultSettings.xib in Resources */,
+				5ACE5604ADBC9E3D1FD6A4C58C5D28D8 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8524B05B212FD692ACFBCE808C9A37F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F900FA23B39B9E0B1BFFBA4FA41548E /* TastyKeyboard.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99D563280E2C56AE55358C36BF651E42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		12234BCE44FDDE819644D21EC64B53B0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A7D2B6944DF06F548789403B9B58C7EC /* DefaultSettings.xib in Resources */,
-				9B2EA82A28B2D08337207350374FC3A7 /* Media.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4906E438F76ABF4EC2843391AAA56FA5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD8ABF9C73D4053705269BAF8F6CE43B /* TastyKeyboard.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C2885ECBA837D57751F4887C61E54A1 /* Resources */ = {
+		D7286BFB6E24245484F947DBF10090F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -476,82 +479,82 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1B1F139BEFF85D2DBA122A9E058D35DA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				12A191F6785CEBD5CD0187362F1843E5 /* Pods-Keyboard-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F8AEB1003E1B006FF7823D7C4EB4A7B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9245F9002D4987DEF4DC3A8F7BB446CB /* Pods-HostingApp-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0C7E07234AE4392D88D9562D0A5C841 /* Sources */ = {
+		6E0C4971E0D6A1AD5FA0713060416BBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA1E564A230A807A5434935155041CE6 /* Sources */ = {
+		7A34597657909F2FBDA67983015D2C7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B762B59BE7EF81026C634F22D35AFBCF /* DefaultKeyboard.swift in Sources */,
-				B996A779A9D47CBEE74D877A43E476E6 /* DefaultSettings.swift in Sources */,
-				E02EB8007B48C977B908B0617BB148C3 /* DirectionEnum.swift in Sources */,
-				5144D47242AEB46796F9EA64E52CAC0A /* ExtraView.swift in Sources */,
-				DC3470AD297F1C8D733DBE1B2CA75DD7 /* ForwardingView.swift in Sources */,
-				F50C94C6BA1DF7FAE5C4289931E9D4E4 /* ImageKey.swift in Sources */,
-				E225717ABED1A10C644496D2EA98ABAD /* KeyboardConnector.swift in Sources */,
-				6B80955E0224EF3F688999502412FA17 /* KeyboardInputTraits.swift in Sources */,
-				72FFC1C97340310C8E47A099EF3FE6E3 /* KeyboardKey.swift in Sources */,
-				E1855C25FC9E3FBBABCD3CE893CD9EA2 /* KeyboardKeyBackground.swift in Sources */,
-				6F8B1C63B16FF495895AC035FED177D8 /* KeyboardLayout.swift in Sources */,
-				40ADF45F4CCD003AA28F15C05E27179E /* KeyboardModel.swift in Sources */,
-				2925F01D40CE691893C885ECBDCBF50C /* Shapes.swift in Sources */,
-				1AE3FAD726658821B079F76E8B40226C /* TastyKeyboard-dummy.m in Sources */,
-				1FB7CCF7BAF31B285BE91952C498A483 /* TastyKeyboardViewController.swift in Sources */,
-				3D6CEF63E61AB5A2CCD77994291C6A09 /* Utilities.swift in Sources */,
+				B5656EA1F148D69EE8EDCDC312E270FA /* Pods-Keyboard-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B17107F2556575094A2FCBEBE212D74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0AE8D814265ADF177978C255779B021 /* Pods-HostingApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD87A9A2826CF7F143E0EB09D6EBC950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4F99C1D73FC35FE4DA6E2223666E383 /* DefaultKeyboard.swift in Sources */,
+				2685D771D9C37A1AE8019EB60B903580 /* DefaultSettings.swift in Sources */,
+				26F0BB4F807D3163C75AA1F36014FF09 /* DirectionEnum.swift in Sources */,
+				64F9C12A02DF2D1BFE7BEB8EEF4B7CFD /* ExtraView.swift in Sources */,
+				46C65B3A38FC02B5E18E2E959098CDA6 /* ForwardingView.swift in Sources */,
+				379A6C58E011E1A1D531BA86487AC1E2 /* ImageKey.swift in Sources */,
+				DF881919664E96B1B46A90BA918E451E /* KeyboardConnector.swift in Sources */,
+				2BEF7F87E69307E263445FDFE2292427 /* KeyboardInputTraits.swift in Sources */,
+				D9701FD05977099BFC282377940B1968 /* KeyboardKey.swift in Sources */,
+				3CF9C0374603E99CCEB79B654A812D2E /* KeyboardKeyBackground.swift in Sources */,
+				11447001D4C217D3BB76C25DBCBF4AC9 /* KeyboardLayout.swift in Sources */,
+				4C96E52E7C9A8A2E1FC95E6093E6D62E /* KeyboardModel.swift in Sources */,
+				45197006C56F3C54BBEBEE8C35A1C174 /* Shapes.swift in Sources */,
+				F4A655AB655CD3167607F49BA66727B1 /* TastyKeyboard-dummy.m in Sources */,
+				E3B055E94E600FED5921E57396D6665C /* TastyKeyboardViewController.swift in Sources */,
+				3CE18C09843AEE5DDB35887A50DE1764 /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C29DAB2503F644017C08DC1CF4C6416 /* PBXTargetDependency */ = {
+		3040DCBA71DFE5F7B19587B35BB63CDC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TastyKeyboard;
 			target = AB949BC7C7A4698A8B69F3BF30F92D95 /* TastyKeyboard */;
-			targetProxy = 068C62A86796A2625FC3CCB5821661B2 /* PBXContainerItemProxy */;
+			targetProxy = B00159B83A816AEF22D99495F65D1340 /* PBXContainerItemProxy */;
 		};
-		6A8A74CC0B79EC603228BB29A9DA7C4D /* PBXTargetDependency */ = {
+		5002E1C50B3AF7A08E6955D41339F6C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TastyKeyboard;
 			target = AB949BC7C7A4698A8B69F3BF30F92D95 /* TastyKeyboard */;
-			targetProxy = 730B10341886944C1B968482404C14F8 /* PBXContainerItemProxy */;
+			targetProxy = 26132508620AF0DD88F9AAAEBC82185D /* PBXContainerItemProxy */;
 		};
-		E1F4A7317C18997C975EF95EC906F25B /* PBXTargetDependency */ = {
+		AAA53159A8541722C578575875C5EC0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "TastyKeyboard-TastyKeyboard";
 			target = EEC758A4B3BBD79F492743889EE1070D /* TastyKeyboard-TastyKeyboard */;
-			targetProxy = C77202F8E5DE23266881B6A43DECE9EF /* PBXContainerItemProxy */;
+			targetProxy = 951FD3D77DBB444FCEB23F987B198974 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2335AD5F670716D1294A33EA92496BB2 /* Debug */ = {
+		2A6D733A298F9A011688B6B3B2C41F89 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BACF7838A583FA854C3E8EBBAC18100 /* TastyKeyboard.xcconfig */;
+			baseConfigurationReference = 45C6D0DF8F44588008AC98F79EEE34E2 /* TastyKeyboard.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TastyKeyboard";
+				IBSC_MODULE = TastyKeyboard;
 				INFOPLIST_FILE = "Target Support Files/TastyKeyboard/ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = TastyKeyboard;
@@ -562,13 +565,57 @@
 			};
 			name = Debug;
 		};
-		444BF2E452336BE48864DA0DF40902BE /* Release */ = {
+		373C4423D83907EE489EA453C0F3DAAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45C6D0DF8F44588008AC98F79EEE34E2 /* TastyKeyboard.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TastyKeyboard/TastyKeyboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TastyKeyboard/TastyKeyboard-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TastyKeyboard/TastyKeyboard.modulemap";
+				PRODUCT_MODULE_NAME = TastyKeyboard;
+				PRODUCT_NAME = TastyKeyboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4126333655D6378E41B8529AA534A093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB827D75A643DAF66C5EDD3EB0BE704D /* TastyKeyboard.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TastyKeyboard";
+				IBSC_MODULE = TastyKeyboard;
+				INFOPLIST_FILE = "Target Support Files/TastyKeyboard/ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = TastyKeyboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		431AA56FD160B587E88011DFC41410B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87173E37DCA6B1BE114B3723B33E6F19 /* Pods-Keyboard.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -579,7 +626,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Keyboard/Pods-Keyboard-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Keyboard/Pods-Keyboard.modulemap";
@@ -597,7 +644,39 @@
 			};
 			name = Release;
 		};
-		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
+		669328C65FF8131F0F7E43FF7C0AFA42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21CD452AA6BD523F3CF742AFF2BF2C75 /* Pods-Keyboard.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Keyboard/Pods-Keyboard-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Keyboard/Pods-Keyboard.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C14E932D4C3EFCC589F7DEABCEC18F22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -623,6 +702,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -645,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -657,62 +737,11 @@
 			};
 			name = Release;
 		};
-		4C1E747168048B8066F97D0E386F98E0 /* Release */ = {
+		E2BEA330515859F2B6B3E1C6484DB1C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BACF7838A583FA854C3E8EBBAC18100 /* TastyKeyboard.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TastyKeyboard";
-				INFOPLIST_FILE = "Target Support Files/TastyKeyboard/ResourceBundle-TastyKeyboard-TastyKeyboard-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = TastyKeyboard;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		51C117034F3DFC05B1CEEBD8DD61AEF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21CD452AA6BD523F3CF742AFF2BF2C75 /* Pods-Keyboard.debug.xcconfig */;
+			baseConfigurationReference = B405BE6A9716988ABB8A494DE26C6B40 /* Pods-HostingApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Keyboard/Pods-Keyboard-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Keyboard/Pods-Keyboard.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		62B75AD4090B8CA30BC5864B04B86E73 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E90CD5F42C2DA34CBDF8E16D8F1840D4 /* Pods-HostingApp.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -723,7 +752,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-HostingApp/Pods-HostingApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-HostingApp/Pods-HostingApp.modulemap";
@@ -735,12 +764,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
+		EF3BAAA889B17377BE8F3254633FA0A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -766,6 +796,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -791,7 +822,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -804,12 +835,10 @@
 			};
 			name = Debug;
 		};
-		C9EA93E2433A4DC54B4F3D945B2D7EE9 /* Debug */ = {
+		F12A5BD752F91B9A45B5D478EACDA8DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BACF7838A583FA854C3E8EBBAC18100 /* TastyKeyboard.xcconfig */;
+			baseConfigurationReference = EB827D75A643DAF66C5EDD3EB0BE704D /* TastyKeyboard.release.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -831,17 +860,17 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		CE43676E11336C1BDFD506F1E85E4233 /* Release */ = {
+		FA404521A2861EA706E851F57C55F47C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B405BE6A9716988ABB8A494DE26C6B40 /* Pods-HostingApp.release.xcconfig */;
+			baseConfigurationReference = E90CD5F42C2DA34CBDF8E16D8F1840D4 /* Pods-HostingApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -852,7 +881,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-HostingApp/Pods-HostingApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-HostingApp/Pods-HostingApp.modulemap";
@@ -864,89 +893,55 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		EB1FD9395298627723331737ED089F26 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BACF7838A583FA854C3E8EBBAC18100 /* TastyKeyboard.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TastyKeyboard/TastyKeyboard-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TastyKeyboard/TastyKeyboard-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TastyKeyboard/TastyKeyboard.modulemap";
-				PRODUCT_MODULE_NAME = TastyKeyboard;
-				PRODUCT_NAME = TastyKeyboard;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		13D93A4BF51BFAF8BFA54A2A4C75DEBB /* Build configuration list for PBXNativeTarget "TastyKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373C4423D83907EE489EA453C0F3DAAB /* Debug */,
+				F12A5BD752F91B9A45B5D478EACDA8DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F92BCE48EAF146B07E5BCB3B4AE6B26 /* Build configuration list for PBXNativeTarget "Pods-HostingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA404521A2861EA706E851F57C55F47C /* Debug */,
+				E2BEA330515859F2B6B3E1C6484DB1C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
-				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
+				EF3BAAA889B17377BE8F3254633FA0A7 /* Debug */,
+				C14E932D4C3EFCC589F7DEABCEC18F22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4BBCDC1FC82A9542C3F9D280B503B102 /* Build configuration list for PBXNativeTarget "TastyKeyboard" */ = {
+		A99EC4D50B5E270A8AA6C65766F3F996 /* Build configuration list for PBXNativeTarget "Pods-Keyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9EA93E2433A4DC54B4F3D945B2D7EE9 /* Debug */,
-				EB1FD9395298627723331737ED089F26 /* Release */,
+				669328C65FF8131F0F7E43FF7C0AFA42 /* Debug */,
+				431AA56FD160B587E88011DFC41410B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7540E337B6F34647A93BF5045B60D50B /* Build configuration list for PBXNativeTarget "Pods-Keyboard" */ = {
+		E553A4841C1D536B1A14471B95083BF0 /* Build configuration list for PBXNativeTarget "TastyKeyboard-TastyKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				51C117034F3DFC05B1CEEBD8DD61AEF2 /* Debug */,
-				444BF2E452336BE48864DA0DF40902BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A7DC479E0F56F9C4C2024763300BB1A7 /* Build configuration list for PBXNativeTarget "TastyKeyboard-TastyKeyboard" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2335AD5F670716D1294A33EA92496BB2 /* Debug */,
-				4C1E747168048B8066F97D0E386F98E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BFC8C0446C2FDEED7B6F2CF35B2A5459 /* Build configuration list for PBXNativeTarget "Pods-HostingApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				62B75AD4090B8CA30BC5864B04B86E73 /* Debug */,
-				CE43676E11336C1BDFD506F1E85E4233 /* Release */,
+				2A6D733A298F9A011688B6B3B2C41F89 /* Debug */,
+				4126333655D6378E41B8529AA534A093 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

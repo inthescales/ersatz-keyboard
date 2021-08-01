@@ -1,5 +1,5 @@
 PODS:
-  - TastyKeyboard (1.0.3)
+  - TastyKeyboard (1.2.0)
 
 DEPENDENCIES:
   - TastyKeyboard (from `.`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  TastyKeyboard: c58a29a3e5ca4076732b8875ea04809d3e06f0c6
+  TastyKeyboard: fe242a5bb5dcd83c1516710068196b329d704466
 
 PODFILE CHECKSUM: a85b1b6e31f484ec3ceea1180394bb36e5a98f83
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.1
