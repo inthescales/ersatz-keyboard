@@ -1,6 +1,0 @@
-framework module TastyKeyboard {
-  umbrella header "TastyKeyboard-umbrella.h"
-
-  export *
-  module * { export * }
-}
