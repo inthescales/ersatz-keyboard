@@ -8,13 +8,13 @@ This project is currently in development for use in another project.
 
 ## Features of the original
 
-* No bitmaps! Everything is rendered using CoreGraphics.
-* Dynamic layouts! All the keys are laid out programmatically, meaning that the keyboard is much easier to extend and will automatically work on devices of all sizes.
-* Auto-capitalization, period shortcut, keyboard clicks.
+* Rendered entirely using CoreGraphics.
+* Dynamic Layouts – All the keys are laid out programmatically, meaning that the keyboard is much easier to extend and will automatically work on devices of all sizes.
+* Support for auto-capitalization, period shortcut, keyboard clicks.
 * An extensible settings screen.
 * Dark mode and solid color mode.
 
-## Aged but relevant Screenshots
+## Screenshots (old)
 
 ![Portrait](./Screenshot-Portrait.png "Portrait")
 
