@@ -259,6 +259,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     override open func viewWillAppear(_ animated: Bool) {
         self.bannerView?.isHidden = false
         self.keyboardHeight = self.height(orientationIsPortrait: self.isPortrait(), withTopBanner: true)
+        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor(self.darkMode())
     }
     
     override open func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -484,6 +485,8 @@ open class TastyKeyboardViewController: UIInputViewController {
         
         self.bannerView?.darkMode = appearanceIsDark
         self.settingsView?.darkMode = appearanceIsDark
+        
+        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor(appearanceIsDark)
     }
     
     @objc func highlightKey(_ sender: KeyboardKey) {
