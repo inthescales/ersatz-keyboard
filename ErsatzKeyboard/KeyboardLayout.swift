@@ -267,8 +267,9 @@ extension CGSize: Hashable {
 
 // handles the layout for the keyboard, including key spacing and arrangement
 public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
-    
+
     class var shouldPoolKeys: Bool { get { return true }}
+    class var shouldPoolShapes: Bool { get { return false }}
     
     var layoutConstants: LayoutConstants.Type
     public var globalColors: GlobalColors.Type
@@ -748,7 +749,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     func getShape(_ shapeClass: Shape.Type) -> Shape {
         let className = NSStringFromClass(shapeClass)
         
-        if type(of: self).shouldPoolKeys {
+        if type(of: self).shouldPoolShapes {
             if let shape = self.shapePool[className] {
                 return shape
             }
