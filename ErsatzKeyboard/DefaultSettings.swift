@@ -34,6 +34,9 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
     let cellLongLabelColorDark = UIColor.lightGray
     let cellLongLabelColorLight = UIColor.gray
     
+    open var settingsTitle: String { "Settings" }
+    open var backTitle: String { "Back" }
+    
     // TODO: these probably don't belong here, and also need to be localized
     open var settingsList: [(String, [SettingsRow])] {
         get {
@@ -152,6 +155,9 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
     }
     
     func updateAppearance(_ dark: Bool) {
+        settingsLabel?.text = settingsTitle
+        backButton?.setTitle("〈 " + backTitle, for: .normal)
+        
         if dark {
             let _ = self.effectsView?.effect //AB: used for side effect, maybe? can't remember, probably junk
             let blueColor = UIColor(red: 135/CGFloat(255), green: 206/CGFloat(255), blue: 250/CGFloat(255), alpha: 1)
