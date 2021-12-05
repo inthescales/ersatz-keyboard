@@ -177,8 +177,7 @@ public class GlobalColors: NSObject {
     class var lightModeBorderColor: UIColor { get { return UIColor(hue: (214/360.0), saturation: 0.04, brightness: 0.65, alpha: 1.0) }}
     class var darkModeBorderColor: UIColor { get { return UIColor.clear }}
     
-    public class var lightModeKeyboardBackgroundColor: UIColor { UIColor(hue: (223.0/360.0), saturation: 0.03, brightness: 0.86, alpha: 1.0) }
-    public class var darkModeKeyboardBackgroundColor: UIColor { UIColor(hue: (116.0/360.0), saturation: 0.0, brightness: 0.17, alpha: 1.0) }
+    public class var keyboardBackgroundColor: UIColor { UIColor(hue: 0, saturation: 0, brightness: 0, alpha: 0.01) }
     
     public class func regularKey(_ darkMode: Bool, solidColorMode: Bool) -> UIColor {
         if darkMode {
@@ -224,15 +223,6 @@ public class GlobalColors: NSObject {
             else {
                 return self.lightModeSpecialKey
             }
-        }
-    }
-    
-    class func keyboardBackgroundColor(_ darkMode: Bool) -> UIColor {
-        if darkMode {
-            return self.darkModeKeyboardBackgroundColor
-        }
-        else {
-            return self.lightModeKeyboardBackgroundColor
         }
     }
 }

@@ -112,6 +112,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.forwardingView = ForwardingView(frame: CGRect.zero)
+        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
         self.view.addSubview(self.forwardingView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(TastyKeyboardViewController.defaultsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
@@ -259,7 +260,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     override open func viewWillAppear(_ animated: Bool) {
         self.bannerView?.isHidden = false
         self.keyboardHeight = self.height(orientationIsPortrait: self.isPortrait(), withTopBanner: true)
-        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor(self.darkMode())
+        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
     }
     
     override open func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -485,8 +486,6 @@ open class TastyKeyboardViewController: UIInputViewController {
         
         self.bannerView?.darkMode = appearanceIsDark
         self.settingsView?.darkMode = appearanceIsDark
-        
-        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor(appearanceIsDark)
     }
     
     @objc func highlightKey(_ sender: KeyboardKey) {
