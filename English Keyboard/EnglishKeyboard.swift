@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
-func defaultKeyboard() -> Keyboard {
+import ErsatzKeyboard
+
+func englishKeyboard() -> Keyboard {
     let defaultKeyboard = Keyboard()
     
     for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {

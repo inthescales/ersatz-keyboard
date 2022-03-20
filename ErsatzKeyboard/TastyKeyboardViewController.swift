@@ -104,7 +104,7 @@ open class TastyKeyboardViewController: UIInputViewController {
             kSmallLowercase: false
         ])
         
-        self.keyboard = defaultKeyboard()
+        // TODO: Put some default here again maybe
         
         self.shiftState = .disabled
         self.currentMode = 0
