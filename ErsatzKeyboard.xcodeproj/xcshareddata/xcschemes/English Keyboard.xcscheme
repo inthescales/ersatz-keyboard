@@ -35,6 +35,20 @@
                ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00596DFA2699FC240069BD79"
+               BuildableName = "ErsatzKeyboard.framework"
+               BlueprintName = "ErsatzKeyboard"
+               ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

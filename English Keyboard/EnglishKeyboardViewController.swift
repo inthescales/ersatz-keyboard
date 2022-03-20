@@ -11,7 +11,7 @@ import UIKit
 
 import ErsatzKeyboard
 
-class EnglishKeyboardViewController: TastyKeyboardViewController {
+class EnglishKeyboardViewController: ErsatzKeyboardViewController {
     var lastInsertedCharacterIsAutomaticSpace = false
     
     required init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

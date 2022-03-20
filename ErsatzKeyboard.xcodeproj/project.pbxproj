@@ -13,7 +13,7 @@
 		005BE27B26B7460B00ECC849 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26926B7460B00ECC849 /* Utilities.swift */; };
 		005BE27C26B7460B00ECC849 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */; };
 		005BE27D26B7460B00ECC849 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26B26B7460B00ECC849 /* DirectionEnum.swift */; };
-		005BE27E26B7460B00ECC849 /* TastyKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26C26B7460B00ECC849 /* TastyKeyboardViewController.swift */; };
+		005BE27E26B7460B00ECC849 /* ErsatzKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */; };
 		005BE27F26B7460B00ECC849 /* DefaultSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005BE26D26B7460B00ECC849 /* DefaultSettings.xib */; };
 		005BE28026B7460B00ECC849 /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */; };
 		005BE28126B7460B00ECC849 /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26F26B7460B00ECC849 /* ImageKey.swift */; };
@@ -66,7 +66,7 @@
 		005BE26926B7460B00ECC849 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		005BE26B26B7460B00ECC849 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
-		005BE26C26B7460B00ECC849 /* TastyKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastyKeyboardViewController.swift; sourceTree = "<group>"; };
+		005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErsatzKeyboardViewController.swift; sourceTree = "<group>"; };
 		005BE26D26B7460B00ECC849 /* DefaultSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultSettings.xib; sourceTree = "<group>"; };
 		005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
 		005BE26F26B7460B00ECC849 /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
@@ -89,6 +89,8 @@
 		00663DB227E0266B002C82BD /* English Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "English Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishKeyboardViewController.swift; sourceTree = "<group>"; };
 		00663DB627E0266B002C82BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00AE807527E7D53800B8F899 /* Ersatz Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ersatz Demo.entitlements"; sourceTree = "<group>"; };
+		00AE807627E7D54600B8F899 /* English Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "English Keyboard.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +127,7 @@
 				005BE26926B7460B00ECC849 /* Utilities.swift */,
 				005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */,
 				005BE26B26B7460B00ECC849 /* DirectionEnum.swift */,
-				005BE26C26B7460B00ECC849 /* TastyKeyboardViewController.swift */,
+				005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */,
 				005BE26D26B7460B00ECC849 /* DefaultSettings.xib */,
 				005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */,
 				005BE26F26B7460B00ECC849 /* ImageKey.swift */,
@@ -157,6 +159,7 @@
 		00663DB327E0266B002C82BD /* English Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				00AE807627E7D54600B8F899 /* English Keyboard.entitlements */,
 				005BE27326B7460B00ECC849 /* EnglishKeyboard.swift */,
 				00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */,
 				00663DB627E0266B002C82BD /* Info.plist */,
@@ -167,6 +170,7 @@
 		4E807D8A19461D9000D875D1 = {
 			isa = PBXGroup;
 			children = (
+				00AE807527E7D53800B8F899 /* Ersatz Demo.entitlements */,
 				005BE26526B7460B00ECC849 /* ErsatzKeyboard */,
 				00663D9B27E02650002C82BD /* Demo App */,
 				00663DB327E0266B002C82BD /* English Keyboard */,
@@ -341,7 +345,7 @@
 				005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */,
 				005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */,
 				005BE28326B7460B00ECC849 /* KeyboardKeyBackground.swift in Sources */,
-				005BE27E26B7460B00ECC849 /* TastyKeyboardViewController.swift in Sources */,
+				005BE27E26B7460B00ECC849 /* ErsatzKeyboardViewController.swift in Sources */,
 				005BE28126B7460B00ECC849 /* ImageKey.swift in Sources */,
 				005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */,
 				005BE28726B7460B00ECC849 /* KeyboardModel.swift in Sources */,
@@ -487,6 +491,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Ersatz Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
@@ -518,6 +523,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Ersatz Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -545,6 +551,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "English Keyboard/English Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
@@ -574,6 +581,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "English Keyboard/English Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
