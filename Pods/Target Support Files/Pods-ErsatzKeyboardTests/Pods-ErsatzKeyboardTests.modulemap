@@ -1,0 +1,6 @@
+module Pods_ErsatzKeyboardTests {
+  umbrella header "Pods-ErsatzKeyboardTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -77,7 +77,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     var shiftWasMultitapped: Bool = false
     var shiftStartingState: ShiftState?
     
-    var keyboardHeight: CGFloat {
+    public var keyboardHeight: CGFloat {
         get {
             if let constraint = self.heightConstraint {
                 return constraint.constant

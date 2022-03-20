@@ -32,6 +32,12 @@
 		00663DB527E0266B002C82BD /* EnglishKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */; };
 		00663DB927E0266B002C82BD /* English Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 00663DB227E0266B002C82BD /* English Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0066BB4027E692CB008B2BF0 /* EnglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27326B7460B00ECC849 /* EnglishKeyboard.swift */; };
+		00AE807F27E7DA0100B8F899 /* ErsatzKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */; };
+		00AE808127E7DA0100B8F899 /* ErsatzKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */; };
+		00AE808827E7DEA600B8F899 /* EnglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */; };
+		00AE808C27E7E2D800B8F899 /* TestDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808B27E7E2D800B8F899 /* TestDevice.swift */; };
+		00AE808E27E7E6FB00B8F899 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808D27E7E6FB00B8F899 /* TestView.swift */; };
+		108FEE8858872100BA138087 /* libPods-ErsatzKeyboardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81478575226F0846740E02B3 /* libPods-ErsatzKeyboardTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 00663DB127E0266B002C82BD;
 			remoteInfo = DemoKeyboard;
+		};
+		00AE808227E7DA0100B8F899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E807D8B19461D9000D875D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00596DFA2699FC240069BD79;
+			remoteInfo = ErsatzKeyboard;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -91,6 +104,15 @@
 		00663DB627E0266B002C82BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00AE807627E7D54600B8F899 /* English Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "English Keyboard.entitlements"; sourceTree = "<group>"; };
 		00AE807727E7D97A00B8F899 /* ErsatzDemo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ErsatzDemo.entitlements; sourceTree = "<group>"; };
+		00AE807C27E7DA0100B8F899 /* ErsatzKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErsatzKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErsatzKeyboardTests.swift; sourceTree = "<group>"; };
+		00AE808027E7DA0100B8F899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishKeyboard.swift; sourceTree = "<group>"; };
+		00AE808B27E7E2D800B8F899 /* TestDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDevice.swift; sourceTree = "<group>"; };
+		00AE808D27E7E6FB00B8F899 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		77AF7A108989A2698D29BD43 /* Pods-ErsatzKeyboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErsatzKeyboardTests.debug.xcconfig"; path = "Target Support Files/Pods-ErsatzKeyboardTests/Pods-ErsatzKeyboardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81478575226F0846740E02B3 /* libPods-ErsatzKeyboardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ErsatzKeyboardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5B33B160D021391BF91E175 /* Pods-ErsatzKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErsatzKeyboardTests.release.xcconfig"; path = "Target Support Files/Pods-ErsatzKeyboardTests/Pods-ErsatzKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +134,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00AE807927E7DA0100B8F899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AE808127E7DA0100B8F899 /* ErsatzKeyboard.framework in Frameworks */,
+				108FEE8858872100BA138087 /* libPods-ErsatzKeyboardTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,13 +199,36 @@
 			path = "English Keyboard";
 			sourceTree = "<group>";
 		};
+		00AE807D27E7DA0100B8F899 /* ErsatzKeyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				00AE808027E7DA0100B8F899 /* Info.plist */,
+				00AE808B27E7E2D800B8F899 /* TestDevice.swift */,
+				00AE808D27E7E6FB00B8F899 /* TestView.swift */,
+				00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */,
+				00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */,
+			);
+			path = ErsatzKeyboardTests;
+			sourceTree = "<group>";
+		};
+		4DB7973F8D5DD45AAEB6334C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81478575226F0846740E02B3 /* libPods-ErsatzKeyboardTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E807D8A19461D9000D875D1 = {
 			isa = PBXGroup;
 			children = (
 				005BE26526B7460B00ECC849 /* ErsatzKeyboard */,
 				00663D9B27E02650002C82BD /* ErsatzDemo */,
 				00663DB327E0266B002C82BD /* English Keyboard */,
+				00AE807D27E7DA0100B8F899 /* ErsatzKeyboardTests */,
 				4E807D9419461D9000D875D1 /* Products */,
+				4DB7973F8D5DD45AAEB6334C /* Frameworks */,
+				FF5A75B57A8267FF033FB6D4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,8 +238,18 @@
 				00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */,
 				00663D9A27E02650002C82BD /* ErsatzDemo.app */,
 				00663DB227E0266B002C82BD /* English Keyboard.appex */,
+				00AE807C27E7DA0100B8F899 /* ErsatzKeyboardTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FF5A75B57A8267FF033FB6D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77AF7A108989A2698D29BD43 /* Pods-ErsatzKeyboardTests.debug.xcconfig */,
+				C5B33B160D021391BF91E175 /* Pods-ErsatzKeyboardTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +319,25 @@
 			productReference = 00663DB227E0266B002C82BD /* English Keyboard.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		00AE807B27E7DA0100B8F899 /* ErsatzKeyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00AE808427E7DA0100B8F899 /* Build configuration list for PBXNativeTarget "ErsatzKeyboardTests" */;
+			buildPhases = (
+				6047C02DA9706B9DB2C6B089 /* [CP] Check Pods Manifest.lock */,
+				00AE807827E7DA0100B8F899 /* Sources */,
+				00AE807927E7DA0100B8F899 /* Frameworks */,
+				00AE807A27E7DA0100B8F899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00AE808327E7DA0100B8F899 /* PBXTargetDependency */,
+			);
+			name = ErsatzKeyboardTests;
+			productName = ErsatzKeyboardTests;
+			productReference = 00AE807C27E7DA0100B8F899 /* ErsatzKeyboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -281,6 +364,11 @@
 						DevelopmentTeam = JZ3WYZWA8F;
 						ProvisioningStyle = Automatic;
 					};
+					00AE807B27E7DA0100B8F899 = {
+						CreatedOnToolsVersion = 12.5.1;
+						DevelopmentTeam = JZ3WYZWA8F;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 4E807D8E19461D9000D875D1 /* Build configuration list for PBXProject "ErsatzKeyboard" */;
@@ -299,6 +387,7 @@
 				00596DFA2699FC240069BD79 /* ErsatzKeyboard */,
 				00663D9927E02650002C82BD /* ErsatzDemo */,
 				00663DB127E0266B002C82BD /* English Keyboard */,
+				00AE807B27E7DA0100B8F899 /* ErsatzKeyboardTests */,
 			);
 		};
 /* End PBXProject section */
@@ -330,7 +419,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00AE807A27E7DA0100B8F899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6047C02DA9706B9DB2C6B089 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ErsatzKeyboardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00596DF72699FC240069BD79 /* Sources */ = {
@@ -373,6 +494,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00AE807827E7DA0100B8F899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AE808E27E7E6FB00B8F899 /* TestView.swift in Sources */,
+				00AE808C27E7E2D800B8F899 /* TestDevice.swift in Sources */,
+				00AE807F27E7DA0100B8F899 /* ErsatzKeyboardTests.swift in Sources */,
+				00AE808827E7DEA600B8F899 /* EnglishKeyboard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -380,6 +512,11 @@
 			isa = PBXTargetDependency;
 			target = 00663DB127E0266B002C82BD /* English Keyboard */;
 			targetProxy = 00663DB727E0266B002C82BD /* PBXContainerItemProxy */;
+		};
+		00AE808327E7DA0100B8F899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00596DFA2699FC240069BD79 /* ErsatzKeyboard */;
+			targetProxy = 00AE808227E7DA0100B8F899 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -600,6 +737,63 @@
 			};
 			name = Release;
 		};
+		00AE808527E7DA0100B8F899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77AF7A108989A2698D29BD43 /* Pods-ErsatzKeyboardTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = ErsatzKeyboardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.ErsatzKeyboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00AE808627E7DA0100B8F899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5B33B160D021391BF91E175 /* Pods-ErsatzKeyboardTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ErsatzKeyboardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.ErsatzKeyboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4E807DAD19461D9000D875D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -730,6 +924,15 @@
 			buildConfigurations = (
 				00663DBB27E0266B002C82BD /* Debug */,
 				00663DBC27E0266B002C82BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00AE808427E7DA0100B8F899 /* Build configuration list for PBXNativeTarget "ErsatzKeyboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00AE808527E7DA0100B8F899 /* Debug */,
+				00AE808627E7DA0100B8F899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
