@@ -1,6 +1,6 @@
 //
 //  DefaultSettings.swift
-//  TastyImitationKeyboard
+//  ErsatzKeyboard
 //
 //  Created by Alexei Baboulevitch on 11/2/14.
 //  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
@@ -66,8 +66,8 @@ open class DefaultSettings: ExtraView, UITableViewDataSource, UITableViewDelegat
     
     func loadNib() throws {
         let mainBundle = Bundle(for: DefaultSettings.self)
-        //guard let bundleURL = mainBundle.url(forResource: "TastyKeyboard", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else { throw TastyErrors.unableToLoadPodBundle }
-        guard let assets = mainBundle.loadNibNamed("DefaultSettings", owner: self, options: nil) else { throw TastyErrors.unableToLoadNIB }
+        //guard let bundleURL = mainBundle.url(forResource: "ErsatzKeyboard", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) else { throw ErsatzErrors.unableToLoadPodBundle }
+        guard let assets = mainBundle.loadNibNamed("DefaultSettings", owner: self, options: nil) else { throw ErsatzErrors.unableToLoadNIB }
         assert(assets.count > 0, "Unable to properly load DefaultSettings xib")
         let rootView = assets.first as! UIView
         rootView.translatesAutoresizingMaskIntoConstraints = false

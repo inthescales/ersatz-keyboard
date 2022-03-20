@@ -4,4 +4,10 @@
    <FileRef
       location = "group:/Users/robin/Development/klavaro-app/ersatz-keyboard/ErsatzKeyboard.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:ErsatzKeyboard.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

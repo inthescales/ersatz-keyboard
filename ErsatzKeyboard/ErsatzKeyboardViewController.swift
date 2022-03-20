@@ -1,5 +1,5 @@
 //
-//  TastyKeyboardViewController.swift
+//  ErsatzKeyboardViewController.swift
 //  Keyboard
 //
 //  Created by Alexei Baboulevitch on 6/9/14.
@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 
-public enum TastyErrors: Error {
+public enum ErsatzErrors: Error {
     case unableToLoadPodBundle
     case unableToLoadNIB
 }
@@ -20,7 +20,7 @@ public let kPeriodShortcut = "kPeriodShortcut"
 public let kKeyboardClicks = "kKeyboardClicks"
 public let kSmallLowercase = "kSmallLowercase"
 
-open class TastyKeyboardViewController: UIInputViewController {
+open class ErsatzKeyboardViewController: UIInputViewController {
     
     let backspaceDelay: TimeInterval = 0.5
     let backspaceRepeat: TimeInterval = 0.07
@@ -77,7 +77,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     var shiftWasMultitapped: Bool = false
     var shiftStartingState: ShiftState?
     
-    var keyboardHeight: CGFloat {
+    public var keyboardHeight: CGFloat {
         get {
             if let constraint = self.heightConstraint {
                 return constraint.constant
@@ -104,7 +104,7 @@ open class TastyKeyboardViewController: UIInputViewController {
             kSmallLowercase: false
         ])
         
-        self.keyboard = defaultKeyboard()
+        // TODO: Put some default here again maybe
         
         self.shiftState = .disabled
         self.currentMode = 0
@@ -115,7 +115,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
         self.view.addSubview(self.forwardingView)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(TastyKeyboardViewController.defaultsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ErsatzKeyboardViewController.defaultsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
     }
     
     public required init?(coder: NSCoder) {
@@ -337,34 +337,34 @@ open class TastyKeyboardViewController: UIInputViewController {
                         switch key.type {
                         case Key.KeyType.keyboardChange:
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.advanceTapped(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.advanceTapped(_:)),
                                               for: .touchUpInside)
                         case Key.KeyType.backspace:
                             let cancelEvents: UIControl.Event = [UIControl.Event.touchUpInside, UIControl.Event.touchUpInside, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel, UIControl.Event.touchDragOutside]
                             
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.backspaceDown(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.backspaceDown(_:)),
                                               for: .touchDown)
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.backspaceUp(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.backspaceUp(_:)),
                                               for: cancelEvents)
                         case Key.KeyType.shift:
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.shiftDown(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.shiftDown(_:)),
                                               for: .touchDown)
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.shiftUp(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.shiftUp(_:)),
                                               for: .touchUpInside)
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.shiftDoubleTapped(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.shiftDoubleTapped(_:)),
                                               for: .touchDownRepeat)
                         case Key.KeyType.modeChange:
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.modeChangeTapped(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.modeChangeTapped(_:)),
                                               for: .touchDown)
                         case Key.KeyType.settings:
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.toggleSettings),
+                                              action: #selector(ErsatzKeyboardViewController.toggleSettings),
                                               for: .touchUpInside)
                         default:
                             break
@@ -373,34 +373,34 @@ open class TastyKeyboardViewController: UIInputViewController {
                         if key.isCharacter {
                             if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.pad {
                                 keyView.addTarget(self,
-                                                  action: #selector(TastyKeyboardViewController.showPopup(_:)),
+                                                  action: #selector(ErsatzKeyboardViewController.showPopup(_:)),
                                                   for: [.touchDown, .touchDragInside, .touchDragEnter])
                                 keyView.addTarget(keyView,
                                                   action: #selector(KeyboardKey.hidePopup),
                                                   for: [.touchDragExit, .touchCancel])
                                 keyView.addTarget(self,
-                                                  action: #selector(TastyKeyboardViewController.hidePopupDelay(_:)),
+                                                  action: #selector(ErsatzKeyboardViewController.hidePopupDelay(_:)),
                                                   for: [.touchUpInside, .touchUpOutside, .touchDragOutside])
                             }
                         }
                         
                         if key.hasOutput {
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.keyPressedHelper(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.keyPressedHelper(_:)),
                                               for: .touchUpInside)
                         }
                         
                         if key.type != Key.KeyType.shift && key.type != Key.KeyType.modeChange {
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.highlightKey(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.highlightKey(_:)),
                                               for: [.touchDown, .touchDragInside, .touchDragEnter])
                             keyView.addTarget(self,
-                                              action: #selector(TastyKeyboardViewController.unHighlightKey(_:)),
+                                              action: #selector(ErsatzKeyboardViewController.unHighlightKey(_:)),
                                               for: [.touchUpInside, .touchUpOutside, .touchDragOutside, .touchDragExit, .touchCancel])
                         }
                         
                         keyView.addTarget(self,
-                                          action: #selector(TastyKeyboardViewController.playKeySound),
+                                          action: #selector(ErsatzKeyboardViewController.playKeySound),
                                           for: .touchDown)
                     }
                 }
@@ -431,7 +431,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         }
         
         if sender.popup != nil {
-            self.popupDelayTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(TastyKeyboardViewController.hidePopupCallback), userInfo: nil, repeats: false)
+            self.popupDelayTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(ErsatzKeyboardViewController.hidePopupCallback), userInfo: nil, repeats: false)
         }
     }
     
@@ -590,7 +590,7 @@ open class TastyKeyboardViewController: UIInputViewController {
         self.updateCapsIfNeeded()
         
         // trigger for subsequent deletes
-        self.backspaceDelayTimer = Timer.scheduledTimer(timeInterval: backspaceDelay - backspaceRepeat, target: self, selector: #selector(TastyKeyboardViewController.backspaceDelayCallback), userInfo: nil, repeats: false)
+        self.backspaceDelayTimer = Timer.scheduledTimer(timeInterval: backspaceDelay - backspaceRepeat, target: self, selector: #selector(ErsatzKeyboardViewController.backspaceDelayCallback), userInfo: nil, repeats: false)
     }
     
     @objc open func backspaceUp(_ sender: KeyboardKey) {
@@ -599,7 +599,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     
     @objc func backspaceDelayCallback() {
         self.backspaceDelayTimer = nil
-        self.backspaceRepeatTimer = Timer.scheduledTimer(timeInterval: backspaceRepeat, target: self, selector: #selector(TastyKeyboardViewController.backspaceRepeatCallback), userInfo: nil, repeats: true)
+        self.backspaceRepeatTimer = Timer.scheduledTimer(timeInterval: backspaceRepeat, target: self, selector: #selector(ErsatzKeyboardViewController.backspaceRepeatCallback), userInfo: nil, repeats: true)
     }
     
     @objc func backspaceRepeatCallback() {
@@ -883,7 +883,7 @@ open class TastyKeyboardViewController: UIInputViewController {
     open func createSettings() -> ExtraView? {
         // note that dark mode is not yet valid here, so we just put false for clarity
         let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-        settingsView.backButton?.addTarget(self, action: #selector(TastyKeyboardViewController.toggleSettings), for: UIControl.Event.touchUpInside)
+        settingsView.backButton?.addTarget(self, action: #selector(ErsatzKeyboardViewController.toggleSettings), for: UIControl.Event.touchUpInside)
         return settingsView
     }
 }
