@@ -78,7 +78,7 @@
 		005BE27526B7460B00ECC849 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
 		005BE27726B7460B00ECC849 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		005BE28A26B7469600ECC849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00663D9A27E02650002C82BD /* Ersatz Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ersatz Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00663D9A27E02650002C82BD /* ErsatzDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErsatzDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00663D9C27E02650002C82BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00663D9E27E02650002C82BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		00663DA027E02650002C82BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 		00663DB227E0266B002C82BD /* English Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "English Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishKeyboardViewController.swift; sourceTree = "<group>"; };
 		00663DB627E0266B002C82BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00AE807527E7D53800B8F899 /* Ersatz Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ersatz Demo.entitlements"; sourceTree = "<group>"; };
 		00AE807627E7D54600B8F899 /* English Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "English Keyboard.entitlements"; sourceTree = "<group>"; };
+		00AE807727E7D97A00B8F899 /* ErsatzDemo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ErsatzDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,27 +142,28 @@
 			path = ErsatzKeyboard;
 			sourceTree = "<group>";
 		};
-		00663D9B27E02650002C82BD /* Demo App */ = {
+		00663D9B27E02650002C82BD /* ErsatzDemo */ = {
 			isa = PBXGroup;
 			children = (
+				00663DA527E02650002C82BD /* Assets.xcassets */,
+				00663DAA27E02650002C82BD /* Info.plist */,
+				00AE807727E7D97A00B8F899 /* ErsatzDemo.entitlements */,
+				00663DA227E02650002C82BD /* Main.storyboard */,
+				00663DA727E02650002C82BD /* LaunchScreen.storyboard */,
 				00663D9C27E02650002C82BD /* AppDelegate.swift */,
 				00663D9E27E02650002C82BD /* SceneDelegate.swift */,
 				00663DA027E02650002C82BD /* ViewController.swift */,
-				00663DA227E02650002C82BD /* Main.storyboard */,
-				00663DA527E02650002C82BD /* Assets.xcassets */,
-				00663DA727E02650002C82BD /* LaunchScreen.storyboard */,
-				00663DAA27E02650002C82BD /* Info.plist */,
 			);
-			path = "Demo App";
+			path = ErsatzDemo;
 			sourceTree = "<group>";
 		};
 		00663DB327E0266B002C82BD /* English Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				00663DB627E0266B002C82BD /* Info.plist */,
 				00AE807627E7D54600B8F899 /* English Keyboard.entitlements */,
 				005BE27326B7460B00ECC849 /* EnglishKeyboard.swift */,
 				00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */,
-				00663DB627E0266B002C82BD /* Info.plist */,
 			);
 			path = "English Keyboard";
 			sourceTree = "<group>";
@@ -170,9 +171,8 @@
 		4E807D8A19461D9000D875D1 = {
 			isa = PBXGroup;
 			children = (
-				00AE807527E7D53800B8F899 /* Ersatz Demo.entitlements */,
 				005BE26526B7460B00ECC849 /* ErsatzKeyboard */,
-				00663D9B27E02650002C82BD /* Demo App */,
+				00663D9B27E02650002C82BD /* ErsatzDemo */,
 				00663DB327E0266B002C82BD /* English Keyboard */,
 				4E807D9419461D9000D875D1 /* Products */,
 			);
@@ -182,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */,
-				00663D9A27E02650002C82BD /* Ersatz Demo.app */,
+				00663D9A27E02650002C82BD /* ErsatzDemo.app */,
 				00663DB227E0266B002C82BD /* English Keyboard.appex */,
 			);
 			name = Products;
@@ -219,9 +219,9 @@
 			productReference = 00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		00663D9927E02650002C82BD /* Ersatz Demo */ = {
+		00663D9927E02650002C82BD /* ErsatzDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00663DAD27E02650002C82BD /* Build configuration list for PBXNativeTarget "Ersatz Demo" */;
+			buildConfigurationList = 00663DAD27E02650002C82BD /* Build configuration list for PBXNativeTarget "ErsatzDemo" */;
 			buildPhases = (
 				00663D9627E02650002C82BD /* Sources */,
 				00663D9727E02650002C82BD /* Frameworks */,
@@ -233,9 +233,9 @@
 			dependencies = (
 				00663DB827E0266B002C82BD /* PBXTargetDependency */,
 			);
-			name = "Ersatz Demo";
+			name = ErsatzDemo;
 			productName = DemoApp;
-			productReference = 00663D9A27E02650002C82BD /* Ersatz Demo.app */;
+			productReference = 00663D9A27E02650002C82BD /* ErsatzDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00663DB127E0266B002C82BD /* English Keyboard */ = {
@@ -297,7 +297,7 @@
 			projectRoot = "";
 			targets = (
 				00596DFA2699FC240069BD79 /* ErsatzKeyboard */,
-				00663D9927E02650002C82BD /* Ersatz Demo */,
+				00663D9927E02650002C82BD /* ErsatzDemo */,
 				00663DB127E0266B002C82BD /* English Keyboard */,
 			);
 		};
@@ -491,13 +491,13 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "Ersatz Demo.entitlements";
+				CODE_SIGN_ENTITLEMENTS = ErsatzDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = "Demo App/Info.plist";
+				INFOPLIST_FILE = ErsatzDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -523,13 +523,13 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "Ersatz Demo.entitlements";
+				CODE_SIGN_ENTITLEMENTS = ErsatzDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Demo App/Info.plist";
+				INFOPLIST_FILE = ErsatzDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -716,7 +716,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00663DAD27E02650002C82BD /* Build configuration list for PBXNativeTarget "Ersatz Demo" */ = {
+		00663DAD27E02650002C82BD /* Build configuration list for PBXNativeTarget "ErsatzDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00663DAB27E02650002C82BD /* Debug */,

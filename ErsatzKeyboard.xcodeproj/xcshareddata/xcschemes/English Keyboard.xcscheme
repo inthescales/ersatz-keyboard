@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00663D9927E02650002C82BD"
-               BuildableName = "Ersatz Demo.app"
-               BlueprintName = "Ersatz Demo"
+               BuildableName = "ErsatzDemo.app"
+               BlueprintName = "ErsatzDemo"
                ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "00663D9927E02650002C82BD"
-            BuildableName = "Ersatz Demo.app"
-            BlueprintName = "Ersatz Demo"
+            BuildableName = "ErsatzDemo.app"
+            BlueprintName = "ErsatzDemo"
             ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -98,8 +98,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "00663D9927E02650002C82BD"
-            BuildableName = "Ersatz Demo.app"
-            BlueprintName = "Ersatz Demo"
+            BuildableName = "ErsatzDemo.app"
+            BlueprintName = "ErsatzDemo"
             ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
