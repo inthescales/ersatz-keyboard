@@ -24,7 +24,6 @@
 		005BE28726B7460B00ECC849 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27526B7460B00ECC849 /* KeyboardModel.swift */; };
 		005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27726B7460B00ECC849 /* KeyboardLayout.swift */; };
 		00663D9D27E02650002C82BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663D9C27E02650002C82BD /* AppDelegate.swift */; };
-		00663D9F27E02650002C82BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663D9E27E02650002C82BD /* SceneDelegate.swift */; };
 		00663DA127E02650002C82BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663DA027E02650002C82BD /* ViewController.swift */; };
 		00663DA427E02650002C82BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00663DA227E02650002C82BD /* Main.storyboard */; };
 		00663DA627E02650002C82BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00663DA527E02650002C82BD /* Assets.xcassets */; };
@@ -93,7 +92,6 @@
 		005BE28A26B7469600ECC849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00663D9A27E02650002C82BD /* ErsatzDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErsatzDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00663D9C27E02650002C82BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00663D9E27E02650002C82BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		00663DA027E02650002C82BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		00663DA327E02650002C82BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00663DA527E02650002C82BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				00663DA227E02650002C82BD /* Main.storyboard */,
 				00663DA727E02650002C82BD /* LaunchScreen.storyboard */,
 				00663D9C27E02650002C82BD /* AppDelegate.swift */,
-				00663D9E27E02650002C82BD /* SceneDelegate.swift */,
 				00663DA027E02650002C82BD /* ViewController.swift */,
 			);
 			path = ErsatzDemo;
@@ -481,7 +478,6 @@
 			files = (
 				00663DA127E02650002C82BD /* ViewController.swift in Sources */,
 				00663D9D27E02650002C82BD /* AppDelegate.swift in Sources */,
-				00663D9F27E02650002C82BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,14 +628,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = ErsatzDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ErsatzDemo/ErsatzDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = ErsatzDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -664,14 +660,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = ErsatzDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ErsatzDemo/ErsatzDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ErsatzDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
