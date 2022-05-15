@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00663DB127E0266B002C82BD"
-               BuildableName = "English Keyboard.appex"
-               BlueprintName = "English Keyboard"
+               BlueprintIdentifier = "00596DFA2699FC240069BD79"
+               BuildableName = "ErsatzKeyboard.framework"
+               BlueprintName = "ErsatzKeyboard"
                ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,20 +32,6 @@
                BlueprintIdentifier = "00663D9927E02650002C82BD"
                BuildableName = "ErsatzDemo.app"
                BlueprintName = "ErsatzDemo"
-               ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00596DFA2699FC240069BD79"
-               BuildableName = "ErsatzKeyboard.framework"
-               BlueprintName = "ErsatzKeyboard"
                ReferencedContainer = "container:ErsatzKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -72,7 +58,7 @@
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
       <RemoteRunnable
-         runnableDebuggingMode = "1"
+         runnableDebuggingMode = "0"
          BundleIdentifier = "com.apple.MobileAddressBook"
          RemotePath = "/Applications/Xcode 12.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Applications/Contacts.app">
       </RemoteRunnable>

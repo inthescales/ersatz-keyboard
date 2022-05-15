@@ -65,7 +65,7 @@ open class KeyboardKey: UIControl {
         didSet {
             for view in [self.displayView, self.borderView, self.underView] {
                 view?.layer.shouldRasterize = shouldRasterize
-                view?.layer.rasterizationScale = UIScreen.main.scale
+                // view?.layer.rasterizationScale = UIScreen.main.scale // TODO(robin): is this necessary?
             }
         }
     }

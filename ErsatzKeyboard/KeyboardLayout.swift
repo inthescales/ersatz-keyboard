@@ -91,7 +91,7 @@ public class LayoutConstants: NSObject {
         }
     }
     
-    class func keyGapPortrait(_ width: CGFloat, rowCharacterCount: Int) -> CGFloat {
+    class func keyGapPortrait(_ width: CGFloat, rowCharacterCount: Int, isPad: Bool = false) -> CGFloat {
         let compressed = (rowCharacterCount >= self.keyCompressedThreshhold)
         if compressed {
             if width >= self.keyGapPortraitUncompressThreshhold {
@@ -105,9 +105,9 @@ public class LayoutConstants: NSObject {
             return self.keyGapPortraitNormal
         }
     }
-    class func keyGapLandscape(_ width: CGFloat, rowCharacterCount: Int) -> CGFloat {
+    class func keyGapLandscape(_ width: CGFloat, rowCharacterCount: Int, isPad: Bool = false) -> CGFloat {
         let compressed = (rowCharacterCount >= self.keyCompressedThreshhold)
-        let shrunk = self.keyboardIsShrunk(width)
+        let shrunk = self.keyboardIsShrunk(width, isPad: isPad)
         if compressed || shrunk {
             return self.keyGapLandscapeSmall
         }
@@ -120,12 +120,10 @@ public class LayoutConstants: NSObject {
         return self.findThreshhold(self.lastRowKeyGapLandscapeArray, threshholds: self.lastRowKeyGapLandscapeWidthThreshholds, measurement: width)
     }
     
-    class func keyboardIsShrunk(_ width: CGFloat) -> Bool {
-        let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+    class func keyboardIsShrunk(_ width: CGFloat, isPad: Bool = false) -> Bool {
         return (isPad ? false : width >= self.keyboardShrunkSizeBaseWidthThreshhold)
     }
-    class func keyboardShrunkSize(_ width: CGFloat) -> CGFloat {
-        let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+    class func keyboardShrunkSize(_ width: CGFloat, isPad: Bool = false) -> CGFloat {
         if isPad {
             return width
         }
@@ -278,7 +276,17 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     var solidColorMode: Bool
     var initialized: Bool
     
-    required init(model: Keyboard, superview: UIView, layoutConstants: LayoutConstants.Type, globalColors: GlobalColors.Type, darkMode: Bool, solidColorMode: Bool) {
+    let deviceProvider: DeviceProvider
+    
+    required init(
+        model: Keyboard,
+        superview: UIView,
+        layoutConstants: LayoutConstants.Type,
+        globalColors: GlobalColors.Type,
+        darkMode: Bool,
+        solidColorMode: Bool,
+        deviceProvider: DeviceProvider = ActualDeviceProvider()
+    ) {
         self.layoutConstants = layoutConstants
         self.globalColors = globalColors
         
@@ -288,6 +296,8 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         
         self.darkMode = darkMode
         self.solidColorMode = solidColorMode
+        
+        self.deviceProvider = deviceProvider
     }
     
     // TODO: remove this method
@@ -543,7 +553,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         Key.KeyType.specialCharacter,
         Key.KeyType.period:
             key.color = self.self.globalColors.regularKey(darkMode, solidColorMode: solidColorMode)
-            if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+            if deviceProvider.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
                 key.downColor = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
             }
             else {
@@ -759,7 +769,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     //////////////////////
     
     func rounded(_ measurement: CGFloat) -> CGFloat {
-        return round(measurement * UIScreen.main.scale) / UIScreen.main.scale
+        return round(measurement * deviceProvider.scale) / deviceProvider.scale
     }
     
     func generateKeyFrames(_ model: Keyboard, bounds: CGRect, page pageToLayout: Int) -> [Key:CGRect]? {
@@ -778,7 +788,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         let bottomEdge = sideEdges
         
         let normalKeyboardSize = bounds.width - CGFloat(2) * sideEdges
-        let shrunkKeyboardSize = self.layoutConstants.keyboardShrunkSize(normalKeyboardSize)
+        let shrunkKeyboardSize = self.layoutConstants.keyboardShrunkSize(normalKeyboardSize, isPad: deviceProvider.userInterfaceIdiom == .pad)
         
         sideEdges += ((normalKeyboardSize - shrunkKeyboardSize) / CGFloat(2))
         
@@ -906,7 +916,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         var frames = [CGRect]()
 
         let standardFullKeyCount = Int(self.layoutConstants.keyCompressedThreshhold) - 1
-        let standardGap = (isLandscape ? self.layoutConstants.keyGapLandscape : self.layoutConstants.keyGapPortrait)(frame.width, standardFullKeyCount)
+        let standardGap = (isLandscape ? self.layoutConstants.keyGapLandscape : self.layoutConstants.keyGapPortrait)(frame.width, standardFullKeyCount, deviceProvider.userInterfaceIdiom == .pad)
         let sideEdges = (isLandscape ? self.layoutConstants.sideEdgesLandscape : self.layoutConstants.sideEdgesPortrait(frame.width))
         var standardKeyWidth = (frame.width - sideEdges - (standardGap * CGFloat(standardFullKeyCount - 1)) - sideEdges)
         standardKeyWidth /= CGFloat(standardFullKeyCount)
@@ -1029,7 +1039,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     ////////////////
     
     func popupFrame(for key: KeyboardKey, direction: Direction) -> CGRect {
-        let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
+        let actualScreenWidth = (deviceProvider.nativeSize.width / deviceProvider.nativeScale)
         let totalHeight = self.layoutConstants.popupTotalHeight(actualScreenWidth)
         
         let popupWidth = key.bounds.width + self.layoutConstants.popupWidthIncrement

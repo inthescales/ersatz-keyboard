@@ -9,12 +9,12 @@
 import UIKit
 
 final class TestView: UIView {
-    convenience init(device: TestDevice, view: UIView) {
+    convenience init(device: TestDevice, view: UIView, height: CGFloat) {
         let frame = CGRect(
             x: 0,
             y: 0,
-            width: device.keyboardSize.width,
-            height: device.keyboardSize.height
+            width: 1600 / 3,
+            height: height
         )
         self.init(frame: frame)
         

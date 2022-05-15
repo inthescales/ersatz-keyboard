@@ -13,11 +13,17 @@ import ErsatzKeyboard
 
 class EnglishKeyboardViewController: ErsatzKeyboardViewController {
     var lastInsertedCharacterIsAutomaticSpace = false
-    
-    required init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nil, bundle: nil)
         keyboard = englishKeyboard()
     }
+    
+    /* init(deviceProvider: DeviceProvider = ActualDeviceProvider()) {
+        super.init(deviceProvider: deviceProvider)
+        super.init(nibName: nil, bundle: nil)
+        keyboard = englishKeyboard()
+    } */
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

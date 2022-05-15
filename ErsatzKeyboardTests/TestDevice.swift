@@ -74,11 +74,18 @@ struct TestDevice {
         return CGSize(width: size.width, height: keyboardHeight)
     }
     
+    let scale: CGFloat
+    
+    var nativeScale: CGFloat {
+        scale
+    }
+    
     // MARK: - Initializers
     
-    init(name: String, size: CGSize, type: DeviceType, orientation: Orientation = .portrait) {
+    init(name: String, size: CGSize, scale: CGFloat, type: DeviceType, orientation: Orientation = .portrait) {
         self.name = name
         self.sizePortrait = size
+        self.scale = scale
         self.type = type
         self.orientation = orientation
         
@@ -105,18 +112,21 @@ extension TestDevice {
     static let iPhone8 = TestDevice(
         name: "iPhone8",
         size: CGSize(width: 750, height: 1334),
+        scale: 2,
         type: .phone
     )
     
     static let iPhone11 = TestDevice(
         name: "iPhone11",
         size: CGSize(width: 828, height: 1792),
+        scale: 2,
         type: .phone
     )
     
     static let iPhone13ProMax = TestDevice(
         name: "iPhone13ProMax",
         size: CGSize(width: 1284, height: 2778),
+        scale: 3,
         type: .phone
     )
 
@@ -125,12 +135,14 @@ extension TestDevice {
     static let iPadPro11Inch = TestDevice(
         name: "iPadPro11Inch",
         size: CGSize(width: 1668, height: 2388),
+        scale: 2,
         type: .phone
     )
     
     static let iPadPro12p9Inch = TestDevice(
         name: "iPadPro12.9Inch",
         size: CGSize(width: 2048, height: 2732),
+        scale: 2,
         type: .phone
     )
 }

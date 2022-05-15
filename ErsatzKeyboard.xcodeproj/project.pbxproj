@@ -23,6 +23,8 @@
 		005BE28626B7460B00ECC849 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27426B7460B00ECC849 /* Shapes.swift */; };
 		005BE28726B7460B00ECC849 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27526B7460B00ECC849 /* KeyboardModel.swift */; };
 		005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27726B7460B00ECC849 /* KeyboardLayout.swift */; };
+		0064E2AE27E9571F008B8454 /* DeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064E2AD27E9571F008B8454 /* DeviceProvider.swift */; };
+		0064E2B027E96231008B8454 /* TestDeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064E2AF27E96231008B8454 /* TestDeviceProvider.swift */; };
 		00663D9D27E02650002C82BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663D9C27E02650002C82BD /* AppDelegate.swift */; };
 		00663D9F27E02650002C82BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663D9E27E02650002C82BD /* SceneDelegate.swift */; };
 		00663DA127E02650002C82BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663DA027E02650002C82BD /* ViewController.swift */; };
@@ -91,6 +93,8 @@
 		005BE27526B7460B00ECC849 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
 		005BE27726B7460B00ECC849 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		005BE28A26B7469600ECC849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0064E2AD27E9571F008B8454 /* DeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProvider.swift; sourceTree = "<group>"; };
+		0064E2AF27E96231008B8454 /* TestDeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDeviceProvider.swift; sourceTree = "<group>"; };
 		00663D9A27E02650002C82BD /* ErsatzDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErsatzDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00663D9C27E02650002C82BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00663D9E27E02650002C82BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		005BE26526B7460B00ECC849 /* ErsatzKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				005BE28A26B7469600ECC849 /* Info.plist */,
 				005BE26626B7460B00ECC849 /* Media.xcassets */,
 				005BE26726B7460B00ECC849 /* ExtraView.swift */,
 				005BE26826B7460B00ECC849 /* KeyboardKey.swift */,
@@ -168,7 +173,7 @@
 				005BE27426B7460B00ECC849 /* Shapes.swift */,
 				005BE27526B7460B00ECC849 /* KeyboardModel.swift */,
 				005BE27726B7460B00ECC849 /* KeyboardLayout.swift */,
-				005BE28A26B7469600ECC849 /* Info.plist */,
+				0064E2AD27E9571F008B8454 /* DeviceProvider.swift */,
 			);
 			path = ErsatzKeyboard;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			children = (
 				00AE808027E7DA0100B8F899 /* Info.plist */,
 				00AE808B27E7E2D800B8F899 /* TestDevice.swift */,
+				0064E2AF27E96231008B8454 /* TestDeviceProvider.swift */,
 				00AE808D27E7E6FB00B8F899 /* TestView.swift */,
 				00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */,
 				00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */,
@@ -462,6 +468,7 @@
 				005BE28626B7460B00ECC849 /* Shapes.swift in Sources */,
 				005BE28026B7460B00ECC849 /* KeyboardConnector.swift in Sources */,
 				005BE28426B7460B00ECC849 /* DefaultSettings.swift in Sources */,
+				0064E2AE27E9571F008B8454 /* DeviceProvider.swift in Sources */,
 				005BE27B26B7460B00ECC849 /* Utilities.swift in Sources */,
 				005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */,
 				005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */,
@@ -501,6 +508,7 @@
 				00AE808E27E7E6FB00B8F899 /* TestView.swift in Sources */,
 				00AE808C27E7E2D800B8F899 /* TestDevice.swift in Sources */,
 				00AE807F27E7DA0100B8F899 /* ErsatzKeyboardTests.swift in Sources */,
+				0064E2B027E96231008B8454 /* TestDeviceProvider.swift in Sources */,
 				00AE808827E7DEA600B8F899 /* EnglishKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

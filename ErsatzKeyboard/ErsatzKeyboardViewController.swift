@@ -36,7 +36,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
 
     open private(set) var topBannerHeight: CGFloat = 30.0
     
-    public var currentMode: Int {
+    public var currentMode: Int = 0 {
         didSet {
             if oldValue != currentMode {
                 setMode(currentMode)
@@ -60,7 +60,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     public var autoPeriodState: AutoPeriodState = .noSpace
     var lastCharCountInBeforeContext: Int = 0
     
-    public var shiftState: ShiftState {
+    public var shiftState: ShiftState = .disabled {
         didSet {
             switch shiftState {
             case .disabled:
@@ -91,23 +91,31 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         }
     }
     
-    // TODO: why does the app crash if this isn't here?
+    let deviceProvider: DeviceProvider
+    
     convenience init() {
         self.init(nibName: nil, bundle: nil)
     }
     
+    /* public init(deviceProvider: DeviceProvider = ActualDeviceProvider()) {
+        self.deviceProvider = deviceProvider
+        super.init(nibName: nil, bundle: nil)
+        initialSetup()
+    } */
+
     required override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.deviceProvider = ActualDeviceProvider()
+        /* super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        initialSetup()
+    }
+    
+    private func initialSetup() { */
         UserDefaults.standard.register(defaults: [
             kAutoCapitalization: true,
             kPeriodShortcut: true,
             kKeyboardClicks: false,
             kSmallLowercase: false
         ])
-        
-        // TODO: Put some default here again maybe
-        
-        self.shiftState = .disabled
-        self.currentMode = 0
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -208,7 +216,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     
     public func isPortrait() -> Bool
     {
-        let size = UIScreen.main.bounds.size
+        let size = deviceProvider.size
         if size.width > size.height {
             //print("Landscape: \(size.width) X \(size.height)")
             return false
@@ -288,7 +296,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     public func height(orientationIsPortrait isPortrait: Bool, withTopBanner: Bool) -> CGFloat {
-        let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+        let isPad = deviceProvider.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         
         // AB: consider re-enabling this when interfaceOrientation actually breaks
         //// HACK: Detecting orientation manually
@@ -296,7 +304,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         //let orientation: UIInterfaceOrientation = screenSize.width < screenSize.height ? .portrait : .landscapeLeft
         
         //TODO: hardcoded stuff
-        let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
+        let actualScreenWidth = (deviceProvider.size.width / deviceProvider.nativeScale)
         let canonicalPortraitHeight: CGFloat
         let canonicalLandscapeHeight: CGFloat
         if isPad {
@@ -371,7 +379,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
                         }
                         
                         if key.isCharacter {
-                            if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.pad {
+                            if deviceProvider.userInterfaceIdiom != UIUserInterfaceIdiom.pad {
                                 keyView.addTarget(self,
                                                   action: #selector(ErsatzKeyboardViewController.showPopup(_:)),
                                                   for: [.touchDown, .touchDragInside, .touchDragEnter])
