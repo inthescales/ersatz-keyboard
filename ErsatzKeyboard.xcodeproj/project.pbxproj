@@ -150,8 +150,52 @@
 		005BE26526B7460B00ECC849 /* ErsatzKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				00CBE4AC2841AEB9006AF6FE /* Assets */,
+				00CBE4AD2841AED1006AF6FE /* Source */,
+			);
+			path = ErsatzKeyboard;
+			sourceTree = "<group>";
+		};
+		00663D9B27E02650002C82BD /* ErsatzDemo */ = {
+			isa = PBXGroup;
+			children = (
+				00CBE4AE2841AF08006AF6FE /* Assets */,
+				00CBE4AF2841AF41006AF6FE /* Source */,
+				00CBE4B02841AF92006AF6FE /* Storyboards */,
+			);
+			path = ErsatzDemo;
+			sourceTree = "<group>";
+		};
+		00663DB327E0266B002C82BD /* English Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				00CBE4B12841AFA7006AF6FE /* Assets */,
+				00CBE4B22841AFB9006AF6FE /* Source */,
+			);
+			path = "English Keyboard";
+			sourceTree = "<group>";
+		};
+		00AE807D27E7DA0100B8F899 /* ErsatzKeyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				00CBE4B32841AFDE006AF6FE /* Assets */,
+				00CBE4B42841AFE9006AF6FE /* Source */,
+			);
+			path = ErsatzKeyboardTests;
+			sourceTree = "<group>";
+		};
+		00CBE4AC2841AEB9006AF6FE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				005BE28A26B7469600ECC849 /* Info.plist */,
 				005BE26626B7460B00ECC849 /* Media.xcassets */,
-				005BE26726B7460B00ECC849 /* ExtraView.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		00CBE4AD2841AED1006AF6FE /* Source */ = {
+			isa = PBXGroup;
+			children = (
 				005BE26826B7460B00ECC849 /* KeyboardKey.swift */,
 				005BE26926B7460B00ECC849 /* Utilities.swift */,
 				005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */,
@@ -166,46 +210,90 @@
 				005BE27426B7460B00ECC849 /* Shapes.swift */,
 				005BE27526B7460B00ECC849 /* KeyboardModel.swift */,
 				005BE27726B7460B00ECC849 /* KeyboardLayout.swift */,
-				005BE28A26B7469600ECC849 /* Info.plist */,
+				005BE26726B7460B00ECC849 /* ExtraView.swift */,
 			);
-			path = ErsatzKeyboard;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		00663D9B27E02650002C82BD /* ErsatzDemo */ = {
+		00CBE4AE2841AF08006AF6FE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				00663DA527E02650002C82BD /* Assets.xcassets */,
 				00663DAA27E02650002C82BD /* Info.plist */,
+				00663DA527E02650002C82BD /* Assets.xcassets */,
 				00AE807727E7D97A00B8F899 /* ErsatzDemo.entitlements */,
-				00663DA227E02650002C82BD /* Main.storyboard */,
-				00663DA727E02650002C82BD /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		00CBE4AF2841AF41006AF6FE /* Source */ = {
+			isa = PBXGroup;
+			children = (
 				00663D9C27E02650002C82BD /* AppDelegate.swift */,
 				00663DA027E02650002C82BD /* ViewController.swift */,
 			);
-			path = ErsatzDemo;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		00663DB327E0266B002C82BD /* English Keyboard */ = {
+		00CBE4B02841AF92006AF6FE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				00663DA227E02650002C82BD /* Main.storyboard */,
+				00663DA727E02650002C82BD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		00CBE4B12841AFA7006AF6FE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				00663DB627E0266B002C82BD /* Info.plist */,
 				00AE807627E7D54600B8F899 /* English Keyboard.entitlements */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		00CBE4B22841AFB9006AF6FE /* Source */ = {
+			isa = PBXGroup;
+			children = (
 				005BE27326B7460B00ECC849 /* EnglishKeyboard.swift */,
 				00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */,
 			);
-			path = "English Keyboard";
+			path = Source;
 			sourceTree = "<group>";
 		};
-		00AE807D27E7DA0100B8F899 /* ErsatzKeyboardTests */ = {
+		00CBE4B32841AFDE006AF6FE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				00AE808027E7DA0100B8F899 /* Info.plist */,
-				00AE808B27E7E2D800B8F899 /* TestDevice.swift */,
-				00AE808D27E7E6FB00B8F899 /* TestView.swift */,
-				00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */,
-				00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */,
 			);
-			path = ErsatzKeyboardTests;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		00CBE4B42841AFE9006AF6FE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				00CBE4B52841AFEF006AF6FE /* Models */,
+				00CBE4B62841B005006AF6FE /* Helpers */,
+				00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		00CBE4B52841AFEF006AF6FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				00AE808B27E7E2D800B8F899 /* TestDevice.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		00CBE4B62841B005006AF6FE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */,
+				00AE808D27E7E6FB00B8F899 /* TestView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4DB7973F8D5DD45AAEB6334C /* Frameworks */ = {
@@ -557,7 +645,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = ErsatzKeyboard/Info.plist;
+				INFOPLIST_FILE = ErsatzKeyboard/Assets/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -597,7 +685,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = ErsatzKeyboard/Info.plist;
+				INFOPLIST_FILE = ErsatzKeyboard/Assets/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -634,7 +722,7 @@
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = ErsatzDemo/Info.plist;
+				INFOPLIST_FILE = ErsatzDemo/Assets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -666,7 +754,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = ErsatzDemo/Info.plist;
+				INFOPLIST_FILE = ErsatzDemo/Assets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -694,7 +782,7 @@
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = "English Keyboard/Info.plist";
+				INFOPLIST_FILE = "English Keyboard/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -724,7 +812,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "English Keyboard/Info.plist";
+				INFOPLIST_FILE = "English Keyboard/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -753,7 +841,7 @@
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = ErsatzKeyboardTests/Info.plist;
+				INFOPLIST_FILE = ErsatzKeyboardTests/Assets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -782,7 +870,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = ErsatzKeyboardTests/Info.plist;
+				INFOPLIST_FILE = ErsatzKeyboardTests/Assets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
