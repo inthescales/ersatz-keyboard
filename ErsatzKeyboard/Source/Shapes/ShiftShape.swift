@@ -12,8 +12,12 @@ final class ShiftShape: Shape {
         }
     }
     
+    override var baseSize: CGSize {
+        CGSize(width: 38, height: withLock ? 38 : 32)
+    }
+    
     override func drawShape(_ color: UIColor) {
-        drawShift(self.bounds, color: color, drawUnderline: self.withLock)
+        drawShift(bounds, color: color, drawUnderline: withLock)
     }
     
     /// Draw the shift icon – an upward arrow
@@ -21,11 +25,8 @@ final class ShiftShape: Shape {
         let scaleFactor = getScaleFactor(for: bounds)
         let xScale = scaleFactor
         let yScale = scaleFactor
-        
-        let shapeWidth: CGFloat = 38
-        let shapeHeight: CGFloat = drawUnderline ? 38 : 32
-        
-        centerShape(CGSize(width: shapeWidth * xScale, height: shapeHeight * yScale), toRect: bounds)
+
+        centerShape(CGSize(width: baseSize.width * xScale, height: baseSize.height * yScale), on: bounds)
         color.setFill()
         
         // Draw the upward arrow

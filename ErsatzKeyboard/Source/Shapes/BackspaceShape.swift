@@ -5,6 +5,10 @@ import UIKit
 
 /// Shape for drawing the backspace key
 final class BackspaceShape: Shape {
+    override var baseSize: CGSize {
+        CGSize(width: 44, height: 32)
+    }
+    
     override func drawShape(_ color: UIColor) {
         drawBackspace(self.bounds, color: color)
     }
@@ -16,7 +20,7 @@ final class BackspaceShape: Shape {
         let yScale = scaleFactor
         let lineWidthScale = scaleFactor
         
-        centerShape(CGSize(width: 44 * xScale, height: 32 * yScale), toRect: bounds)
+        centerShape(CGSize(width: baseSize.width * xScale, height: baseSize.height * yScale), on: bounds)
         
         // Color to draw the pointed box shape of the backspace symbol
         let shapeColor = color

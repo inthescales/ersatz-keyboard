@@ -5,6 +5,10 @@ import UIKit
 
 /// Globe Shape for the change keyboard button
 final class GlobeShape: Shape {
+    override var baseSize: CGSize {
+        CGSize(width: 41, height: 40)
+    }
+    
     override func drawShape(_ color: UIColor) {
         drawGlobe(self.bounds, color: color)
     }
@@ -16,7 +20,7 @@ final class GlobeShape: Shape {
         let yScale = scaleFactor
         let lineWidthScale = scaleFactor
         
-        centerShape(CGSize(width: 41 * xScale, height: 40 * yScale), toRect: bounds)
+        centerShape(CGSize(width: baseSize.width * xScale, height: baseSize.height * yScale), on: bounds)
         color.setStroke()
         
         // Draw the oval outline

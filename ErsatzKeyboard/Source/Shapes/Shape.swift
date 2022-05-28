@@ -17,7 +17,7 @@ class Shape: UIView {
     
     /// The natural size of the shape being drawn.
     var baseSize: CGSize {
-        CGSize(width: 44, height: 32)
+        CGSize(width: 32, height: 32)
     }
 
     convenience init() {
@@ -45,7 +45,7 @@ class Shape: UIView {
         ctx?.restoreGState()
     }
     
-    /// Returns a scaling factor needed to draw an image with the base size into the given rect.
+    /// Returns a scaling factor needed to draw an image into the given rect given its base size.
     func getScaleFactor(for drawRect: CGRect) -> CGFloat {
         let xSize = { () -> CGFloat in
             let scaledSize = (baseSize.width / CGFloat(2))
@@ -69,18 +69,21 @@ class Shape: UIView {
         
         return min(xSize, ySize)
     }
-}
-
-func centerShape(_ fromSize: CGSize, toRect: CGRect) {
-    let xOffset = (toRect.width - fromSize.width) / CGFloat(2)
-    let yOffset = (toRect.height - fromSize.height) / CGFloat(2)
     
-    let ctx = UIGraphicsGetCurrentContext()
-    ctx?.saveGState()
-    ctx?.translateBy(x: xOffset, y: yOffset)
-}
+    /// Translates the graphics context suited to a scaled size
+    func centerShape(_ fromSize: CGSize, on drawRect: CGRect) {
+        let xOffset = (drawRect.width - fromSize.width) / CGFloat(2)
+        let yOffset = (drawRect.height - fromSize.height) / CGFloat(2)
+        
+        let ctx = UIGraphicsGetCurrentContext()
+        ctx?.saveGState()
+        ctx?.translateBy(x: xOffset, y: yOffset)
+    }
 
-func endCenter() {
-    let ctx = UIGraphicsGetCurrentContext()
-    ctx?.restoreGState()
+    /// Restores graphics context state after translation
+    func endCenter() {
+        let ctx = UIGraphicsGetCurrentContext()
+        ctx?.restoreGState()
+    }
+
 }
