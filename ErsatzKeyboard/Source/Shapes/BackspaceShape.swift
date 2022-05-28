@@ -5,7 +5,7 @@ import UIKit
 
 /// Shape for drawing the backspace key
 final class BackspaceShape: Shape {
-    override func drawCall(_ color: UIColor) {
+    override func drawShape(_ color: UIColor) {
         drawBackspace(self.bounds, color: color)
     }
 

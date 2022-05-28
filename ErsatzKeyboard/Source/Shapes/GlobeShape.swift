@@ -5,7 +5,7 @@ import UIKit
 
 /// Globe Shape for the change keyboard button
 final class GlobeShape: Shape {
-    override func drawCall(_ color: UIColor) {
+    override func drawShape(_ color: UIColor) {
         drawGlobe(self.bounds, color: color)
     }
     

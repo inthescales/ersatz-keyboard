@@ -8,11 +8,11 @@ final class ShiftShape: Shape {
     /// Whether shift lock should be drawn as active
     var withLock: Bool = false {
         didSet {
-            self.overflowCanvas.setNeedsDisplay()
+            setNeedsDisplay()
         }
     }
     
-    override func drawCall(_ color: UIColor) {
+    override func drawShape(_ color: UIColor) {
         drawShift(self.bounds, color: color, drawUnderline: self.withLock)
     }
     

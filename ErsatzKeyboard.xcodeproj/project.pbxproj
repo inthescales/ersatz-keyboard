@@ -19,7 +19,7 @@
 		005BE28226B7460B00ECC849 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27026B7460B00ECC849 /* ForwardingView.swift */; };
 		005BE28326B7460B00ECC849 /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27126B7460B00ECC849 /* KeyboardKeyBackground.swift */; };
 		005BE28426B7460B00ECC849 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27226B7460B00ECC849 /* DefaultSettings.swift */; };
-		005BE28626B7460B00ECC849 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27426B7460B00ECC849 /* Shapes.swift */; };
+		005BE28626B7460B00ECC849 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27426B7460B00ECC849 /* Shape.swift */; };
 		005BE28726B7460B00ECC849 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27526B7460B00ECC849 /* KeyboardModel.swift */; };
 		005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27726B7460B00ECC849 /* KeyboardLayout.swift */; };
 		00663D9D27E02650002C82BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663D9C27E02650002C82BD /* AppDelegate.swift */; };
@@ -87,7 +87,7 @@
 		005BE27126B7460B00ECC849 /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKeyBackground.swift; sourceTree = "<group>"; };
 		005BE27226B7460B00ECC849 /* DefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
 		005BE27326B7460B00ECC849 /* EnglishKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnglishKeyboard.swift; sourceTree = "<group>"; };
-		005BE27426B7460B00ECC849 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		005BE27426B7460B00ECC849 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		005BE27526B7460B00ECC849 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
 		005BE27726B7460B00ECC849 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		005BE28A26B7469600ECC849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 		00CBE4B82841B61B006AF6FE /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				005BE27426B7460B00ECC849 /* Shapes.swift */,
+				005BE27426B7460B00ECC849 /* Shape.swift */,
 				00CBE4B92841B632006AF6FE /* BackspaceShape.swift */,
 				00CBE4BD2841C55F006AF6FE /* GlobeShape.swift */,
 				00CBE4BB2841C277006AF6FE /* ShiftShape.swift */,
@@ -566,7 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				005BE28226B7460B00ECC849 /* ForwardingView.swift in Sources */,
-				005BE28626B7460B00ECC849 /* Shapes.swift in Sources */,
+				005BE28626B7460B00ECC849 /* Shape.swift in Sources */,
 				005BE28026B7460B00ECC849 /* KeyboardConnector.swift in Sources */,
 				005BE28426B7460B00ECC849 /* DefaultSettings.swift in Sources */,
 				005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */,
