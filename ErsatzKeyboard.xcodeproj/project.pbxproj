@@ -10,7 +10,6 @@
 		005BE27826B7460B00ECC849 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005BE26626B7460B00ECC849 /* Media.xcassets */; };
 		005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26726B7460B00ECC849 /* ExtraView.swift */; };
 		005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26826B7460B00ECC849 /* KeyboardKey.swift */; };
-		005BE27B26B7460B00ECC849 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26926B7460B00ECC849 /* Utilities.swift */; };
 		005BE27C26B7460B00ECC849 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */; };
 		005BE27D26B7460B00ECC849 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26B26B7460B00ECC849 /* DirectionEnum.swift */; };
 		005BE27E26B7460B00ECC849 /* ErsatzKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */; };
@@ -75,7 +74,6 @@
 		005BE26626B7460B00ECC849 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		005BE26726B7460B00ECC849 /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
 		005BE26826B7460B00ECC849 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
-		005BE26926B7460B00ECC849 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		005BE26B26B7460B00ECC849 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
 		005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErsatzKeyboardViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				005BE26826B7460B00ECC849 /* KeyboardKey.swift */,
-				005BE26926B7460B00ECC849 /* Utilities.swift */,
 				005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */,
 				005BE26B26B7460B00ECC849 /* DirectionEnum.swift */,
 				005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */,
@@ -547,7 +544,6 @@
 				005BE28626B7460B00ECC849 /* Shapes.swift in Sources */,
 				005BE28026B7460B00ECC849 /* KeyboardConnector.swift in Sources */,
 				005BE28426B7460B00ECC849 /* DefaultSettings.swift in Sources */,
-				005BE27B26B7460B00ECC849 /* Utilities.swift in Sources */,
 				005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */,
 				005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */,
 				005BE28326B7460B00ECC849 /* KeyboardKeyBackground.swift in Sources */,
