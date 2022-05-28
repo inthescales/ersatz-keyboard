@@ -1,7 +1,3 @@
-//
-//  Shapes.swift
-//  ErsatzKeyboard
-//
 //  Created by Alexei Baboulevitch on 10/5/14.
 //  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
@@ -14,13 +10,7 @@ import UIKit
 // SHAPE OBJECTS //
 ///////////////////
 
-class BackspaceShape: Shape {
-    override func drawCall(_ color: UIColor) {
-        drawBackspace(self.bounds, color: color)
-    }
-}
-
-class ShiftShape: Shape {
+final class ShiftShape: Shape {
     var withLock: Bool = false {
         didSet {
             self.overflowCanvas.setNeedsDisplay()
@@ -32,7 +22,7 @@ class ShiftShape: Shape {
     }
 }
 
-class GlobeShape: Shape {
+final class GlobeShape: Shape {
     override func drawCall(_ color: UIColor) {
         drawGlobe(self.bounds, color: color)
     }
@@ -168,62 +158,6 @@ func centerShape(_ fromSize: CGSize, toRect: CGRect) {
 func endCenter() {
     let ctx = UIGraphicsGetCurrentContext()
     ctx?.restoreGState()
-}
-
-func drawBackspace(_ bounds: CGRect, color: UIColor) {
-    let factors = getFactors(CGSize(width: 44, height: 32), toRect: bounds)
-    let xScalingFactor = factors.xScalingFactor
-    let yScalingFactor = factors.yScalingFactor
-    let lineWidthScalingFactor = factors.lineWidthScalingFactor
-    
-    centerShape(CGSize(width: 44 * xScalingFactor, height: 32 * yScalingFactor), toRect: bounds)
-    
-    
-    //// Color Declarations
-    let color = color
-    let color2 = UIColor.gray // TODO:
-    
-    //// Bezier Drawing
-    let bezierPath = UIBezierPath()
-    bezierPath.move(to: CGPoint(x: 16 * xScalingFactor, y: 32 * yScalingFactor))
-    bezierPath.addLine(to: CGPoint(x: 38 * xScalingFactor, y: 32 * yScalingFactor))
-    bezierPath.addCurve(to: CGPoint(x: 44 * xScalingFactor, y: 26 * yScalingFactor), controlPoint1: CGPoint(x: 38 * xScalingFactor, y: 32 * yScalingFactor), controlPoint2: CGPoint(x: 44 * xScalingFactor, y: 32 * yScalingFactor))
-    bezierPath.addCurve(to: CGPoint(x: 44 * xScalingFactor, y: 6 * yScalingFactor), controlPoint1: CGPoint(x: 44 * xScalingFactor, y: 22 * yScalingFactor), controlPoint2: CGPoint(x: 44 * xScalingFactor, y: 6 * yScalingFactor))
-    bezierPath.addCurve(to: CGPoint(x: 36 * xScalingFactor, y: 0 * yScalingFactor), controlPoint1: CGPoint(x: 44 * xScalingFactor, y: 6 * yScalingFactor), controlPoint2: CGPoint(x: 44 * xScalingFactor, y: 0 * yScalingFactor))
-    bezierPath.addCurve(to: CGPoint(x: 16 * xScalingFactor, y: 0 * yScalingFactor), controlPoint1: CGPoint(x: 32 * xScalingFactor, y: 0 * yScalingFactor), controlPoint2: CGPoint(x: 16 * xScalingFactor, y: 0 * yScalingFactor))
-    bezierPath.addLine(to: CGPoint(x: 0 * xScalingFactor, y: 18 * yScalingFactor))
-    bezierPath.addLine(to: CGPoint(x: 16 * xScalingFactor, y: 32 * yScalingFactor))
-    bezierPath.close()
-    color.setFill()
-    bezierPath.fill()
-    
-    
-    //// Bezier 2 Drawing
-    let bezier2Path = UIBezierPath()
-    bezier2Path.move(to: CGPoint(x: 20 * xScalingFactor, y: 10 * yScalingFactor))
-    bezier2Path.addLine(to: CGPoint(x: 34 * xScalingFactor, y: 22 * yScalingFactor))
-    bezier2Path.addLine(to: CGPoint(x: 20 * xScalingFactor, y: 10 * yScalingFactor))
-    bezier2Path.close()
-    UIColor.gray.setFill()
-    bezier2Path.fill()
-    color2.setStroke()
-    bezier2Path.lineWidth = 2.5 * lineWidthScalingFactor
-    bezier2Path.stroke()
-    
-    
-    //// Bezier 3 Drawing
-    let bezier3Path = UIBezierPath()
-    bezier3Path.move(to: CGPoint(x: 20 * xScalingFactor, y: 22 * yScalingFactor))
-    bezier3Path.addLine(to: CGPoint(x: 34 * xScalingFactor, y: 10 * yScalingFactor))
-    bezier3Path.addLine(to: CGPoint(x: 20 * xScalingFactor, y: 22 * yScalingFactor))
-    bezier3Path.close()
-    UIColor.red.setFill()
-    bezier3Path.fill()
-    color2.setStroke()
-    bezier3Path.lineWidth = 2.5 * lineWidthScalingFactor
-    bezier3Path.stroke()
-    
-    endCenter()
 }
 
 func drawShift(_ bounds: CGRect, color: UIColor, withRect: Bool) {

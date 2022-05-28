@@ -35,6 +35,7 @@
 		00AE808827E7DEA600B8F899 /* EnglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */; };
 		00AE808C27E7E2D800B8F899 /* TestDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808B27E7E2D800B8F899 /* TestDevice.swift */; };
 		00AE808E27E7E6FB00B8F899 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808D27E7E6FB00B8F899 /* TestView.swift */; };
+		00CBE4BA2841B632006AF6FE /* BackspaceShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CBE4B92841B632006AF6FE /* BackspaceShape.swift */; };
 		108FEE8858872100BA138087 /* libPods-ErsatzKeyboardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81478575226F0846740E02B3 /* libPods-ErsatzKeyboardTests.a */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishKeyboard.swift; sourceTree = "<group>"; };
 		00AE808B27E7E2D800B8F899 /* TestDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDevice.swift; sourceTree = "<group>"; };
 		00AE808D27E7E6FB00B8F899 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		00CBE4B92841B632006AF6FE /* BackspaceShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceShape.swift; sourceTree = "<group>"; };
 		77AF7A108989A2698D29BD43 /* Pods-ErsatzKeyboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErsatzKeyboardTests.debug.xcconfig"; path = "Target Support Files/Pods-ErsatzKeyboardTests/Pods-ErsatzKeyboardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81478575226F0846740E02B3 /* libPods-ErsatzKeyboardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ErsatzKeyboardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B33B160D021391BF91E175 /* Pods-ErsatzKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErsatzKeyboardTests.release.xcconfig"; path = "Target Support Files/Pods-ErsatzKeyboardTests/Pods-ErsatzKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				00CBE4B72841B5A2006AF6FE /* Utilities */,
+				00CBE4B82841B61B006AF6FE /* Shapes */,
 				005BE26826B7460B00ECC849 /* KeyboardKey.swift */,
 				005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */,
 				005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */,
@@ -204,7 +207,6 @@
 				005BE27026B7460B00ECC849 /* ForwardingView.swift */,
 				005BE27126B7460B00ECC849 /* KeyboardKeyBackground.swift */,
 				005BE27226B7460B00ECC849 /* DefaultSettings.swift */,
-				005BE27426B7460B00ECC849 /* Shapes.swift */,
 				005BE27526B7460B00ECC849 /* KeyboardModel.swift */,
 				005BE27726B7460B00ECC849 /* KeyboardLayout.swift */,
 				005BE26726B7460B00ECC849 /* ExtraView.swift */,
@@ -299,6 +301,15 @@
 				005BE26B26B7460B00ECC849 /* Direction.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		00CBE4B82841B61B006AF6FE /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				005BE27426B7460B00ECC849 /* Shapes.swift */,
+				00CBE4B92841B632006AF6FE /* BackspaceShape.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		4DB7973F8D5DD45AAEB6334C /* Frameworks */ = {
@@ -557,6 +568,7 @@
 				005BE28326B7460B00ECC849 /* KeyboardKeyBackground.swift in Sources */,
 				005BE27E26B7460B00ECC849 /* ErsatzKeyboardViewController.swift in Sources */,
 				005BE28126B7460B00ECC849 /* ImageKey.swift in Sources */,
+				00CBE4BA2841B632006AF6FE /* BackspaceShape.swift in Sources */,
 				005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */,
 				005BE28726B7460B00ECC849 /* KeyboardModel.swift in Sources */,
 				005BE27C26B7460B00ECC849 /* KeyboardInputTraits.swift in Sources */,
