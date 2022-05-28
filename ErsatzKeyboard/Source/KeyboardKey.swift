@@ -407,13 +407,13 @@ open class KeyboardKey: UIControl {
         assert(self.popup != nil, "popup not found")
         
         self.background.attach(direction)
-        self.popup!.attach(direction.opposite())
+        self.popup!.attach(direction.opposite)
         
         let kv = self.background
         let p = self.popup!
         
         self.connector?.removeFromSuperview()
-        self.connector = KeyboardConnector(cornerRadius: 4, underOffset: self.underOffset, start: kv, end: p, startConnectable: kv, endConnectable: p, startDirection: direction, endDirection: direction.opposite())
+        self.connector = KeyboardConnector(cornerRadius: 4, underOffset: self.underOffset, start: kv, end: p, startConnectable: kv, endConnectable: p, startDirection: direction, endDirection: direction.opposite)
         self.connector!.layer.zPosition = -1
         self.addSubview(self.connector!)
         

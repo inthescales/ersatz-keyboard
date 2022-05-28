@@ -269,8 +269,8 @@ class KeyboardKeyBackground: UIView, Connectable {
     
     func attachmentPoints(_ direction: Direction) -> (CGPoint, CGPoint) {
         let returnValue = (
-            self.segmentPoints[direction.clockwise().rawValue].0,
-            self.segmentPoints[direction.counterclockwise().rawValue].1)
+            self.segmentPoints[direction.nextClockwise.rawValue].0,
+            self.segmentPoints[direction.nextCounterClockwise.rawValue].1)
         
         return returnValue
     }

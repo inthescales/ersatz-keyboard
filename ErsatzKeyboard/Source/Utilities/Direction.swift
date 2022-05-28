@@ -1,17 +1,11 @@
-//
-//  Direction.swift
-//  TransliteratingKeyboard
-//
 //  Created by Alexei Baboulevitch on 7/19/14.
 //  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
-//
 
+/// Represents a cardinal direction
 enum Direction: Int, CustomStringConvertible {
-    case left = 0
-    case down = 3
-    case right = 2
-    case up = 1
-    
+    case left = 0, up, right, down
+
+    /// English string representing the direction
     var description: String {
         get {
             switch self {
@@ -27,7 +21,8 @@ enum Direction: Int, CustomStringConvertible {
         }
     }
     
-    func clockwise() -> Direction {
+    /// The next direction clockwise from this one
+    var nextClockwise: Direction {
         switch self {
         case .left:
             return .up
@@ -40,7 +35,8 @@ enum Direction: Int, CustomStringConvertible {
         }
     }
     
-    func counterclockwise() -> Direction {
+    /// The next direction counterclockwise from this one
+    var nextCounterClockwise: Direction {
         switch self {
         case .left:
             return .down
@@ -53,7 +49,8 @@ enum Direction: Int, CustomStringConvertible {
         }
     }
     
-    func opposite() -> Direction {
+    /// The opposite cardinal direction from this one
+    var opposite: Direction {
         switch self {
         case .left:
             return .right
@@ -63,17 +60,6 @@ enum Direction: Int, CustomStringConvertible {
             return .down
         case .down:
             return .up
-        }
-    }
-    
-    func horizontal() -> Bool {
-        switch self {
-        case
-        .left,
-        .right:
-            return true
-        default:
-            return false
         }
     }
 }

@@ -11,7 +11,7 @@
 		005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26726B7460B00ECC849 /* ExtraView.swift */; };
 		005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26826B7460B00ECC849 /* KeyboardKey.swift */; };
 		005BE27C26B7460B00ECC849 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */; };
-		005BE27D26B7460B00ECC849 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26B26B7460B00ECC849 /* DirectionEnum.swift */; };
+		005BE27D26B7460B00ECC849 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26B26B7460B00ECC849 /* Direction.swift */; };
 		005BE27E26B7460B00ECC849 /* ErsatzKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */; };
 		005BE27F26B7460B00ECC849 /* DefaultSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005BE26D26B7460B00ECC849 /* DefaultSettings.xib */; };
 		005BE28026B7460B00ECC849 /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */; };
@@ -75,7 +75,7 @@
 		005BE26726B7460B00ECC849 /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
 		005BE26826B7460B00ECC849 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
 		005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
-		005BE26B26B7460B00ECC849 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
+		005BE26B26B7460B00ECC849 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErsatzKeyboardViewController.swift; sourceTree = "<group>"; };
 		005BE26D26B7460B00ECC849 /* DefaultSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultSettings.xib; sourceTree = "<group>"; };
 		005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
@@ -194,9 +194,9 @@
 		00CBE4AD2841AED1006AF6FE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				00CBE4B72841B5A2006AF6FE /* Utilities */,
 				005BE26826B7460B00ECC849 /* KeyboardKey.swift */,
 				005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */,
-				005BE26B26B7460B00ECC849 /* DirectionEnum.swift */,
 				005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */,
 				005BE26D26B7460B00ECC849 /* DefaultSettings.xib */,
 				005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */,
@@ -291,6 +291,14 @@
 				00AE808D27E7E6FB00B8F899 /* TestView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		00CBE4B72841B5A2006AF6FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				005BE26B26B7460B00ECC849 /* Direction.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4DB7973F8D5DD45AAEB6334C /* Frameworks */ = {
@@ -552,7 +560,7 @@
 				005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */,
 				005BE28726B7460B00ECC849 /* KeyboardModel.swift in Sources */,
 				005BE27C26B7460B00ECC849 /* KeyboardInputTraits.swift in Sources */,
-				005BE27D26B7460B00ECC849 /* DirectionEnum.swift in Sources */,
+				005BE27D26B7460B00ECC849 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
