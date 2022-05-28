@@ -6,16 +6,6 @@ import UIKit
 
 // TODO: these shapes were traced and as such are erratic and inaccurate; should redo as SVG or PDF
 
-///////////////////
-// SHAPE OBJECTS //
-///////////////////
-
-final class GlobeShape: Shape {
-    override func drawCall(_ color: UIColor) {
-        drawGlobe(self.bounds, color: color)
-    }
-}
-
 class Shape: UIView {
     var color: UIColor? {
         didSet {
@@ -146,91 +136,4 @@ func centerShape(_ fromSize: CGSize, toRect: CGRect) {
 func endCenter() {
     let ctx = UIGraphicsGetCurrentContext()
     ctx?.restoreGState()
-}
-
-func drawGlobe(_ bounds: CGRect, color: UIColor) {
-    let factors = getFactors(CGSize(width: 41, height: 40), toRect: bounds)
-    let xScalingFactor = factors.xScalingFactor
-    let yScalingFactor = factors.yScalingFactor
-    let lineWidthScalingFactor = factors.lineWidthScalingFactor
-    
-    centerShape(CGSize(width: 41 * xScalingFactor, height: 40 * yScalingFactor), toRect: bounds)
-    
-    
-    //// Color Declarations
-    let color = color
-    
-    //// Oval Drawing
-    let ovalPath = UIBezierPath(ovalIn: CGRect(x: 0 * xScalingFactor, y: 0 * yScalingFactor, width: 40 * xScalingFactor, height: 40 * yScalingFactor))
-    color.setStroke()
-    ovalPath.lineWidth = 1 * lineWidthScalingFactor
-    ovalPath.stroke()
-    
-    
-    //// Bezier Drawing
-    let bezierPath = UIBezierPath()
-    bezierPath.move(to: CGPoint(x: 20 * xScalingFactor, y: -0 * yScalingFactor))
-    bezierPath.addLine(to: CGPoint(x: 20 * xScalingFactor, y: 40 * yScalingFactor))
-    bezierPath.addLine(to: CGPoint(x: 20 * xScalingFactor, y: -0 * yScalingFactor))
-    bezierPath.close()
-    color.setStroke()
-    bezierPath.lineWidth = 1 * lineWidthScalingFactor
-    bezierPath.stroke()
-    
-    
-    //// Bezier 2 Drawing
-    let bezier2Path = UIBezierPath()
-    bezier2Path.move(to: CGPoint(x: 0.5 * xScalingFactor, y: 19.5 * yScalingFactor))
-    bezier2Path.addLine(to: CGPoint(x: 39.5 * xScalingFactor, y: 19.5 * yScalingFactor))
-    bezier2Path.addLine(to: CGPoint(x: 0.5 * xScalingFactor, y: 19.5 * yScalingFactor))
-    bezier2Path.close()
-    color.setStroke()
-    bezier2Path.lineWidth = 1 * lineWidthScalingFactor
-    bezier2Path.stroke()
-    
-    
-    //// Bezier 3 Drawing
-    let bezier3Path = UIBezierPath()
-    bezier3Path.move(to: CGPoint(x: 21.63 * xScalingFactor, y: 0.42 * yScalingFactor))
-    bezier3Path.addCurve(to: CGPoint(x: 21.63 * xScalingFactor, y: 39.6 * yScalingFactor), controlPoint1: CGPoint(x: 21.63 * xScalingFactor, y: 0.42 * yScalingFactor), controlPoint2: CGPoint(x: 41 * xScalingFactor, y: 19 * yScalingFactor))
-    bezier3Path.lineCapStyle = .round;
-    
-    color.setStroke()
-    bezier3Path.lineWidth = 1 * lineWidthScalingFactor
-    bezier3Path.stroke()
-    
-    
-    //// Bezier 4 Drawing
-    let bezier4Path = UIBezierPath()
-    bezier4Path.move(to: CGPoint(x: 17.76 * xScalingFactor, y: 0.74 * yScalingFactor))
-    bezier4Path.addCurve(to: CGPoint(x: 18.72 * xScalingFactor, y: 39.6 * yScalingFactor), controlPoint1: CGPoint(x: 17.76 * xScalingFactor, y: 0.74 * yScalingFactor), controlPoint2: CGPoint(x: -2.5 * xScalingFactor, y: 19.04 * yScalingFactor))
-    bezier4Path.lineCapStyle = .round;
-    
-    color.setStroke()
-    bezier4Path.lineWidth = 1 * lineWidthScalingFactor
-    bezier4Path.stroke()
-    
-    
-    //// Bezier 5 Drawing
-    let bezier5Path = UIBezierPath()
-    bezier5Path.move(to: CGPoint(x: 6 * xScalingFactor, y: 7 * yScalingFactor))
-    bezier5Path.addCurve(to: CGPoint(x: 34 * xScalingFactor, y: 7 * yScalingFactor), controlPoint1: CGPoint(x: 6 * xScalingFactor, y: 7 * yScalingFactor), controlPoint2: CGPoint(x: 19 * xScalingFactor, y: 21 * yScalingFactor))
-    bezier5Path.lineCapStyle = .round;
-    
-    color.setStroke()
-    bezier5Path.lineWidth = 1 * lineWidthScalingFactor
-    bezier5Path.stroke()
-    
-    
-    //// Bezier 6 Drawing
-    let bezier6Path = UIBezierPath()
-    bezier6Path.move(to: CGPoint(x: 6 * xScalingFactor, y: 33 * yScalingFactor))
-    bezier6Path.addCurve(to: CGPoint(x: 34 * xScalingFactor, y: 33 * yScalingFactor), controlPoint1: CGPoint(x: 6 * xScalingFactor, y: 33 * yScalingFactor), controlPoint2: CGPoint(x: 19 * xScalingFactor, y: 22 * yScalingFactor))
-    bezier6Path.lineCapStyle = .round;
-    
-    color.setStroke()
-    bezier6Path.lineWidth = 1 * lineWidthScalingFactor
-    bezier6Path.stroke()
-    
-    endCenter()
 }

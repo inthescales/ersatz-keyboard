@@ -26,6 +26,7 @@ final class ShiftShape: Shape {
         let yScale = factors.yScalingFactor
         
         centerShape(CGSize(width: shapeWidth * xScale, height: shapeHeight * yScale), toRect: bounds)
+        color.setFill()
         
         // Draw the upward arrow
         let bezierPath = UIBezierPath()
@@ -40,13 +41,11 @@ final class ShiftShape: Shape {
         bezierPath.addCurve(to: CGPoint(x: 28 * xScale, y: 28 * yScale), controlPoint1: CGPoint(x: 24 * xScale, y: 32 * yScale), controlPoint2: CGPoint(x: 28 * xScale, y: 32 * yScale))
         bezierPath.addCurve(to: CGPoint(x: 28 * xScale, y: 18 * yScale), controlPoint1: CGPoint(x: 28 * xScale, y: 26 * yScale), controlPoint2: CGPoint(x: 28 * xScale, y: 18 * yScale))
         bezierPath.close()
-        color.setFill()
         bezierPath.fill()
         
         // Draw a line under the arrow if shift lock is on
         if drawUnderline {
             let rectanglePath = UIBezierPath(rect: CGRect(x: 10 * xScale, y: 34 * yScale, width: 18 * xScale, height: 4 * yScale))
-            color.setFill()
             rectanglePath.fill()
         }
         
