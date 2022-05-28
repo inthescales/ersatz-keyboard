@@ -11,10 +11,10 @@ final class BackspaceShape: Shape {
 
     /// Draws the shape of the backspace key (boxy arrow pointing left, with an X overtop)
     private func drawBackspace(_ bounds: CGRect, color: UIColor) {
-        let factors = getFactors(CGSize(width: 44, height: 32), toRect: bounds)
-        let xScale = factors.xScalingFactor
-        let yScale = factors.yScalingFactor
-        let lineWidthScale = factors.lineWidthScalingFactor
+        let scaleFactor = getScaleFactor(for: bounds)
+        let xScale = scaleFactor
+        let yScale = scaleFactor
+        let lineWidthScale = scaleFactor
         
         centerShape(CGSize(width: 44 * xScale, height: 32 * yScale), toRect: bounds)
         

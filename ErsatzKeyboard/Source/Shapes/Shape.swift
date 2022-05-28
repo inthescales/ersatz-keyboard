@@ -6,12 +6,18 @@ import UIKit
 /// Locates and draws non-letter shapes on keycaps, such as shift and backspace
 /// These shapes were traced and as such are erratic and inaccurate. Consider replacing with SVG or PDF.
 class Shape: UIView {
+    /// The stroke and fill color for drawing the shape.
     var color: UIColor? {
         didSet {
             if let _ = self.color {
                 setNeedsDisplay()
             }
         }
+    }
+    
+    /// The natural size of the shape being drawn.
+    var baseSize: CGSize {
+        CGSize(width: 44, height: 32)
     }
 
     convenience init() {
@@ -38,33 +44,31 @@ class Shape: UIView {
         drawShape(color ?? .black)
         ctx?.restoreGState()
     }
-}
-
-func getFactors(_ fromSize: CGSize, toRect: CGRect) -> (xScalingFactor: CGFloat, yScalingFactor: CGFloat, lineWidthScalingFactor: CGFloat, fillIsHorizontal: Bool, offset: CGFloat) {
     
-    let xSize = { () -> CGFloat in
-        let scaledSize = (fromSize.width / CGFloat(2))
-        if scaledSize > toRect.width {
-            return (toRect.width / scaledSize) / CGFloat(2)
-        }
-        else {
-            return CGFloat(0.5)
-        }
-    }()
-    
-    let ySize = { () -> CGFloat in
-        let scaledSize = (fromSize.height / CGFloat(2))
-        if scaledSize > toRect.height {
-            return (toRect.height / scaledSize) / CGFloat(2)
-        }
-        else {
-            return CGFloat(0.5)
-        }
-    }()
-    
-    let actualSize = min(xSize, ySize)
-    
-    return (actualSize, actualSize, actualSize, false, 0)
+    /// Returns a scaling factor needed to draw an image with the base size into the given rect.
+    func getScaleFactor(for drawRect: CGRect) -> CGFloat {
+        let xSize = { () -> CGFloat in
+            let scaledSize = (baseSize.width / CGFloat(2))
+            if scaledSize > drawRect.width {
+                return (drawRect.width / scaledSize) / CGFloat(2)
+            }
+            else {
+                return CGFloat(0.5)
+            }
+        }()
+        
+        let ySize = { () -> CGFloat in
+            let scaledSize = (baseSize.height / CGFloat(2))
+            if scaledSize > drawRect.height {
+                return (drawRect.height / scaledSize) / CGFloat(2)
+            }
+            else {
+                return CGFloat(0.5)
+            }
+        }()
+        
+        return min(xSize, ySize)
+    }
 }
 
 func centerShape(_ fromSize: CGSize, toRect: CGRect) {

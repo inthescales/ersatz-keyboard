@@ -11,10 +11,10 @@ final class GlobeShape: Shape {
     
     /// Draw the globe shape
     private func drawGlobe(_ bounds: CGRect, color: UIColor) {
-        let factors = getFactors(CGSize(width: 41, height: 40), toRect: bounds)
-        let xScale = factors.xScalingFactor
-        let yScale = factors.yScalingFactor
-        let lineWidthScale = factors.lineWidthScalingFactor
+        let scaleFactor = getScaleFactor(for: bounds)
+        let xScale = scaleFactor
+        let yScale = scaleFactor
+        let lineWidthScale = scaleFactor
         
         centerShape(CGSize(width: 41 * xScale, height: 40 * yScale), toRect: bounds)
         color.setStroke()

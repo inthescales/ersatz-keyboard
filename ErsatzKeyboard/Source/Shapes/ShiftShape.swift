@@ -18,12 +18,12 @@ final class ShiftShape: Shape {
     
     /// Draw the shift icon – an upward arrow
     private func drawShift(_ bounds: CGRect, color: UIColor, drawUnderline: Bool) {
+        let scaleFactor = getScaleFactor(for: bounds)
+        let xScale = scaleFactor
+        let yScale = scaleFactor
+        
         let shapeWidth: CGFloat = 38
         let shapeHeight: CGFloat = drawUnderline ? 38 : 32
-
-        let factors = getFactors(CGSize(width: shapeWidth, height: shapeHeight), toRect: bounds)
-        let xScale = factors.xScalingFactor
-        let yScale = factors.yScalingFactor
         
         centerShape(CGSize(width: shapeWidth * xScale, height: shapeHeight * yScale), toRect: bounds)
         color.setFill()
