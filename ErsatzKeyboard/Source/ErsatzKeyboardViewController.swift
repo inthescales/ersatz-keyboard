@@ -30,7 +30,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     var heightConstraint: NSLayoutConstraint?
     
     var bannerView: ExtraView?
-    var settingsView: ExtraView?
+    var settingsVC: SettingsViewController?
 
     // MARK: - Metrics
 
@@ -485,7 +485,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         self.layout?.updateKeyAppearance()
         
         self.bannerView?.darkMode = appearanceIsDark
-        self.settingsView?.darkMode = appearanceIsDark
+        self.settingsVC?.darkMode = appearanceIsDark
     }
     
     @objc func highlightKey(_ sender: KeyboardKey) {
@@ -706,31 +706,18 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     
     @IBAction open func toggleSettings() {
         // lazy load settings
-        if self.settingsView == nil {
+        if self.settingsVC == nil {
             if let aSettings = self.createSettings() {
                 aSettings.darkMode = self.darkMode()
-                
-                aSettings.isHidden = true
-                self.view.addSubview(aSettings)
-                self.settingsView = aSettings
-                
-                aSettings.translatesAutoresizingMaskIntoConstraints = false
-                
-                let widthConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0)
-                let heightConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 0)
-                let centerXConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
-                let centerYConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
-                
-                self.view.addConstraint(widthConstraint)
-                self.view.addConstraint(heightConstraint)
-                self.view.addConstraint(centerXConstraint)
-                self.view.addConstraint(centerYConstraint)
+                aSettings.view.isHidden = true
+                self.view.addEdgeMatchedSubview(aSettings.view)
+                self.settingsVC = aSettings
             }
         }
         
-        if let settings = self.settingsView {
-            let hidden = settings.isHidden
-            settings.isHidden = !hidden
+        if let settings = self.settingsVC {
+            let hidden = settings.view.isHidden
+            settings.view.isHidden = !hidden
             self.forwardingView.isHidden = hidden
             self.forwardingView.isUserInteractionEnabled = !hidden
             self.bannerView?.isHidden = hidden
@@ -880,10 +867,24 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     // a settings view that replaces the keyboard when the settings button is pressed
-    open func createSettings() -> ExtraView? {
+    func createSettings() -> SettingsViewController? {
         // note that dark mode is not yet valid here, so we just put false for clarity
-        let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-        settingsView.backButton?.addTarget(self, action: #selector(ErsatzKeyboardViewController.toggleSettings), for: UIControl.Event.touchUpInside)
-        return settingsView
+        // let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
+        // settingsView.backButton?.addTarget(self, action: #selector(ErsatzKeyboardViewController.toggleSettings), for: UIControl.Event.touchUpInside)
+        let settingsList: [(String, [SettingsRow])] =
+            [
+                ("General Settings", [
+                    .toggle("Auto-Capitalization", setting: kAutoCapitalization, notes: nil),
+                    .toggle("“.” Shortcut", setting: kPeriodShortcut, notes: nil),
+                    .toggle("Keyboard Clicks", setting: kKeyboardClicks, notes:
+                    "Please note that keyboard clicks will work only if “Allow Full Access” is enabled in the keyboard settings. Unfortunately, this is a limitation of the operating system.")
+                ]),
+                ("Extra Settings", [
+                    .toggle("Allow Lowercase Key Caps", setting: kSmallLowercase, notes:
+                    "Changes your key caps to lowercase when Shift is off, making it easier to tell what mode you are in.")
+                ])
+            ]
+        let settingsVC = SettingsViewController(settingsList: settingsList, backTapped: { [weak self] in self?.toggleSettings() })
+        return settingsVC
     }
 }

@@ -483,7 +483,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             if model.type == Key.KeyType.settings {
                 if let imageKey = key as? ImageKey {
                     if imageKey.image == nil {
-                        let mainBundle = Bundle(for: DefaultSettings.self)
+                        let mainBundle = Bundle(for: KeyboardLayout.self)
                         //guard let bundleURL = mainBundle.url(forResource: "KeyboardFramework", withExtension: "framework"), let bundle = Bundle(url: bundleURL) else { throw ErsatzErrors.unableToLoadPodBundle }
                         let gearImage = UIImage(named: "gear", in: mainBundle, compatibleWith: nil)
                         let settingsImageView = UIImageView(image: gearImage)
