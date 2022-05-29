@@ -14,14 +14,7 @@ public enum ErsatzErrors: Error {
     case unableToLoadNIB
 }
 
-// TODO: move this somewhere else and localize
-public let kAutoCapitalization = "kAutoCapitalization"
-public let kPeriodShortcut = "kPeriodShortcut"
-public let kKeyboardClicks = "kKeyboardClicks"
-public let kSmallLowercase = "kSmallLowercase"
-
-open class ErsatzKeyboardViewController: UIInputViewController {
-    
+open class ErsatzKeyboardViewController: UIInputViewController {    
     let backspaceDelay: TimeInterval = 0.5
     let backspaceRepeat: TimeInterval = 0.07
     public var keyboard: Keyboard!
@@ -30,7 +23,16 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     var heightConstraint: NSLayoutConstraint?
     
     var bannerView: ExtraView?
-    var settingsVC: SettingsViewController?
+    
+    /// The settings configuration to use for this keyboard
+    lazy var settingsConfig: SettingsConfiguration = SettingsConfiguration.defaultSettings
+    
+    /// View controller for displaying the settings panel
+    private lazy var settingsVC: SettingsViewController = {
+        let settingsVC = SettingsViewController(settingsList: settingsConfig, backTapped: { [weak self] in self?.toggleSettings() })
+        settingsVC.view.isHidden = true
+        return settingsVC
+    }()
 
     // MARK: - Metrics
 
@@ -97,19 +99,15 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     required override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        UserDefaults.standard.register(defaults: [
-            kAutoCapitalization: true,
-            kPeriodShortcut: true,
-            kKeyboardClicks: false,
-            kSmallLowercase: false
-        ])
-        
-        // TODO: Put some default here again maybe
-        
         self.shiftState = .disabled
         self.currentMode = 0
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        var defaultSettings = [String: Bool]()
+        let settings = settingsConfig.sections.flatMap { $0.rows }.map { $0.setting }
+        settings.forEach { defaultSettings[$0.key] = $0.defaultValue}
+        UserDefaults.standard.register(defaults: defaultSettings)
         
         self.forwardingView = ForwardingView(frame: CGRect.zero)
         self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
@@ -233,7 +231,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         }
         else {
             let uppercase = self.shiftState.uppercase()
-            let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
+            let characterUppercase = (UserDefaults.standard.bool(forKey: SettingsItem.smallLowercase.key) ? uppercase : true)
             
             self.forwardingView.frame = orientationSavvyBounds
             self.layout?.layoutKeys(self.currentMode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
@@ -485,7 +483,6 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         self.layout?.updateKeyAppearance()
         
         self.bannerView?.darkMode = appearanceIsDark
-        self.settingsVC?.darkMode = appearanceIsDark
     }
     
     @objc func highlightKey(_ sender: KeyboardKey) {
@@ -522,7 +519,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     func handleAutoPeriod(_ key: Key) {
-        if !UserDefaults.standard.bool(forKey: kPeriodShortcut) {
+        if !UserDefaults.standard.bool(forKey: SettingsItem.periodShortcut.key) {
             return
         }
         
@@ -674,7 +671,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     open func updateKeyCaps(_ uppercase: Bool) {
-        let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
+        let characterUppercase = (UserDefaults.standard.bool(forKey: SettingsItem.smallLowercase.key) ? uppercase : true)
         self.layout?.updateKeyCaps(false, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
     }
     
@@ -690,7 +687,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         self.shiftWasMultitapped = false
         
         let uppercase = self.shiftState.uppercase()
-        let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
+        let characterUppercase = (UserDefaults.standard.bool(forKey: SettingsItem.smallLowercase.key) ? uppercase : true)
         self.layout?.layoutKeys(mode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
         
         self.setupKeys()
@@ -705,23 +702,16 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     @IBAction open func toggleSettings() {
-        // lazy load settings
-        if self.settingsVC == nil {
-            if let aSettings = self.createSettings() {
-                aSettings.darkMode = self.darkMode()
-                aSettings.view.isHidden = true
-                self.view.addEdgeMatchedSubview(aSettings.view)
-                self.settingsVC = aSettings
-            }
+        if settingsVC.parent == nil {
+            addChild(settingsVC)
+            self.view.addEdgeMatchedSubview(settingsVC.view)
         }
         
-        if let settings = self.settingsVC {
-            let hidden = settings.view.isHidden
-            settings.view.isHidden = !hidden
-            self.forwardingView.isHidden = hidden
-            self.forwardingView.isUserInteractionEnabled = !hidden
-            self.bannerView?.isHidden = hidden
-        }
+        let hidden = settingsVC.view.isHidden
+        settingsVC.view.isHidden = !hidden
+        self.forwardingView.isHidden = hidden
+        self.forwardingView.isUserInteractionEnabled = !hidden
+        self.bannerView?.isHidden = hidden
     }
     
     public func updateCapsIfNeeded() {
@@ -772,7 +762,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     func shouldAutoCapitalize() -> Bool {
-        if !UserDefaults.standard.bool(forKey: kAutoCapitalization) {
+        if !UserDefaults.standard.bool(forKey: SettingsItem.autoCapitalization.key) {
             return false
         }
         
@@ -838,7 +828,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     
     // this only works if full access is enabled
     @objc public func playKeySound() {
-        if !UserDefaults.standard.bool(forKey: kKeyboardClicks) {
+        if !UserDefaults.standard.bool(forKey: SettingsItem.keyboardClicks.key) {
             return
         }
         
@@ -864,27 +854,5 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         // note that dark mode is not yet valid here, so we just put false for clarity
         //return ExtraView(globalColors: self.dynamicType.globalColors, darkMode: false, solidColorMode: self.solidColorMode())
         return nil
-    }
-    
-    // a settings view that replaces the keyboard when the settings button is pressed
-    func createSettings() -> SettingsViewController? {
-        // note that dark mode is not yet valid here, so we just put false for clarity
-        // let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-        // settingsView.backButton?.addTarget(self, action: #selector(ErsatzKeyboardViewController.toggleSettings), for: UIControl.Event.touchUpInside)
-        let settingsList: [(String, [SettingsRow])] =
-            [
-                ("General Settings", [
-                    .toggle("Auto-Capitalization", setting: kAutoCapitalization, notes: nil),
-                    .toggle("“.” Shortcut", setting: kPeriodShortcut, notes: nil),
-                    .toggle("Keyboard Clicks", setting: kKeyboardClicks, notes:
-                    "Please note that keyboard clicks will work only if “Allow Full Access” is enabled in the keyboard settings. Unfortunately, this is a limitation of the operating system.")
-                ]),
-                ("Extra Settings", [
-                    .toggle("Allow Lowercase Key Caps", setting: kSmallLowercase, notes:
-                    "Changes your key caps to lowercase when Shift is off, making it easier to tell what mode you are in.")
-                ])
-            ]
-        let settingsVC = SettingsViewController(settingsList: settingsList, backTapped: { [weak self] in self?.toggleSettings() })
-        return settingsVC
     }
 }

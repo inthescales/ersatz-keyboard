@@ -10,21 +10,6 @@ final class SettingsViewController: UIViewController {
         static let navBarHeight: CGFloat = 44.0
     }
     
-    /// Whether this view should be displayed in dark mode.
-    var darkMode: Bool {
-        didSet {
-            self.updateAppearance(darkMode)
-        }
-    }
-    
-    // Color constants
-    let cellBackgroundColorDark = UIColor.white.withAlphaComponent(CGFloat(0.25))
-    let cellBackgroundColorLight = UIColor.white.withAlphaComponent(CGFloat(1))
-    let cellLabelColorDark = UIColor.white
-    let cellLabelColorLight = UIColor.black
-    let cellLongLabelColorDark = UIColor.lightGray
-    let cellLongLabelColorLight = UIColor.gray
-    
     /// Table view containing the settings items
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -87,14 +72,13 @@ final class SettingsViewController: UIViewController {
     }()
     
     /// Settings to display
-    let settingsList: [(String, [SettingsRow])]
+    let settingsConfig: SettingsConfiguration
     
     /// Closure called when back button is tapped
     @objc let backTapped: () -> Void
 
-    init(settingsList: [(String, [SettingsRow])], backTapped: @escaping () -> Void) {
-        self.settingsList = settingsList
-        self.darkMode = false
+    init(settingsList: SettingsConfiguration, backTapped: @escaping () -> Void) {
+        self.settingsConfig = settingsList
         self.backTapped = backTapped
         super.init(nibName: nil, bundle: nil)
     }
@@ -118,29 +102,6 @@ final class SettingsViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func updateAppearance(_ dark: Bool) {
-        // TODO(robin): Make sure title and button have right color in light and dark modes
-        
-        if dark {
-            for cell in self.tableView.visibleCells {
-                cell.backgroundColor = cellBackgroundColorDark
-                let label = cell.viewWithTag(2) as? UILabel
-                label?.textColor = cellLabelColorDark
-                let longLabel = cell.viewWithTag(3) as? UITextView
-                longLabel?.textColor = cellLongLabelColorDark
-            }
-        }
-        else {
-            for cell in self.tableView.visibleCells {
-                cell.backgroundColor = cellBackgroundColorLight
-                let label = cell.viewWithTag(2) as? UILabel
-                label?.textColor = cellLabelColorLight
-                let longLabel = cell.viewWithTag(3) as? UITextView
-                longLabel?.textColor = cellLongLabelColorLight
-            }
-        }
-    }
-    
     /// Called when a setting has been toggled
     private func toggled(setting key: String, to value: Bool) {
         UserDefaults.standard.set(value, forKey: key)
@@ -154,11 +115,11 @@ final class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.settingsList.count
+        return self.settingsConfig.sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.settingsList[section].1.count
+        return self.settingsConfig.sections[section].rows.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -166,24 +127,23 @@ extension SettingsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.settingsList[section].0
+        return self.settingsConfig.sections[section].title
     }
 }
 
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SettingsCell {
-            let row = self.settingsList[indexPath.section].1[indexPath.row]
-            // TODO(robin): Make sure cell colors are up to date
-            
-            switch row {
-            case .toggle(let text, let key, _):
-                cell.configure(key: key, text: text, note: nil, didToggle: { [weak self] key, toggleOn in
-                    self?.toggled(setting: key, to: toggleOn)
-                })
-            case .info(let title, notes: let notes):
-                cell.configureInfo(text: title, note: notes)
-            }
+            let row = self.settingsConfig.sections[indexPath.section].rows[indexPath.row]
+            // TODO(robin): Put notes here again when the cell works
+            cell.configure(
+                key: row.setting.key,
+                text: row.title,
+                note: nil,
+                isToggledOn: UserDefaults.standard.bool(forKey: row.setting.key),
+                didToggle: { [weak self] key, toggleOn in
+                self?.toggled(setting: key, to: toggleOn)
+            })
             cell.selectionStyle = .none
             return cell
         }

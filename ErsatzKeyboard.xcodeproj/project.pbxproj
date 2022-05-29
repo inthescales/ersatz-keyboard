@@ -23,7 +23,7 @@
 		0064EF9C2842CEE9000310AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EF9B2842CEE9000310AF /* SettingsViewController.swift */; };
 		0064EF9E2842D25F000310AF /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EF9D2842D25F000310AF /* UIView+Helpers.swift */; };
 		0064EFA12842DF5A000310AF /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EFA02842DF5A000310AF /* SettingsCell.swift */; };
-		0064EFA32842F13E000310AF /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EFA22842F13E000310AF /* SettingsRow.swift */; };
+		0064EFA32842F13E000310AF /* SettingsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EFA22842F13E000310AF /* SettingsConfiguration.swift */; };
 		00663D9D27E02650002C82BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663D9C27E02650002C82BD /* AppDelegate.swift */; };
 		00663DA127E02650002C82BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663DA027E02650002C82BD /* ViewController.swift */; };
 		00663DA427E02650002C82BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00663DA227E02650002C82BD /* Main.storyboard */; };
@@ -32,6 +32,8 @@
 		00663DB527E0266B002C82BD /* EnglishKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */; };
 		00663DB927E0266B002C82BD /* English Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 00663DB227E0266B002C82BD /* English Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0066BB4027E692CB008B2BF0 /* EnglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27326B7460B00ECC849 /* EnglishKeyboard.swift */; };
+		00798AD12842FE1C008065CE /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00798AD02842FE1C008065CE /* SettingsItem.swift */; };
+		00798AD3284303E7008065CE /* SettingsConfiguration+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00798AD2284303E7008065CE /* SettingsConfiguration+Default.swift */; };
 		00AE807F27E7DA0100B8F899 /* ErsatzKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */; };
 		00AE808127E7DA0100B8F899 /* ErsatzKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */; };
 		00AE808827E7DEA600B8F899 /* EnglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */; };
@@ -94,7 +96,7 @@
 		0064EF9B2842CEE9000310AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0064EF9D2842D25F000310AF /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		0064EFA02842DF5A000310AF /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		0064EFA22842F13E000310AF /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		0064EFA22842F13E000310AF /* SettingsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfiguration.swift; sourceTree = "<group>"; };
 		00663D9A27E02650002C82BD /* ErsatzDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErsatzDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00663D9C27E02650002C82BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00663DA027E02650002C82BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,8 @@
 		00663DB227E0266B002C82BD /* English Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "English Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00663DB427E0266B002C82BD /* EnglishKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishKeyboardViewController.swift; sourceTree = "<group>"; };
 		00663DB627E0266B002C82BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00798AD02842FE1C008065CE /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		00798AD2284303E7008065CE /* SettingsConfiguration+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsConfiguration+Default.swift"; sourceTree = "<group>"; };
 		00AE807627E7D54600B8F899 /* English Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "English Keyboard.entitlements"; sourceTree = "<group>"; };
 		00AE807727E7D97A00B8F899 /* ErsatzDemo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ErsatzDemo.entitlements; sourceTree = "<group>"; };
 		00AE807C27E7DA0100B8F899 /* ErsatzKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErsatzKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,7 +171,9 @@
 		0064EF992842CBBC000310AF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				0064EFA22842F13E000310AF /* SettingsRow.swift */,
+				00798AD02842FE1C008065CE /* SettingsItem.swift */,
+				0064EFA22842F13E000310AF /* SettingsConfiguration.swift */,
+				00798AD2284303E7008065CE /* SettingsConfiguration+Default.swift */,
 				0064EFA02842DF5A000310AF /* SettingsCell.swift */,
 				0064EF9B2842CEE9000310AF /* SettingsViewController.swift */,
 			);
@@ -586,7 +592,8 @@
 				00CBE4BE2841C55F006AF6FE /* GlobeShape.swift in Sources */,
 				005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */,
 				005BE28326B7460B00ECC849 /* KeyboardKeyBackground.swift in Sources */,
-				0064EFA32842F13E000310AF /* SettingsRow.swift in Sources */,
+				0064EFA32842F13E000310AF /* SettingsConfiguration.swift in Sources */,
+				00798AD12842FE1C008065CE /* SettingsItem.swift in Sources */,
 				005BE27E26B7460B00ECC849 /* ErsatzKeyboardViewController.swift in Sources */,
 				005BE28126B7460B00ECC849 /* ImageKey.swift in Sources */,
 				00CBE4BA2841B632006AF6FE /* BackspaceShape.swift in Sources */,
@@ -594,6 +601,7 @@
 				0064EF9C2842CEE9000310AF /* SettingsViewController.swift in Sources */,
 				00CBE4BC2841C277006AF6FE /* ShiftShape.swift in Sources */,
 				005BE28726B7460B00ECC849 /* KeyboardModel.swift in Sources */,
+				00798AD3284303E7008065CE /* SettingsConfiguration+Default.swift in Sources */,
 				0064EFA12842DF5A000310AF /* SettingsCell.swift in Sources */,
 				005BE27C26B7460B00ECC849 /* KeyboardInputTraits.swift in Sources */,
 				005BE27D26B7460B00ECC849 /* Direction.swift in Sources */,

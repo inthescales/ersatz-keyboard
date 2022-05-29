@@ -50,10 +50,12 @@ final class SettingsCell: UITableViewCell {
     private var didToggle: ((String, Bool) -> Void)?
     
     /// Configure this cell as a toggleable setting
-    func configure(key: String, text: String, note: String?, didToggle: @escaping (String, Bool) -> Void) {
+    func configure(key: String, text: String, note: String?, isToggledOn: Bool, didToggle: @escaping (String, Bool) -> Void) {
         self.key = key
         toggle.isHidden = false
         label.isHidden = false
+        
+        toggle.isOn = isToggledOn
         
         longLabel.isHidden = note == nil
         longLabelBottomConstraint.isActive = note != nil
