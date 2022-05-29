@@ -74,11 +74,15 @@ final class SettingsViewController: UIViewController {
     /// Settings to display
     let settingsConfig: SettingsConfiguration
     
+    /// Provider for actual setting values
+    let settingsProvider: SettingsProvider
+    
     /// Closure called when back button is tapped
     @objc let backTapped: () -> Void
 
-    init(settingsList: SettingsConfiguration, backTapped: @escaping () -> Void) {
+    init(settingsList: SettingsConfiguration, settingsProvider: SettingsProvider, backTapped: @escaping () -> Void) {
         self.settingsConfig = settingsList
+        self.settingsProvider = settingsProvider
         self.backTapped = backTapped
         super.init(nibName: nil, bundle: nil)
     }
@@ -104,7 +108,7 @@ final class SettingsViewController: UIViewController {
     
     /// Called when a setting has been toggled
     private func toggled(setting key: String, to value: Bool) {
-        UserDefaults.standard.set(value, forKey: key)
+        settingsProvider.setValue(for: key, to: value)
     }
     
     /// Called when the back button is tapped
@@ -140,7 +144,7 @@ extension SettingsViewController: UITableViewDataSource {
                 key: row.setting.key,
                 text: row.title,
                 note: nil,
-                isToggledOn: UserDefaults.standard.bool(forKey: row.setting.key),
+                isToggledOn: settingsProvider.value(for: row.setting.key),
                 didToggle: { [weak self] key, toggleOn in
                 self?.toggled(setting: key, to: toggleOn)
             })

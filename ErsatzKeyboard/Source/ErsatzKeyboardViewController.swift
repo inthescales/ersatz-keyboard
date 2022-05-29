@@ -27,9 +27,15 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     /// The settings configuration to use for this keyboard
     lazy var settingsConfig: SettingsConfiguration = SettingsConfiguration.defaultSettings
     
+    /// The provider that handles actual settings values
+    let settingsProvider = UserDefaultsSettingsProvider()
+    
     /// View controller for displaying the settings panel
     private lazy var settingsVC: SettingsViewController = {
-        let settingsVC = SettingsViewController(settingsList: settingsConfig, backTapped: { [weak self] in self?.toggleSettings() })
+        let settingsVC = SettingsViewController(
+            settingsList: settingsConfig,
+            settingsProvider: settingsProvider,
+            backTapped: { [weak self] in self?.toggleSettings() })
         settingsVC.view.isHidden = true
         return settingsVC
     }()
@@ -104,10 +110,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        var defaultSettings = [String: Bool]()
-        let settings = settingsConfig.sections.flatMap { $0.rows }.map { $0.setting }
-        settings.forEach { defaultSettings[$0.key] = $0.defaultValue}
-        UserDefaults.standard.register(defaults: defaultSettings)
+        settingsProvider.setDefaults(from: settingsConfig)
         
         self.forwardingView = ForwardingView(frame: CGRect.zero)
         self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
@@ -231,7 +234,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         }
         else {
             let uppercase = self.shiftState.uppercase()
-            let characterUppercase = (UserDefaults.standard.bool(forKey: SettingsItem.smallLowercase.key) ? uppercase : true)
+            let characterUppercase = (settingsProvider.value(for: SettingsItem.smallLowercase.key) ? uppercase : true)
             
             self.forwardingView.frame = orientationSavvyBounds
             self.layout?.layoutKeys(self.currentMode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
@@ -519,7 +522,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     func handleAutoPeriod(_ key: Key) {
-        if !UserDefaults.standard.bool(forKey: SettingsItem.periodShortcut.key) {
+        if !settingsProvider.value(for: SettingsItem.periodShortcut.key) {
             return
         }
         
@@ -671,7 +674,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     open func updateKeyCaps(_ uppercase: Bool) {
-        let characterUppercase = (UserDefaults.standard.bool(forKey: SettingsItem.smallLowercase.key) ? uppercase : true)
+        let characterUppercase = (settingsProvider.value(for: SettingsItem.smallLowercase.key) ? uppercase : true)
         self.layout?.updateKeyCaps(false, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
     }
     
@@ -687,7 +690,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         self.shiftWasMultitapped = false
         
         let uppercase = self.shiftState.uppercase()
-        let characterUppercase = (UserDefaults.standard.bool(forKey: SettingsItem.smallLowercase.key) ? uppercase : true)
+        let characterUppercase = (settingsProvider.value(for: SettingsItem.smallLowercase.key) ? uppercase : true)
         self.layout?.layoutKeys(mode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
         
         self.setupKeys()
@@ -762,7 +765,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     }
     
     func shouldAutoCapitalize() -> Bool {
-        if !UserDefaults.standard.bool(forKey: SettingsItem.autoCapitalization.key) {
+        if !settingsProvider.value(for: SettingsItem.autoCapitalization.key) {
             return false
         }
         
@@ -828,7 +831,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     
     // this only works if full access is enabled
     @objc public func playKeySound() {
-        if !UserDefaults.standard.bool(forKey: SettingsItem.keyboardClicks.key) {
+        if !settingsProvider.value(for: SettingsItem.keyboardClicks.key) {
             return
         }
         
