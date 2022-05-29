@@ -1,61 +1,9 @@
-//
-//  KeyboardModel.swift
-//  TransliteratingKeyboard
-//
 //  Created by Alexei Baboulevitch on 7/10/14.
 //  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
-//
 
 import Foundation
 
 var counter = 0
-
-public enum ShiftState {
-    case disabled
-    case enabled
-    case locked
-    
-    public func uppercase() -> Bool {
-        switch self {
-        case .disabled:
-            return false
-        case .enabled:
-            return true
-        case .locked:
-            return true
-        }
-    }
-}
-
-open class Keyboard {
-    public var pages: [Page] = []
-    
-    public func add(key: Key, row: Int, page: Int) {
-        if self.pages.count <= page {
-            for _ in self.pages.count...page {
-                self.pages.append(Page())
-            }
-        }
-        
-        self.pages[page].add(key: key, row: row)
-    }
-
-    public init() {}
-}
-
-public class Page {
-    public var rows: [[Key]] = []
-    
-    public func add(key: Key, row: Int) {
-        if self.rows.count <= row {
-            for _ in self.rows.count...row {
-                self.rows.append([])
-            }
-        }
-
-        self.rows[row].append(key)
-    }
-}
 
 public class Key: Hashable {
     public enum KeyType {
@@ -174,6 +122,8 @@ public class Key: Hashable {
     public var customAppearance : ((_ key: KeyboardKey, _ darkMode: Bool, _ solidColorMode: Bool) -> (Void))?
 }
 
-public func ==(lhs: Key, rhs: Key) -> Bool {
-    return lhs.hashValue == rhs.hashValue
+extension Key: Equatable {
+    public static func ==(lhs: Key, rhs: Key) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
 }

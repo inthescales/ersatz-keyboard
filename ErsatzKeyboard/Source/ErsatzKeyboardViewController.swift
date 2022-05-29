@@ -9,11 +9,6 @@
 import UIKit
 import AudioToolbox
 
-public enum ErsatzErrors: Error {
-    case unableToLoadPodBundle
-    case unableToLoadNIB
-}
-
 open class ErsatzKeyboardViewController: UIInputViewController {    
     let backspaceDelay: TimeInterval = 0.5
     let backspaceRepeat: TimeInterval = 0.07
@@ -132,7 +127,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     
     @objc func defaultsChanged(_ notification: Notification) {
         //let defaults = notification.object as? NSUserDefaults
-        self.updateKeyCaps(self.shiftState.uppercase())
+        self.updateKeyCaps(self.shiftState.isUppercase)
     }
     
     // without this here kludge, the height constraint for the keyboard does not work for some reason
@@ -183,7 +178,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
             
             self.setupKludge()
             
-            self.updateKeyCaps(self.shiftState.uppercase())
+            self.updateKeyCaps(self.shiftState.isUppercase)
             self.updateCapsIfNeeded()
             
             self.updateAppearances(self.darkMode())
@@ -233,7 +228,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
             // do nothing
         }
         else {
-            let uppercase = self.shiftState.uppercase()
+            let uppercase = self.shiftState.isUppercase
             let characterUppercase = (settingsProvider.value(for: SettingsItem.smallLowercase.key) ? uppercase : true)
             
             self.forwardingView.frame = orientationSavvyBounds
@@ -613,7 +608,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         self.shiftStartingState = self.shiftState
         
         if let shiftStartingState = self.shiftStartingState {
-            if shiftStartingState.uppercase() {
+            if shiftStartingState.isUppercase {
                 // handled by shiftUp
                 return
             }
@@ -638,7 +633,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         }
         else {
             if let shiftStartingState = self.shiftStartingState {
-                if !shiftStartingState.uppercase() {
+                if !shiftStartingState.isUppercase {
                     // handled by shiftDown
                 }
                 else {
@@ -689,7 +684,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         self.shiftStartingState = nil
         self.shiftWasMultitapped = false
         
-        let uppercase = self.shiftState.uppercase()
+        let uppercase = self.shiftState.isUppercase
         let characterUppercase = (settingsProvider.value(for: SettingsItem.smallLowercase.key) ? uppercase : true)
         self.layout?.layoutKeys(mode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
         
@@ -849,7 +844,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     open class var globalColors: GlobalColors.Type { get { return GlobalColors.self }}
     
     open func keyPressed(_ key: Key) {
-        self.textDocumentProxy.insertText(key.outputForCase(self.shiftState.uppercase()))
+        self.textDocumentProxy.insertText(key.outputForCase(self.shiftState.isUppercase))
     }
     
     // a banner that sits in the empty space on top of the keyboard

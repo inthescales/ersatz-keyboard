@@ -25,7 +25,7 @@ class EnglishKeyboardViewController: ErsatzKeyboardViewController {
     
     override func keyPressed(_ key: Key) {
         if lastInsertedCharacterIsAutomaticSpace && documentProxy().documentContextBeforeInput?.hasSuffix(" ") == true {
-            let keyOuput = key.outputForCase(shiftState.uppercase())
+            let keyOuput = key.outputForCase(shiftState.isUppercase)
             if !keyOuput.isEmpty && Array(" .,!?-/:;)]}").contains(keyOuput.first!) {
                 documentProxy().deleteBackward()
             }
