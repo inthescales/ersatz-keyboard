@@ -46,7 +46,7 @@ final class SettingsViewController: UIViewController {
         
         // Add 'settings' label
         let settingsLabel = UILabel()
-        settingsLabel.text = "Settings"
+        settingsLabel.text = settingsConfig.titleText
         view.addSubview(settingsLabel)
         view.addConstraints([
             NSLayoutConstraint(item: settingsLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0),
@@ -55,7 +55,7 @@ final class SettingsViewController: UIViewController {
         
         // Add back button
         let backButton = UIButton()
-        backButton.setTitle("Back", for: .normal)
+        backButton.setTitle(settingsConfig.backText, for: .normal)
         backButton.setTitleColor(.systemBlue, for: .normal)
         backButton.addTarget(self, action: #selector(SettingsViewController.didTapBack), for: .touchUpInside)
         view.addSubview(backButton)

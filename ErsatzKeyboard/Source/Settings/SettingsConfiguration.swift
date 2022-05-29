@@ -3,9 +3,18 @@
 
 /// Configuration for the settings panel
 public struct SettingsConfiguration {
+    /// Title text to show on the settings panel
+    let titleText: String
+    
+    /// Button text for the back button on the settings panel
+    let backText: String
+    
+    /// Sections of the settings table view
     let sections: [SettingsSection]
     
-    public init(sections: [SettingsSection]) {
+    public init(titleText: String, backText: String, sections: [SettingsSection]) {
+        self.titleText = titleText
+        self.backText = backText
         self.sections = sections
     }
 }
