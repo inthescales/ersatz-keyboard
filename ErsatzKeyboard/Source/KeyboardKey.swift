@@ -11,8 +11,9 @@ import UIKit
 // TODO: correct corner radius
 // TODO: refactor
 
-// popup constraints have to be setup with the topmost view in mind; hence these callbacks
-protocol KeyboardKeyProtocol: AnyObject {
+/// Delegate protocol for KeyboardKey.
+/// Popup constraints have to be setup with the topmost view in mind; hence these callbacks
+protocol KeyboardKeyDelegate: AnyObject {
     func popupFrame(for key: KeyboardKey, direction: Direction) -> CGRect
     func willShowPopup(for key: KeyboardKey, direction: Direction) //may be called multiple times during layout
     func willHidePopup(for key: KeyboardKey)
@@ -26,7 +27,7 @@ enum VibrancyType {
 
 open class KeyboardKey: UIControl {
     
-    weak var delegate: KeyboardKeyProtocol?
+    weak var delegate: KeyboardKeyDelegate?
     
     var vibrancy: VibrancyType?
     
@@ -34,7 +35,6 @@ open class KeyboardKey: UIControl {
         didSet {
             self.label.text = text
             self.label.frame = CGRect(x: self.labelInset, y: self.labelInset, width: self.bounds.width - self.labelInset * 2, height: self.bounds.height - self.labelInset * 2)
-            self.redrawText()
         }
     }
     
@@ -81,12 +81,6 @@ open class KeyboardKey: UIControl {
     override open var isHighlighted: Bool {
         didSet {
             updateColors()
-        }
-    }
-    
-    override open var frame: CGRect {
-        didSet {
-            self.redrawText()
         }
     }
     
@@ -220,7 +214,6 @@ open class KeyboardKey: UIControl {
     
     func refreshViews() {
         self.refreshShapes()
-        self.redrawText()
         self.redrawShape()
         self.updateColors()
     }
@@ -304,29 +297,24 @@ open class KeyboardKey: UIControl {
         }
     }
     
-    func redrawText() {
-//        self.keyView.frame = self.bounds
-//        self.button.frame = self.bounds
-//        
-//        self.button.setTitle(self.text, forState: UIControlState.Normal)
-    }
-    
     func redrawShape() {
-        if let shape = self.shape {
-            self.text = ""
-            shape.removeFromSuperview()
-            self.addSubview(shape)
-            
-            let pointOffset: CGFloat = 4
-            let size = CGSize(width: self.bounds.width - pointOffset - pointOffset, height: self.bounds.height - pointOffset - pointOffset)
-            shape.frame = CGRect(
-                x: CGFloat((self.bounds.width - size.width) / 2.0),
-                y: CGFloat((self.bounds.height - size.height) / 2.0),
-                width: size.width,
-                height: size.height)
-            
-            shape.setNeedsLayout()
+        guard let shape = self.shape else {
+            return
         }
+        
+        self.text = ""
+        shape.removeFromSuperview()
+        self.addSubview(shape)
+        
+        let pointOffset: CGFloat = 4
+        let size = CGSize(width: self.bounds.width - pointOffset - pointOffset, height: self.bounds.height - pointOffset - pointOffset)
+        shape.frame = CGRect(
+            x: CGFloat((self.bounds.width - size.width) / 2.0),
+            y: CGFloat((self.bounds.height - size.height) / 2.0),
+            width: size.width,
+            height: size.height)
+        
+        shape.setNeedsLayout()
     }
     
     func updateColors() {
@@ -574,10 +562,4 @@ class ShapeView: UIView {
             }
         }
     }
-    
-//    override func drawRect(rect: CGRect) {
-//        if self.shapeLayer == nil {
-//            self.drawCall(rect)
-//        }
-//    }
 }

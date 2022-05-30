@@ -256,7 +256,7 @@ extension CGSize: Hashable {
 }
 
 // handles the layout for the keyboard, including key spacing and arrangement
-public class KeyboardLayout: NSObject, KeyboardKeyProtocol {
+public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
 
     class var shouldPoolKeys: Bool { get { return true }}
     class var shouldPoolShapes: Bool { get { return false }}

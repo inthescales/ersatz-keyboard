@@ -8,31 +8,53 @@
 
 import UIKit
 
-// This class does not actually draw its contents; rather, it generates bezier curves for others to use.
-// (You can still move it around, resize it, and add subviews to it. It just won't display the curve assigned to it.)
+/// Generates bezier curves used to draw the lines, edges, and background of a keyboard key
+/// This class does not actually draw its contents; rather, it generates bezier curves for others to use.
+/// You can still move it around, resize it, and add subviews to it. It just won't display the curve assigned to it.
 class KeyboardKeyBackground: UIView, Connectable {
+    let floatPi = CGFloat.pi
+    let floatPiDiv2 = CGFloat.pi/2.0
+    let floatPiDivNeg2 = -CGFloat.pi/2.0
     
+    /// Bezier path used to draw the fill color for the key
     var fillPath: UIBezierPath?
-    var underPath: UIBezierPath?
+    
+    /// Bezier paths used to draw the edges of the key
     var edgePaths: [UIBezierPath]?
     
+    /// Bezier path used to draw the key's "depth" seen at the bottom
+    var underPath: UIBezierPath?
+
+    
     // do not set this manually
-    var cornerRadius: CGFloat
+    private var cornerRadius: CGFloat
+    
     var underOffset: CGFloat
     
-    var startingPoints: [CGPoint]
-    var segmentPoints: [(CGPoint, CGPoint)]
-    var arcCenters: [CGPoint]
-    var arcStartingAngles: [CGFloat]
+    /// Starting points for drawing – the four corners of the key
+    private var startingPoints: [CGPoint]
     
-    var dirty: Bool
+    /// Pairs of points denoting the start and end points of the rectangular key's line segments (excluding the rounded corners)
+    private var segmentPoints: [(CGPoint, CGPoint)]
+    
+    /// Center points for the arcs used to draw the key's rounded corners
+    private var arcCenters: [CGPoint]
+    
+    /// The angle of the line leading to the corner arc, in the order of drawing
+    private var arcStartingAngles: [CGFloat]
+    
+    /// Whether this view's properties have changed and a redraw is required
+    private var dirty: Bool
 
+    /// Direction on which this key background attaches to another, if any
+    /// Used to attach a key to its popup
     var attached: Direction? {
         didSet {
             self.dirty = true
             self.setNeedsLayout()
         }
     }
+
     var hideDirectionIsOpposite: Bool {
         didSet {
             self.dirty = true
@@ -40,10 +62,14 @@ class KeyboardKeyBackground: UIView, Connectable {
         }
     }
     
+    var oldBounds: CGRect?
+    
     init(cornerRadius: CGFloat, underOffset: CGFloat) {
         attached = nil
         hideDirectionIsOpposite = false
         dirty = false
+        
+        // Initialize starting positions for the points and edges
         
         startingPoints = []
         segmentPoints = []
@@ -74,7 +100,6 @@ class KeyboardKeyBackground: UIView, Connectable {
         fatalError("NSCoding not supported")
     }
     
-    var oldBounds: CGRect?
     override func layoutSubviews() {
         if !self.dirty {
             if self.bounds.width == 0 || self.bounds.height == 0 {
@@ -93,10 +118,7 @@ class KeyboardKeyBackground: UIView, Connectable {
         self.dirty = false
     }
     
-    let floatPi = CGFloat.pi
-    let floatPiDiv2 = CGFloat.pi/2.0
-    let floatPiDivNeg2 = -CGFloat.pi/2.0
-    
+    /// Generates points that will be used for drawing the key, indicating its corners and edges.
     func generatePointsForDrawing(_ bounds: CGRect) {
         let segmentWidth = bounds.width
         let segmentHeight = bounds.height - CGFloat(underOffset)
@@ -120,6 +142,7 @@ class KeyboardKeyBackground: UIView, Connectable {
         //
         //self.arcStartingAngles.removeAll(keepCapacity: true)
         
+        // Generate start and end points for each edge segment based on the corner points.
         for i in 0 ..< self.startingPoints.count {
             let currentPoint = self.startingPoints[i]
             let nextPoint = self.startingPoints[(i + 1) % self.startingPoints.count]
@@ -142,17 +165,20 @@ class KeyboardKeyBackground: UIView, Connectable {
             }
             
             let p0 = CGPoint(
-                x: currentPoint.x + (floatXCorner),
-                y: currentPoint.y + underOffset + (floatYCorner))
+                x: currentPoint.x + floatXCorner,
+                y: currentPoint.y + underOffset + floatYCorner
+            )
             let p1 = CGPoint(
-                x: nextPoint.x - (floatXCorner),
-                y: nextPoint.y + underOffset - (floatYCorner))
+                x: nextPoint.x - floatXCorner,
+                y: nextPoint.y + underOffset - floatYCorner
+            )
             
             self.segmentPoints[i] = (p0, p1)
             
             let c = CGPoint(
-                x: p0.x - (floatYCorner),
-                y: p0.y + (floatXCorner))
+                x: p0.x - floatYCorner,
+                y: p0.y + floatXCorner
+            )
 
             self.arcCenters[i] = c
         }
@@ -172,6 +198,9 @@ class KeyboardKeyBackground: UIView, Connectable {
             var edgePath: UIBezierPath?
             let segmentPoint = self.segmentPoints[i]
             
+            // Trace line segment if needed
+            // If this key has something attached, we don't want to draw that edge
+            
             if self.attached != nil && (self.hideDirectionIsOpposite ? self.attached!.rawValue != i : self.attached!.rawValue == i) {
                 // do nothing
                 // TODO: quick hack
@@ -187,7 +216,8 @@ class KeyboardKeyBackground: UIView, Connectable {
                     prevPoint = segmentPoint.0
                     fillPath.move(to: prevPoint!)
                 }
-
+                
+                // Add this segment to fill and edge paths
                 fillPath.addLine(to: segmentPoint.0)
                 fillPath.addLine(to: segmentPoint.1)
                 
@@ -198,6 +228,8 @@ class KeyboardKeyBackground: UIView, Connectable {
             }
             
             let shouldDrawArcInOppositeMode = (self.attached != nil ? (self.attached!.rawValue == i) || (self.attached!.rawValue == ((i + 1) % 4)) : false)
+            
+            // Trace corner arc if needed
             
             if (self.attached != nil && (self.hideDirectionIsOpposite ? !shouldDrawArcInOppositeMode : self.attached!.rawValue == ((i + 1) % 4))) {
                 // do nothing
@@ -230,7 +262,8 @@ class KeyboardKeyBackground: UIView, Connectable {
         fillPath.close()
         fillPath.apply(CGAffineTransform(translationX: 0, y: -self.underOffset))
         
-        let underPath = { () -> UIBezierPath in
+        // Generate path for the key's depth underline
+        let underPath: UIBezierPath = {
             let underPath = UIBezierPath()
             
             underPath.move(to: self.segmentPoints[2].1)
