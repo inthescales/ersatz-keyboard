@@ -211,10 +211,10 @@
 		00798AD62843086D008065CE /* Keyboard Models */ = {
 			isa = PBXGroup;
 			children = (
+				00798AD728430881008065CE /* ShiftState.swift */,
 				00798ADB28430920008065CE /* Keyboard.swift */,
 				00798AD9284308BD008065CE /* Page.swift */,
 				005BE27526B7460B00ECC849 /* Key.swift */,
-				00798AD728430881008065CE /* ShiftState.swift */,
 			);
 			path = "Keyboard Models";
 			sourceTree = "<group>";

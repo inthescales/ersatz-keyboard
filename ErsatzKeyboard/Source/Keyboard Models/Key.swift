@@ -25,8 +25,11 @@ public class Key: Hashable {
     public var lowercaseKeyCap: String?
     public var uppercaseOutput: String?
     public var lowercaseOutput: String?
-    public var toMode: Int? //if the key is a mode button, this indicates which page it links to
     
+    /// If the key is a mode button, this indicates which page it links to
+    public var toMode: Int?
+    
+    /// Whether this key represents a character
     public var isCharacter: Bool {
         get {
             switch self.type {
@@ -41,6 +44,7 @@ public class Key: Hashable {
         }
     }
     
+    /// Whether this is a special key (shift, backspace, mode, etc)
     public var isSpecial: Bool {
         get {
             switch self.type {
@@ -62,6 +66,7 @@ public class Key: Hashable {
         }
     }
     
+    /// Whether this key produces text output when tapped
     public var hasOutput: Bool {
         get {
             return (self.uppercaseOutput != nil) || (self.lowercaseOutput != nil)
