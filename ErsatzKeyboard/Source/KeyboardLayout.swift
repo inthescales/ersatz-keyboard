@@ -520,6 +520,14 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
         else {
             key.text = model.keyCapForCase(uppercase)
         }
+        
+        if let accessibility = model.accessibilityText {
+            key.accessibilityLabel = accessibility
+            key.isAccessibilityElement = true
+        } else {
+            key.accessibilityLabel = key.text
+            key.isAccessibilityElement = !key.text.isEmpty
+        }
     }
     
     ///////////////

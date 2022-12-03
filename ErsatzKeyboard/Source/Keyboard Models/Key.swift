@@ -25,6 +25,7 @@ public class Key: Hashable {
     public var lowercaseKeyCap: String?
     public var uppercaseOutput: String?
     public var lowercaseOutput: String?
+    public var accessibilityText: String?
     
     /// If the key is a mode button, this indicates which page it links to
     public var toMode: Int?

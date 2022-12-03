@@ -23,8 +23,9 @@ func englishKeyboard() -> Keyboard {
         defaultKeyboard.add(key: keyModel, row: 1, page: 0)
     }
     
-    let keyModel = Key(.shift)
-    defaultKeyboard.add(key: keyModel, row: 2, page: 0)
+    let shiftKey = Key(.shift)
+    shiftKey.accessibilityText = "Shift"
+    defaultKeyboard.add(key: shiftKey, row: 2, page: 0)
     
     for key in ["Z", "X", "C", "V", "B", "N", "M"] {
         let keyModel = Key(.character)
@@ -33,17 +34,21 @@ func englishKeyboard() -> Keyboard {
     }
     
     let backspace = Key(.backspace)
+    backspace.accessibilityText = "Backspace"
     defaultKeyboard.add(key: backspace, row: 2, page: 0)
     
     let keyModeChangeNumbers = Key(.modeChange)
     keyModeChangeNumbers.uppercaseKeyCap = "123"
     keyModeChangeNumbers.toMode = 1
+    keyModeChangeNumbers.accessibilityText = "Numbers and special characters"
     defaultKeyboard.add(key: keyModeChangeNumbers, row: 3, page: 0)
     
     let keyboardChange = Key(.keyboardChange)
+    keyboardChange.accessibilityText = "Change keyboard"
     defaultKeyboard.add(key: keyboardChange, row: 3, page: 0)
     
     let settings = Key(.settings)
+    settings.accessibilityText = "Settings"
     defaultKeyboard.add(key: settings, row: 3, page: 0)
     
     let space = Key(.space)
@@ -73,6 +78,7 @@ func englishKeyboard() -> Keyboard {
     let keyModeChangeSpecialCharacters = Key(.modeChange)
     keyModeChangeSpecialCharacters.uppercaseKeyCap = "#+="
     keyModeChangeSpecialCharacters.toMode = 2
+    keyModeChangeSpecialCharacters.accessibilityText = "Special characters"
     defaultKeyboard.add(key: keyModeChangeSpecialCharacters, row: 2, page: 1)
     
     for key in [".", ",", "?", "!", "'"] {
@@ -86,6 +92,7 @@ func englishKeyboard() -> Keyboard {
     let keyModeChangeLetters = Key(.modeChange)
     keyModeChangeLetters.uppercaseKeyCap = "ABC"
     keyModeChangeLetters.toMode = 0
+    keyModeChangeLetters.accessibilityText = "Letters"
     defaultKeyboard.add(key: keyModeChangeLetters, row: 3, page: 1)
     
     defaultKeyboard.add(key: Key(keyboardChange), row: 3, page: 1)
