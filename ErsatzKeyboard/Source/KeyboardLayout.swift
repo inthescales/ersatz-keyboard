@@ -266,19 +266,26 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
     
     unowned var model: Keyboard
     unowned var superview: UIView
-    var modelToView: [Key:KeyboardKey] = [:]
-    var viewToModel: [KeyboardKey:Key] = [:]
+    var modelToView: [Key: KeyboardKey] = [:]
+    var viewToModel: [KeyboardKey: Key] = [:]
     
     var keyPool: [KeyboardKey] = []
-    var nonPooledMap: [String:KeyboardKey] = [:]
-    var sizeToKeyMap: [CGSize:[KeyboardKey]] = [:]
-    var shapePool: [String:Shape] = [:]
+    var nonPooledMap: [String: KeyboardKey] = [:]
+    var sizeToKeyMap: [CGSize: [KeyboardKey]] = [:]
+    var shapePool: [String: Shape] = [:]
     
     var darkMode: Bool
     var solidColorMode: Bool
     var initialized: Bool
     
-    required init(model: Keyboard, superview: UIView, layoutConstants: LayoutConstants.Type, globalColors: GlobalColors.Type, darkMode: Bool, solidColorMode: Bool) {
+    required init(
+        model: Keyboard,
+        superview: UIView,
+        layoutConstants: LayoutConstants.Type,
+        globalColors: GlobalColors.Type,
+        darkMode: Bool,
+        solidColorMode: Bool
+    ) {
         self.layoutConstants = layoutConstants
         self.globalColors = globalColors
         
@@ -675,7 +682,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
     }
     
     func createNewKey() -> KeyboardKey {
-        return ImageKey(vibrancy: nil)
+        return ImageKey()
     }
     
     // if pool is disabled, always generates a new key
