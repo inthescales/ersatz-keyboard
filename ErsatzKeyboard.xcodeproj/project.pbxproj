@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		005A8787293BDEE1000C4901 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A8786293BDEE1000C4901 /* Accessibility.swift */; };
+		005A878A293BFE10000C4901 /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A8789293BFE10000C4901 /* SettingsKey.swift */; };
 		005BE27826B7460B00ECC849 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005BE26626B7460B00ECC849 /* Media.xcassets */; };
 		005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26726B7460B00ECC849 /* ExtraView.swift */; };
 		005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26826B7460B00ECC849 /* KeyboardKey.swift */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ErsatzKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005A8786293BDEE1000C4901 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
+		005A8789293BFE10000C4901 /* SettingsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKey.swift; sourceTree = "<group>"; };
 		005BE26626B7460B00ECC849 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		005BE26726B7460B00ECC849 /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
 		005BE26826B7460B00ECC849 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		0064EF992842CBBC000310AF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				005A8789293BFE10000C4901 /* SettingsKey.swift */,
 				00798AD02842FE1C008065CE /* SettingsItem.swift */,
 				0064EFA22842F13E000310AF /* SettingsConfiguration.swift */,
 				00798AD2284303E7008065CE /* SettingsConfiguration+Default.swift */,
@@ -623,6 +626,7 @@
 				00798AD528430427008065CE /* SettingsProvider.swift in Sources */,
 				005BE28126B7460B00ECC849 /* ImageKey.swift in Sources */,
 				00CBE4BA2841B632006AF6FE /* BackspaceShape.swift in Sources */,
+				005A878A293BFE10000C4901 /* SettingsKey.swift in Sources */,
 				005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */,
 				0064EF9C2842CEE9000310AF /* SettingsViewController.swift in Sources */,
 				00CBE4BC2841C277006AF6FE /* ShiftShape.swift in Sources */,
