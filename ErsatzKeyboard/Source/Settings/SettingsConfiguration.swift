@@ -24,7 +24,7 @@ public struct SettingsSection {
     let title: String
     let rows: [SettingsRow]
     
-    init(title: String, rows: [SettingsRow]) {
+    public init(title: String, rows: [SettingsRow]) {
         self.title = title
         self.rows = rows
     }

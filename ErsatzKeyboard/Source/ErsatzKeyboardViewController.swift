@@ -9,18 +9,20 @@
 import UIKit
 import AudioToolbox
 
-open class ErsatzKeyboardViewController: UIInputViewController {    
+open class ErsatzKeyboardViewController: UIInputViewController {
+    /// The keyboard to display
+    public var keyboard: Keyboard!
+
+    /// The settings configuration to use for this keyboard
+    public var settingsConfig: SettingsConfiguration! = SettingsConfiguration.defaultSettings
+    
     let backspaceDelay: TimeInterval = 0.5
     let backspaceRepeat: TimeInterval = 0.07
-    public var keyboard: Keyboard!
     var forwardingView: ForwardingView!
-    public var layout: KeyboardLayout?
+    var layout: KeyboardLayout?
     var heightConstraint: NSLayoutConstraint?
     
     var bannerView: ExtraView?
-    
-    /// The settings configuration to use for this keyboard
-    lazy var settingsConfig: SettingsConfiguration = SettingsConfiguration.defaultSettings
     
     /// The provider that handles actual settings values
     let settingsProvider = UserDefaultsSettingsProvider()
