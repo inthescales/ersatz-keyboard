@@ -95,6 +95,7 @@ public class Key: Hashable {
         self.lowercaseKeyCap = key.lowercaseKeyCap
         self.uppercaseOutput = key.uppercaseOutput
         self.lowercaseOutput = key.lowercaseOutput
+        self.accessibilityText = key.accessibilityText
         self.toMode = key.toMode
     }
     
