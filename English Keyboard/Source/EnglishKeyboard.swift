@@ -9,6 +9,7 @@
 import ErsatzKeyboard
 
 func englishKeyboard() -> Keyboard {
+    Accessibility.language = "en"
     let defaultKeyboard = Keyboard()
     
     for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {

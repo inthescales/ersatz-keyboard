@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005A8787293BDEE1000C4901 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A8786293BDEE1000C4901 /* Accessibility.swift */; };
 		005BE27826B7460B00ECC849 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005BE26626B7460B00ECC849 /* Media.xcassets */; };
 		005BE27926B7460B00ECC849 /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26726B7460B00ECC849 /* ExtraView.swift */; };
 		005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE26826B7460B00ECC849 /* KeyboardKey.swift */; };
@@ -82,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ErsatzKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		005A8786293BDEE1000C4901 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
 		005BE26626B7460B00ECC849 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		005BE26726B7460B00ECC849 /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
 		005BE26826B7460B00ECC849 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			children = (
 				005BE26B26B7460B00ECC849 /* Direction.swift */,
 				0064EF9D2842D25F000310AF /* UIView+Helpers.swift */,
+				005A8786293BDEE1000C4901 /* Accessibility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 			files = (
 				005BE28226B7460B00ECC849 /* ForwardingView.swift in Sources */,
 				005BE28626B7460B00ECC849 /* Shape.swift in Sources */,
+				005A8787293BDEE1000C4901 /* Accessibility.swift in Sources */,
 				005BE28026B7460B00ECC849 /* KeyboardConnector.swift in Sources */,
 				00798ADA284308BD008065CE /* Page.swift in Sources */,
 				0064EF9E2842D25F000310AF /* UIView+Helpers.swift in Sources */,

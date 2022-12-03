@@ -531,6 +531,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
         if let accessibility = model.accessibilityText {
             key.accessibilityLabel = accessibility
             key.isAccessibilityElement = true
+            key.accessibilityLanguage = Accessibility.language
         } else {
             key.accessibilityLabel = key.text
             key.isAccessibilityElement = !key.text.isEmpty
