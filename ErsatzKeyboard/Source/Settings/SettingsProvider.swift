@@ -3,7 +3,7 @@
 
 import Foundation
 
-protocol SettingsProvider {
+public protocol SettingsProvider {
     /// Assigns default values based on the configuration.
     /// Call this when initializing the provider
     func setDefaults(from: SettingsConfiguration)

@@ -16,6 +16,9 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     /// The settings configuration to use for this keyboard
     public var settingsConfig: SettingsConfiguration! = SettingsConfiguration.defaultSettings
     
+    /// The provider that handles actual settings values
+    public let settingsProvider: SettingsProvider = UserDefaultsSettingsProvider()
+
     let backspaceDelay: TimeInterval = 0.5
     let backspaceRepeat: TimeInterval = 0.07
     var forwardingView: ForwardingView!
@@ -23,9 +26,6 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     var heightConstraint: NSLayoutConstraint?
     
     var bannerView: ExtraView?
-    
-    /// The provider that handles actual settings values
-    let settingsProvider = UserDefaultsSettingsProvider()
     
     /// View controller for displaying the settings panel
     private lazy var settingsVC: SettingsViewController = {
@@ -108,10 +108,6 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         settingsProvider.setDefaults(from: settingsConfig)
-        
-        self.forwardingView = ForwardingView(frame: CGRect.zero)
-        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
-        self.view.addSubview(self.forwardingView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ErsatzKeyboardViewController.defaultsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
     }
@@ -245,20 +241,24 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         self.forwardingView.frame.origin = newOrigin
     }
     
-    override open func loadView() {
-        super.loadView()
+    override open func viewDidLoad() {
+        super.viewDidLoad()
         
-        if let aBanner = self.createBanner() {
-            aBanner.isHidden = true
-            self.view.insertSubview(aBanner, belowSubview: self.forwardingView)
-            self.bannerView = aBanner
+        forwardingView = ForwardingView(frame: CGRect.zero)
+        forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
+        view.addSubview(forwardingView)
+        
+        if let banner = createBanner() {
+            banner.isHidden = true
+            view.insertSubview(banner, belowSubview: self.forwardingView)
+            bannerView = banner
         }
     }
     
     override open func viewWillAppear(_ animated: Bool) {
-        self.bannerView?.isHidden = false
-        self.keyboardHeight = self.height(orientationIsPortrait: self.isPortrait(), withTopBanner: true)
-        self.forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
+        bannerView?.isHidden = false
+        keyboardHeight = height(orientationIsPortrait: isPortrait(), withTopBanner: true)
+        forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
     }
     
     override open func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
