@@ -247,7 +247,7 @@ public class KeyboardKey: UIControl {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
-        if let _ = self.popup {
+        if popup != nil {
             self.shadowLayer.shadowPath = shadowPath.cgPath
         }
         

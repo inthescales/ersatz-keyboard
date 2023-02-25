@@ -25,24 +25,24 @@ class KeyboardKeyTests: XCTestCase {
         }
     }
     
+    /// Tests the shape of a tapped key, with its popup
     func testTappedKey() {
-        // Copied from KeyboardLayout 2/25/2023
-        // TODO(robin): Find a way to unify these
-        func popupFrame(for key: KeyboardKey, direction: Direction) -> CGRect {
-            let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
-            let totalHeight = self.layoutConstants.popupTotalHeight(actualScreenWidth)
-            
-            let popupWidth = key.bounds.width + self.layoutConstants.popupWidthIncrement
-            let popupHeight = totalHeight - self.layoutConstants.popupGap - key.bounds.height
-            
-            return CGRect(x: (key.bounds.width - popupWidth) / CGFloat(2), y: -popupHeight - self.layoutConstants.popupGap, width: popupWidth, height: popupHeight)
-        }
-        
+        let keyDelegate = MockKeyboardKeyDelegate()
         let keyView = ImageKey()
         keyView.text = "A"
+        keyView.delegate = keyDelegate
         
-        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: max(keyRect.width, popupSize.width), height: keyRect.height + popupSize.height))
+        let containerView = UIView(frame:
+            CGRect(
+                x: 0,
+                y: 0,
+                width: max(keyRect.width, popupSize.width),
+                height: 112
+            )
+        )
+        containerView.backgroundColor = .lightGray
         containerView.addSubview(keyView)
+        
         keyView.frame = CGRect(
             x: (containerView.bounds.width - keyRect.width) / 2,
             y: containerView.bounds.height - keyRect.height,
@@ -52,6 +52,8 @@ class KeyboardKeyTests: XCTestCase {
         keyView.showPopup()
 
         let testName = "key_tapped"
+        
+        // Note: Shadows cannot currently be rendered in snapshot tests without a host application
         assertSnapshot(matching: containerView, as: .image, named: testName)
     }
     
@@ -86,4 +88,22 @@ class KeyboardKeyTests: XCTestCase {
             assertSnapshot(matching: keyView, as: .image, named: testName)
         }
     }
+}
+
+private class MockKeyboardKeyDelegate: KeyboardKeyDelegate {
+    // Copied from KeyboardLayout 2/25/2023
+    // TODO(robin): Find a way to unify these
+    func popupFrame(for key: KeyboardKey, direction: Direction) -> CGRect {
+        let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
+        let totalHeight = LayoutConstants.popupTotalHeight(actualScreenWidth)
+        
+        let popupWidth = key.bounds.width + LayoutConstants.popupWidthIncrement
+        let popupHeight = totalHeight - LayoutConstants.popupGap - key.bounds.height
+        
+        return CGRect(x: (key.bounds.width - popupWidth) / CGFloat(2), y: -popupHeight - LayoutConstants.popupGap, width: popupWidth, height: popupHeight)
+    }
+    
+    func willShowPopup(for key: KeyboardKey, direction: Direction) {}
+    
+    func willHidePopup(for key: KeyboardKey) {}
 }

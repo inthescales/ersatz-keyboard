@@ -183,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				005BE26F26B7460B00ECC849 /* ImageKey.swift */,
+				005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */,
 				005BE26826B7460B00ECC849 /* KeyboardKey.swift */,
 				005BE27126B7460B00ECC849 /* KeyboardKeyBackground.swift */,
 				00573FEF29AA944200EB3781 /* ShapeView.swift */,
@@ -247,7 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				00CBE4B32841AFDE006AF6FE /* Assets */,
-				00CBE4B42841AFE9006AF6FE /* Source */,
+				00CBE4B42841AFE9006AF6FE /* Tests */,
 			);
 			path = ErsatzKeyboardTests;
 			sourceTree = "<group>";
@@ -271,7 +272,6 @@
 				00573FEE29AA943500EB3781 /* Key UI */,
 				005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */,
 				005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */,
-				005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */,
 				005BE27026B7460B00ECC849 /* ForwardingView.swift */,
 				005BE27726B7460B00ECC849 /* KeyboardLayout.swift */,
 				005BE26726B7460B00ECC849 /* ExtraView.swift */,
@@ -333,7 +333,7 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		00CBE4B42841AFE9006AF6FE /* Source */ = {
+		00CBE4B42841AFE9006AF6FE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				00CBE4B52841AFEF006AF6FE /* Models */,
@@ -341,7 +341,7 @@
 				00AE807E27E7DA0100B8F899 /* ErsatzKeyboardTests.swift */,
 				00573FE829AA850000EB3781 /* KeyboardKeyTests.swift */,
 			);
-			path = Source;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		00CBE4B52841AFEF006AF6FE /* Models */ = {
