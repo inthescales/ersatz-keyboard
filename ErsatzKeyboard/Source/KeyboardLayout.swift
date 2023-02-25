@@ -490,10 +490,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
             if model.type == Key.KeyType.settings {
                 if let imageKey = key as? ImageKey {
                     if imageKey.image == nil {
-                        let mainBundle = Bundle(for: KeyboardLayout.self)
-                        let gearImage = UIImage(named: "gear", in: mainBundle, compatibleWith: nil)
-                        let settingsImageView = UIImageView(image: gearImage)
-                        imageKey.image = settingsImageView
+                        imageKey.image = UIImageView(image: .gear)
                     }
                 }
             }
