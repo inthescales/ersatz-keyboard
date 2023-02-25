@@ -320,7 +320,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
         CATransaction.setDisableActions(true)
         
         // pre-allocate all keys if no cache
-        if !type(of: self).shouldPoolKeys {
+        if !Self.shouldPoolKeys {
             if self.keyPool.isEmpty {
                 for p in 0..<self.model.pages.count {
                     self.positionKeys(p)
@@ -345,7 +345,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
             }
         }
         
-        if type(of: self).shouldPoolKeys {
+        if Self.shouldPoolKeys {
             self.updateKeyAppearance()
             self.updateKeyCaps(true, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: shiftState)
         }
@@ -364,7 +364,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
         }
         
         if var keyMap = self.generateKeyFrames(self.model, bounds: self.superview.bounds, page: pageNum) {
-            if type(of: self).shouldPoolKeys {
+            if Self.shouldPoolKeys {
                 self.modelToView.removeAll(keepingCapacity: true)
                 self.viewToModel.removeAll(keepingCapacity: true)
                 
@@ -617,7 +617,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
     
     // if pool is disabled, always returns a unique key view for the corresponding key model
     func pooledKey(key aKey: Key, model: Keyboard, frame: CGRect) -> KeyboardKey? {
-        if !type(of: self).shouldPoolKeys {
+        if !Self.shouldPoolKeys {
             var p: Int!
             var r: Int!
             var k: Int!
@@ -698,7 +698,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
             return keyView
         }
         
-        if type(of: self).shouldPoolKeys {
+        if Self.shouldPoolKeys {
             if !self.sizeToKeyMap.isEmpty {
                 var (size, keyArray) = self.sizeToKeyMap[self.sizeToKeyMap.startIndex]
                 
@@ -728,7 +728,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
     
     // if pool is disabled, doesn't do anything
     func resetKeyPool() {
-        if type(of: self).shouldPoolKeys {
+        if Self.shouldPoolKeys {
             self.sizeToKeyMap.removeAll(keepingCapacity: true)
             
             for key in self.keyPool {
@@ -751,7 +751,7 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
     func getShape(_ shapeClass: Shape.Type) -> Shape {
         let className = NSStringFromClass(shapeClass)
         
-        if type(of: self).shouldPoolShapes {
+        if Self.shouldPoolShapes {
             if let shape = self.shapePool[className] {
                 return shape
             }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View for implementing custom banners in users of this module.
 open class ExtraView: UIView {
     
     var globalColors: GlobalColors.Type?
