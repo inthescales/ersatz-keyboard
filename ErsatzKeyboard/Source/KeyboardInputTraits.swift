@@ -10,13 +10,6 @@ import Foundation
 import QuartzCore
 import UIKit
 
-//        optional var autocorrectionType: UITextAutocorrectionType { get set } // default is UITextAutocorrectionTypeDefault
-//        @availability(iOS, introduced=5.0)
-//        optional var spellCheckingType: UITextSpellCheckingType { get set } // default is UITextSpellCheckingTypeDefault;
-//        optional var keyboardType: UIKeyboardType { get set } // default is UIKeyboardTypeDefault
-//        optional var returnKeyType: UIReturnKeyType { get set } // default is UIReturnKeyDefault (See note under UIReturnKeyType enum)
-//        optional var enablesReturnKeyAutomatically: Bool { get set } // default is NO (when YES, will automatically disable return key when text widget has zero-length contents, and will automatically enable when text widget has non-zero-length contents)
-
 var traitPollingTimer: CADisplayLink?
 
 extension ErsatzKeyboardViewController {

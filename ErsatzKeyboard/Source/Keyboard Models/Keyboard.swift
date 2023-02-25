@@ -1,7 +1,3 @@
-//
-//  Keyboard.swift
-//  ErsatzKeyboard
-//
 //  Created by Robin Hill on 5/28/22.
 //  Copyright © 2022 Apple. All rights reserved.
 //
