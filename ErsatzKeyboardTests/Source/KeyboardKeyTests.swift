@@ -23,6 +23,23 @@ class KeyboardKeyTests: XCTestCase {
             assertSnapshot(matching: keyView, as: .image, named: testName)
         }
     }
+    
+    func testShapeKey() {
+        let shapeNamePairs: [(String, Shape)] = [
+            ("shift", ShiftShape()),
+            ("backspace", BackspaceShape()),
+            ("globe", GlobeShape())
+        ]
+        
+        for (name, shape) in shapeNamePairs {
+            let keyView = ImageKey()
+            keyView.shape = shape
+            keyView.frame = keyRect
+            
+            let testName = "key_\(name)"
+            assertSnapshot(matching: keyView, as: .image, named: testName)
+        }
+    }
 
     func testImageKey() {
         let imageNamePairs = [

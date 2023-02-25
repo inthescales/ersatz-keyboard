@@ -10,6 +10,6 @@ import Foundation
 
 extension Bundle {
     static var ersatzKeyboard = {
-        Bundle(for: KeyboardLayout.self)
+        Bundle(for: ErsatzKeyboardViewController.self)
     }()
 }
