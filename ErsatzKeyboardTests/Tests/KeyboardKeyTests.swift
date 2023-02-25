@@ -10,6 +10,7 @@ class KeyboardKeyTests: XCTestCase {
     let keyRect = CGRect(x: 0, y: 0, width: 31.666, height: 43)
     let popupSize = CGSize(width: 57.666, height: 57)
 
+    /// Displays a single keyboard key, displaying a character
     func testCharacterKey() {
         let characters = ["a", "g", "h", "ç", "ñ", "ồ", "A", "Ç", "Ñ", "Ồ", "馬"]
         
@@ -25,7 +26,8 @@ class KeyboardKeyTests: XCTestCase {
         }
     }
     
-    /// Tests the shape of a tapped key, with its popup
+    /// Displays a tapped keyboard key, showing its popup
+    /// Note: Shadows cannot currently be rendered in snapshot tests without a host application
     func testTappedKey() {
         let keyDelegate = MockKeyboardKeyDelegate()
         let keyView = ImageKey()
@@ -52,11 +54,10 @@ class KeyboardKeyTests: XCTestCase {
         keyView.showPopup()
 
         let testName = "key_tapped"
-        
-        // Note: Shadows cannot currently be rendered in snapshot tests without a host application
         assertSnapshot(matching: containerView, as: .image, named: testName)
     }
     
+    /// Displays a single key, showing a shape
     func testShapeKey() {
         let shapeNamePairs: [(String, Shape)] = [
             ("shift", ShiftShape()),
@@ -74,6 +75,7 @@ class KeyboardKeyTests: XCTestCase {
         }
     }
 
+    /// Displays a single key, showing an image
     func testImageKey() {
         let imageNamePairs = [
             ("settings", UIImage.gear)
@@ -88,22 +90,4 @@ class KeyboardKeyTests: XCTestCase {
             assertSnapshot(matching: keyView, as: .image, named: testName)
         }
     }
-}
-
-private class MockKeyboardKeyDelegate: KeyboardKeyDelegate {
-    // Copied from KeyboardLayout 2/25/2023
-    // TODO(robin): Find a way to unify these
-    func popupFrame(for key: KeyboardKey, direction: Direction) -> CGRect {
-        let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
-        let totalHeight = LayoutConstants.popupTotalHeight(actualScreenWidth)
-        
-        let popupWidth = key.bounds.width + LayoutConstants.popupWidthIncrement
-        let popupHeight = totalHeight - LayoutConstants.popupGap - key.bounds.height
-        
-        return CGRect(x: (key.bounds.width - popupWidth) / CGFloat(2), y: -popupHeight - LayoutConstants.popupGap, width: popupWidth, height: popupHeight)
-    }
-    
-    func willShowPopup(for key: KeyboardKey, direction: Direction) {}
-    
-    func willHidePopup(for key: KeyboardKey) {}
 }
