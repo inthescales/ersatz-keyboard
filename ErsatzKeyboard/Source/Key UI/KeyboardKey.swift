@@ -18,7 +18,7 @@ protocol KeyboardKeyDelegate: AnyObject {
 
 /// Control for drawing a key on the keyboard, and presenting its popup
 public class KeyboardKey: UIControl {
-    
+
     weak var delegate: KeyboardKeyDelegate?
     
     var text: String = "" {
