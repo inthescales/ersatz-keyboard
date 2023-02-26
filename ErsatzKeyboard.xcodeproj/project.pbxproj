@@ -12,6 +12,7 @@
 		00573FED29AA8CEC00EB3781 /* UIImage+ErsatzKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00573FEC29AA8CEC00EB3781 /* UIImage+ErsatzKeyboard.swift */; };
 		00573FF029AA944200EB3781 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00573FEF29AA944200EB3781 /* ShapeView.swift */; };
 		00573FF329AAADE000EB3781 /* MockKeyboardKeyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00573FF229AAADE000EB3781 /* MockKeyboardKeyDelegate.swift */; };
+		00573FF529AAF90000EB3781 /* KeyboardKeyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00573FF429AAF90000EB3781 /* KeyboardKeyColors.swift */; };
 		005A8787293BDEE1000C4901 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A8786293BDEE1000C4901 /* Accessibility.swift */; };
 		005A878A293BFE10000C4901 /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A8789293BFE10000C4901 /* SettingsKey.swift */; };
 		005BE27826B7460B00ECC849 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005BE26626B7460B00ECC849 /* Media.xcassets */; };
@@ -93,6 +94,7 @@
 		00573FEC29AA8CEC00EB3781 /* UIImage+ErsatzKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ErsatzKeyboard.swift"; sourceTree = "<group>"; };
 		00573FEF29AA944200EB3781 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		00573FF229AAADE000EB3781 /* MockKeyboardKeyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeyboardKeyDelegate.swift; sourceTree = "<group>"; };
+		00573FF429AAF90000EB3781 /* KeyboardKeyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKeyColors.swift; sourceTree = "<group>"; };
 		00596DFB2699FC240069BD79 /* ErsatzKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ErsatzKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005A8786293BDEE1000C4901 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
 		005A8789293BFE10000C4901 /* SettingsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKey.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				005BE26E26B7460B00ECC849 /* KeyboardConnector.swift */,
 				005BE26826B7460B00ECC849 /* KeyboardKey.swift */,
 				005BE27126B7460B00ECC849 /* KeyboardKeyBackground.swift */,
+				00573FF429AAF90000EB3781 /* KeyboardKeyColors.swift */,
 				00573FEF29AA944200EB3781 /* ShapeView.swift */,
 			);
 			path = "Key UI";
@@ -651,6 +654,7 @@
 				005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */,
 				00CBE4BE2841C55F006AF6FE /* GlobeShape.swift in Sources */,
 				005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */,
+				00573FF529AAF90000EB3781 /* KeyboardKeyColors.swift in Sources */,
 				005BE28326B7460B00ECC849 /* KeyboardKeyBackground.swift in Sources */,
 				0064EFA32842F13E000310AF /* SettingsConfiguration.swift in Sources */,
 				00798AD12842FE1C008065CE /* SettingsItem.swift in Sources */,

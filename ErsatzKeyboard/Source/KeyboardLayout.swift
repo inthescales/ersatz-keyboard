@@ -549,61 +549,76 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
             self.setAppearanceForOtherKey(key, model: model, darkMode: darkMode, solidColorMode: solidColorMode)
         }
         
+        let underColor = (self.darkMode ? self.globalColors.darkModeUnderColor : self.globalColors.lightModeUnderColor)
+        let borderColor = (self.darkMode ? self.globalColors.darkModeBorderColor : self.globalColors.lightModeBorderColor)
+        let popupColor = self.globalColors.popup(darkMode, solidColorMode: solidColorMode)
+        
         switch model.type {
-        case
-        Key.KeyType.character,
-        Key.KeyType.specialCharacter,
-        Key.KeyType.period:
-            key.color = self.self.globalColors.regularKey(darkMode, solidColorMode: solidColorMode)
-            if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
-                key.downColor = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
-            }
-            else {
-                key.downColor = nil
-            }
-            key.textColor = (darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor)
-            key.downTextColor = nil
-        case
-        Key.KeyType.space:
-            key.color = self.globalColors.regularKey(darkMode, solidColorMode: solidColorMode)
-            key.downColor = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
-            key.textColor = (darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor)
-            key.downTextColor = nil
-        case
-        Key.KeyType.shift:
-            key.color = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
-            key.downColor = (darkMode ? self.globalColors.darkModeShiftKeyDown : self.globalColors.lightModeRegularKey)
-            key.textColor = self.globalColors.darkModeTextColor
-            key.downTextColor = self.globalColors.lightModeTextColor
-        case
-        Key.KeyType.backspace:
-            key.color = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
+        case .character,
+             .specialCharacter,
+             .period:
+            let isIPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+            key.colors = KeyboardKeyColors(
+                capColor: globalColors.regularKey(darkMode, solidColorMode: solidColorMode),
+                underColor: underColor,
+                borderColor: borderColor,
+                textColor: darkMode ? globalColors.darkModeTextColor : globalColors.lightModeTextColor,
+                downColor: isIPad ? globalColors.specialKey(darkMode, solidColorMode: solidColorMode) : nil,
+                popupColor: popupColor
+            )
+        case .space:
+            key.colors = KeyboardKeyColors(
+                capColor: globalColors.regularKey(darkMode, solidColorMode: solidColorMode),
+                underColor: underColor,
+                borderColor: borderColor,
+                textColor: darkMode ? globalColors.darkModeTextColor : globalColors.lightModeTextColor,
+                downColor: globalColors.specialKey(darkMode, solidColorMode: solidColorMode),
+                popupColor: popupColor
+            )
+        case .shift:
+            key.colors = KeyboardKeyColors(
+                capColor: globalColors.specialKey(darkMode, solidColorMode: solidColorMode),
+                underColor: underColor,
+                borderColor: borderColor,
+                textColor: globalColors.darkModeTextColor,
+                downColor: darkMode ? globalColors.darkModeShiftKeyDown : globalColors.lightModeRegularKey,
+                downTextColor: globalColors.lightModeTextColor,
+                popupColor: popupColor
+            )
+        case .backspace:
             // TODO: actually a bit different
-            key.downColor = self.globalColors.regularKey(darkMode, solidColorMode: solidColorMode)
-            key.textColor = self.globalColors.darkModeTextColor
-            key.downTextColor = (darkMode ? nil : self.globalColors.lightModeTextColor)
-        case
-        Key.KeyType.modeChange:
-            key.color = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
-            key.downColor = nil
-            key.textColor = (darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor)
-            key.downTextColor = nil
-        case
-        Key.KeyType.return,
-        Key.KeyType.keyboardChange,
-        Key.KeyType.settings:
-            key.color = self.globalColors.specialKey(darkMode, solidColorMode: solidColorMode)
+            key.colors = KeyboardKeyColors(
+                capColor: globalColors.specialKey(darkMode, solidColorMode: solidColorMode),
+                underColor: underColor,
+                borderColor: borderColor,
+                textColor: globalColors.darkModeTextColor,
+                downColor: globalColors.regularKey(darkMode, solidColorMode: solidColorMode),
+                downTextColor: darkMode ? nil : self.globalColors.lightModeTextColor,
+                popupColor: popupColor
+            )
+        case .modeChange:
+            key.colors = KeyboardKeyColors(
+                capColor: globalColors.specialKey(darkMode, solidColorMode: solidColorMode),
+                underColor: underColor,
+                borderColor: borderColor,
+                textColor: darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor,
+                popupColor: popupColor
+            )
+        case .return,
+             .keyboardChange,
+             .settings:
             // TODO: actually a bit different
-            key.downColor = self.globalColors.regularKey(darkMode, solidColorMode: solidColorMode)
-            key.textColor = (darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor)
-            key.downTextColor = nil
+            key.colors = KeyboardKeyColors(
+                capColor: globalColors.specialKey(darkMode, solidColorMode: solidColorMode),
+                underColor: underColor,
+                borderColor: borderColor,
+                textColor: darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor,
+                downColor: globalColors.regularKey(darkMode, solidColorMode: solidColorMode),
+                popupColor: popupColor
+            )
         default:
             break
         }
-        
-        key.popupColor = self.globalColors.popup(darkMode, solidColorMode: solidColorMode)
-        key.underColor = (self.darkMode ? self.globalColors.darkModeUnderColor : self.globalColors.lightModeUnderColor)
-        key.borderColor = (self.darkMode ? self.globalColors.darkModeBorderColor : self.globalColors.lightModeBorderColor)
     }
     
     func setAppearanceForOtherKey(_ key: KeyboardKey, model: Key, darkMode: Bool, solidColorMode: Bool) { /* override this to handle special keys */ }

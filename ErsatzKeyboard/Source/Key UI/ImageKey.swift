@@ -27,15 +27,15 @@ public class ImageKey: KeyboardKey {
         let switchColors = self.isHighlighted || self.isSelected
         
         if switchColors {
-            if let downTextColor = self.downTextColor {
+            if let downTextColor = colors.downTextColor {
                 self.image?.tintColor = downTextColor
             }
             else {
-                self.image?.tintColor = self.textColor
+                self.image?.tintColor = colors.textColor
             }
         }
         else {
-            self.image?.tintColor = self.textColor
+            self.image?.tintColor = colors.textColor
         }
     }
     

@@ -33,18 +33,13 @@ public class KeyboardKey: UIControl {
         }
     }
     
-    public var color: UIColor { didSet { updateColors() }}
-    var underColor: UIColor { didSet { updateColors() }}
-    var borderColor: UIColor { didSet { updateColors() }}
-    var popupColor: UIColor { didSet { updateColors() }}
+    var colors: KeyboardKeyColors {
+        didSet {
+            updateColors()
+        }
+    }
 
-    var underOffset: CGFloat { didSet { updateColors() }}
-    
-    public var textColor: UIColor { didSet { updateColors() }}
-    public var downColor: UIColor? { didSet { updateColors() }}
-    var downUnderColor: UIColor? { didSet { updateColors() }}
-    var downBorderColor: UIColor? { didSet { updateColors() }}
-    public var downTextColor: UIColor? { didSet { updateColors() }}
+    var underOffset: CGFloat = 1
     
     var labelInset: CGFloat = 0 {
         didSet {
@@ -131,16 +126,10 @@ public class KeyboardKey: UIControl {
     var shadowView = UIView()
     var shadowLayer = CAShapeLayer()
     
-    init() {
-        color = UIColor.white
-        underColor = UIColor.gray
-        borderColor = UIColor.black
-        popupColor = UIColor.white
-        underOffset = 1
-        
+    init(colors: KeyboardKeyColors = .standard) {
+        self.colors = colors
+
         background = KeyboardKeyBackground(cornerRadius: 4, underOffset: underOffset)
-        
-        textColor = UIColor.black
         
         super.init(frame: CGRect.zero)
         
@@ -309,55 +298,28 @@ public class KeyboardKey: UIControl {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
-        let switchColors = self.isHighlighted || self.isSelected
+        let useDownColors = isHighlighted || isSelected
         
-        if switchColors {
-            if let downColor = self.downColor {
-                self.displayView.fillColor = downColor
-            }
-            else {
-                self.displayView.fillColor = self.color
-            }
+        if useDownColors {
+            displayView.fillColor = colors.downColor ?? colors.capColor
+            underView.fillColor = colors.downUnderColor ?? colors.underColor
+            borderView.strokeColor = colors.downBorderColor ?? colors.borderColor
+
+            label.textColor = colors.downTextColor ?? colors.textColor
+            popupLabel?.textColor = colors.downTextColor ?? colors.textColor
+            shape?.color = colors.downTextColor ?? colors.textColor
+        } else {
+            displayView.fillColor = colors.capColor
+            underView.fillColor = colors.underColor
+            borderView.strokeColor = colors.borderColor
             
-            if let downUnderColor = self.downUnderColor {
-                self.underView.fillColor = downUnderColor
-            }
-            else {
-                self.underView.fillColor = self.underColor
-            }
-            
-            if let downBorderColor = self.downBorderColor {
-                self.borderView.strokeColor = downBorderColor
-            }
-            else {
-                self.borderView.strokeColor = self.borderColor
-            }
-            
-            if let downTextColor = self.downTextColor {
-                self.label.textColor = downTextColor
-                self.popupLabel?.textColor = downTextColor
-                self.shape?.color = downTextColor
-            }
-            else {
-                self.label.textColor = self.textColor
-                self.popupLabel?.textColor = self.textColor
-                self.shape?.color = self.textColor
-            }
-        }
-        else {
-            self.displayView.fillColor = self.color
-            
-            self.underView.fillColor = self.underColor
-            
-            self.borderView.strokeColor = self.borderColor
-            
-            self.label.textColor = self.textColor
-            self.popupLabel?.textColor = self.textColor
-            self.shape?.color = self.textColor
+            label.textColor = colors.textColor
+            popupLabel?.textColor = colors.textColor
+            shape?.color = colors.textColor
         }
         
         if self.popup != nil {
-            self.displayView.fillColor = self.popupColor
+            displayView.fillColor = colors.popupColor
         }
         
         CATransaction.commit()
