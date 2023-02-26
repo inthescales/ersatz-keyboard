@@ -37,9 +37,7 @@ public class KeyboardKey: UIControl {
     var underColor: UIColor { didSet { updateColors() }}
     var borderColor: UIColor { didSet { updateColors() }}
     var popupColor: UIColor { didSet { updateColors() }}
-    var drawUnder: Bool { didSet { updateColors() }}
-    var drawOver: Bool { didSet { updateColors() }}
-    var drawBorder: Bool { didSet { updateColors() }}
+
     var underOffset: CGFloat { didSet { updateColors() }}
     
     public var textColor: UIColor { didSet { updateColors() }}
@@ -68,15 +66,27 @@ public class KeyboardKey: UIControl {
     /// The direction that popups should appear from this key
     private let popupDirection: Direction = .up
     
-    override open var isEnabled: Bool { didSet { updateColors() }}
-    override open var isSelected: Bool {
+    override open var isEnabled: Bool {
         didSet {
-            updateColors()
+            if oldValue != isEnabled {
+                updateColors()
+            }
         }
     }
+    
+    override open var isSelected: Bool {
+        didSet {
+            if oldValue != isSelected {
+                updateColors()
+            }
+        }
+    }
+
     override open var isHighlighted: Bool {
         didSet {
-            updateColors()
+            if oldValue != isHighlighted {
+                updateColors()
+            }
         }
     }
     
@@ -126,9 +136,6 @@ public class KeyboardKey: UIControl {
         underColor = UIColor.gray
         borderColor = UIColor.black
         popupColor = UIColor.white
-        drawUnder = true
-        drawOver = true
-        drawBorder = false
         underOffset = 1
         
         background = KeyboardKeyBackground(cornerRadius: 4, underOffset: underOffset)
@@ -385,13 +392,6 @@ public class KeyboardKey: UIControl {
         self.connector = KeyboardConnector(cornerRadius: 4, underOffset: self.underOffset, start: kv, end: p, startConnectable: kv, endConnectable: p, startDirection: direction, endDirection: direction.opposite)
         self.connector!.layer.zPosition = -1
         self.addSubview(self.connector!)
-        
-//        self.drawBorder = true
-        
-        if direction == Direction.up {
-//            self.popup!.drawUnder = false
-//            self.connector!.drawUnder = false
-        }
     }
     
     func showPopup() {

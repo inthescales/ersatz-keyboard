@@ -127,7 +127,7 @@ class KeyboardConnector: KeyboardKeyBackground {
 
         // for now, assuming axis-aligned attachment points
 
-        let isVertical = (self.startDir == Direction.up || self.startDir == Direction.down) && (self.endDir == Direction.up || self.endDir == Direction.down)
+        let isVertical = (self.startDir == .up || self.startDir == .down) && (self.endDir == .up || self.endDir == .down)
 
         var midpoint: CGFloat
         if  isVertical {

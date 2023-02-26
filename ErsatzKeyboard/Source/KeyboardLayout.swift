@@ -1061,8 +1061,8 @@ public class KeyboardLayout: NSObject, KeyboardKeyDelegate {
             if localFrame.origin.y < 3 {
                 localFrame.origin.y = 3
                 
-                key.background.attached = Direction.down
-                key.connector?.startDir = Direction.down
+                key.background.attached = .down
+                key.connector?.startDir = .down
                 key.background.hideDirectionIsOpposite = true
             }
             else {
