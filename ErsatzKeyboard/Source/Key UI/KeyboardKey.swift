@@ -53,7 +53,7 @@ public class KeyboardKey: UIControl {
         didSet {
             for view in [self.displayView, self.borderView, self.underView] {
                 view.layer.shouldRasterize = shouldRasterize
-                view.layer.rasterizationScale = UIScreen.main.scale
+                view.layer.rasterizationScale = deviceProvider.scale
             }
         }
     }
@@ -102,7 +102,7 @@ public class KeyboardKey: UIControl {
     }()
 
     /// Label displaying the key's assigned character in the popup when tapped
-    var popupLabel: UILabel?
+    private var popupLabel: UILabel?
     
     /// Shape for drawing non-character keycaps
     var shape: Shape? {
@@ -126,8 +126,11 @@ public class KeyboardKey: UIControl {
     var shadowView = UIView()
     var shadowLayer = CAShapeLayer()
     
-    init(colors: KeyboardKeyColors = .standard) {
+    private let deviceProvider: DeviceProvider
+    
+    init(colors: KeyboardKeyColors = .standard, deviceProvider: DeviceProvider = MainScreenDeviceProvider()) {
         self.colors = colors
+        self.deviceProvider = deviceProvider
 
         background = KeyboardKeyBackground(cornerRadius: 4, underOffset: underOffset)
         

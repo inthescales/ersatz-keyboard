@@ -34,7 +34,7 @@ class KeyboardKeyTests: XCTestCase {
     /// Note: Shadows cannot currently be rendered in snapshot tests without a host application
     func testTappedKey() {
         for darkMode in [false, true] {
-            let keyDelegate = MockKeyboardKeyDelegate()
+            let keyDelegate = MockKeyboardKeyDelegate(deviceProvider: MainScreenDeviceProvider())
             let keyView = ImageKey()
             keyView.text = "A"
             keyView.colors = .character(GlobalColors.self, darkMode: darkMode)

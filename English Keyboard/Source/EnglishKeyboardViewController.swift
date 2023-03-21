@@ -23,6 +23,9 @@ class EnglishKeyboardViewController: ErsatzKeyboardViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     override func keyPressed(_ key: Key) {
         if lastInsertedCharacterIsAutomaticSpace && documentProxy().documentContextBeforeInput?.hasSuffix(" ") == true {
             let keyOuput = key.outputForCase(shiftState.isUppercase)

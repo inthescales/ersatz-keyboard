@@ -9,10 +9,16 @@ import UIKit
 /// Mock class for KeyboardKeyDelegate.
 /// Implements popupframe based on standard layout constraints.
 final class MockKeyboardKeyDelegate: KeyboardKeyDelegate {
+    private let deviceProvider: DeviceProvider
+    
+    init(deviceProvider: DeviceProvider) {
+        self.deviceProvider = deviceProvider
+    }
+
     // Copied from KeyboardLayout 2/25/2023
     // TODO(robin): Find a way to unify these
     func popupFrame(for key: KeyboardKey, direction: Direction) -> CGRect {
-        let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
+        let actualScreenWidth = (deviceProvider.nativeBounds.size.width / deviceProvider.nativeScale)
         let totalHeight = LayoutConstants.popupTotalHeight(actualScreenWidth)
         
         let popupWidth = key.bounds.width + LayoutConstants.popupWidthIncrement

@@ -3,6 +3,7 @@
 //  Copyright © 2022 Apple. All rights reserved.
 //
 
+@testable import ErsatzKeyboard
 import UIKit
 
 // Default keyboard height values.
@@ -64,6 +65,11 @@ struct TestDevice {
         }
     }
     
+    /// Device scale factor
+    private let scale: Float
+    
+    private let nativeScale: Float
+    
     /// The height of the keyboard for this device and orientation
     private var keyboardHeight: CGFloat {
         return orientation == .portrait ? portraitKeyboardHeight : landscapeKeyboardHeight
@@ -76,9 +82,18 @@ struct TestDevice {
     
     // MARK: - Initializers
     
-    init(name: String, size: CGSize, type: DeviceType, orientation: Orientation = .portrait) {
+    init(
+        name: String,
+        size: CGSize,
+        scale: Float,
+        nativeScale: Float? = nil,
+        type: DeviceType,
+        orientation: Orientation = .portrait
+    ) {
         self.name = name
         self.sizePortrait = size
+        self.scale = scale
+        self.nativeScale = nativeScale ?? scale
         self.type = type
         self.orientation = orientation
         
@@ -105,18 +120,21 @@ extension TestDevice {
     static let iPhone8 = TestDevice(
         name: "iPhone8",
         size: CGSize(width: 750, height: 1334),
+        scale: 2,
         type: .phone
     )
     
     static let iPhone11 = TestDevice(
         name: "iPhone11",
         size: CGSize(width: 828, height: 1792),
+        scale: 2,
         type: .phone
     )
     
     static let iPhone13ProMax = TestDevice(
         name: "iPhone13ProMax",
         size: CGSize(width: 1284, height: 2778),
+        scale: 3,
         type: .phone
     )
 
@@ -125,12 +143,14 @@ extension TestDevice {
     static let iPadPro11Inch = TestDevice(
         name: "iPadPro11Inch",
         size: CGSize(width: 1668, height: 2388),
-        type: .phone
+        scale: 2,
+        type: .tablet
     )
     
     static let iPadPro12p9Inch = TestDevice(
         name: "iPadPro12.9Inch",
         size: CGSize(width: 2048, height: 2732),
-        type: .phone
+        scale: 2,
+        type: .tablet
     )
 }

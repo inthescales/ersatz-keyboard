@@ -28,6 +28,7 @@
 		005BE28626B7460B00ECC849 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27426B7460B00ECC849 /* Shape.swift */; };
 		005BE28726B7460B00ECC849 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27526B7460B00ECC849 /* Key.swift */; };
 		005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005BE27726B7460B00ECC849 /* KeyboardLayout.swift */; };
+		005F2FE029AC601C0094FFD9 /* DeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005F2FDF29AC601C0094FFD9 /* DeviceProvider.swift */; };
 		0064EF9C2842CEE9000310AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EF9B2842CEE9000310AF /* SettingsViewController.swift */; };
 		0064EF9E2842D25F000310AF /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EF9D2842D25F000310AF /* UIView+Helpers.swift */; };
 		0064EFA12842DF5A000310AF /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064EFA02842DF5A000310AF /* SettingsCell.swift */; };
@@ -51,9 +52,11 @@
 		00AE808827E7DEA600B8F899 /* EnglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */; };
 		00AE808C27E7E2D800B8F899 /* TestDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808B27E7E2D800B8F899 /* TestDevice.swift */; };
 		00AE808E27E7E6FB00B8F899 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE808D27E7E6FB00B8F899 /* TestView.swift */; };
+		00C0B08129B58E61001C584F /* GlobalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0B08029B58E61001C584F /* GlobalColors.swift */; };
 		00CBE4BA2841B632006AF6FE /* BackspaceShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CBE4B92841B632006AF6FE /* BackspaceShape.swift */; };
 		00CBE4BC2841C277006AF6FE /* ShiftShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CBE4BB2841C277006AF6FE /* ShiftShape.swift */; };
 		00CBE4BE2841C55F006AF6FE /* GlobeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CBE4BD2841C55F006AF6FE /* GlobeShape.swift */; };
+		00CE3DA129C94BD900650E12 /* TestDeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CE3DA029C94BD900650E12 /* TestDeviceProvider.swift */; };
 		108FEE8858872100BA138087 /* libPods-ErsatzKeyboardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81478575226F0846740E02B3 /* libPods-ErsatzKeyboardTests.a */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +116,7 @@
 		005BE27526B7460B00ECC849 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		005BE27726B7460B00ECC849 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		005BE28A26B7469600ECC849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		005F2FDF29AC601C0094FFD9 /* DeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProvider.swift; sourceTree = "<group>"; };
 		0064EF9B2842CEE9000310AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0064EF9D2842D25F000310AF /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		0064EFA02842DF5A000310AF /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -141,9 +145,11 @@
 		00AE808727E7DEA600B8F899 /* EnglishKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishKeyboard.swift; sourceTree = "<group>"; };
 		00AE808B27E7E2D800B8F899 /* TestDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDevice.swift; sourceTree = "<group>"; };
 		00AE808D27E7E6FB00B8F899 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		00C0B08029B58E61001C584F /* GlobalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalColors.swift; sourceTree = "<group>"; };
 		00CBE4B92841B632006AF6FE /* BackspaceShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceShape.swift; sourceTree = "<group>"; };
 		00CBE4BB2841C277006AF6FE /* ShiftShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftShape.swift; sourceTree = "<group>"; };
 		00CBE4BD2841C55F006AF6FE /* GlobeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeShape.swift; sourceTree = "<group>"; };
+		00CE3DA029C94BD900650E12 /* TestDeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDeviceProvider.swift; sourceTree = "<group>"; };
 		77AF7A108989A2698D29BD43 /* Pods-ErsatzKeyboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErsatzKeyboardTests.debug.xcconfig"; path = "Target Support Files/Pods-ErsatzKeyboardTests/Pods-ErsatzKeyboardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81478575226F0846740E02B3 /* libPods-ErsatzKeyboardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ErsatzKeyboardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B33B160D021391BF91E175 /* Pods-ErsatzKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErsatzKeyboardTests.release.xcconfig"; path = "Target Support Files/Pods-ErsatzKeyboardTests/Pods-ErsatzKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 				00573FEE29AA943500EB3781 /* Key UI */,
 				005BE26A26B7460B00ECC849 /* KeyboardInputTraits.swift */,
 				005BE26C26B7460B00ECC849 /* ErsatzKeyboardViewController.swift */,
+				00C0B08029B58E61001C584F /* GlobalColors.swift */,
 				005BE27026B7460B00ECC849 /* ForwardingView.swift */,
 				005BE27726B7460B00ECC849 /* KeyboardLayout.swift */,
 				005BE26726B7460B00ECC849 /* ExtraView.swift */,
@@ -362,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				00AE808B27E7E2D800B8F899 /* TestDevice.swift */,
+				00CE3DA029C94BD900650E12 /* TestDeviceProvider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				005A8786293BDEE1000C4901 /* Accessibility.swift */,
+				005F2FDF29AC601C0094FFD9 /* DeviceProvider.swift */,
 				005BE26B26B7460B00ECC849 /* Direction.swift */,
 				00573FEA29AA8C2900EB3781 /* Bundle+ErsatzKeyboard.swift */,
 				00573FEC29AA8CEC00EB3781 /* UIImage+ErsatzKeyboard.swift */,
@@ -645,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00573FF029AA944200EB3781 /* ShapeView.swift in Sources */,
+				00C0B08129B58E61001C584F /* GlobalColors.swift in Sources */,
 				005BE28226B7460B00ECC849 /* ForwardingView.swift in Sources */,
 				005BE28626B7460B00ECC849 /* Shape.swift in Sources */,
 				005A8787293BDEE1000C4901 /* Accessibility.swift in Sources */,
@@ -654,6 +664,7 @@
 				005BE28926B7460B00ECC849 /* KeyboardLayout.swift in Sources */,
 				00CBE4BE2841C55F006AF6FE /* GlobeShape.swift in Sources */,
 				005BE27A26B7460B00ECC849 /* KeyboardKey.swift in Sources */,
+				005F2FE029AC601C0094FFD9 /* DeviceProvider.swift in Sources */,
 				00573FF529AAF90000EB3781 /* KeyboardKeyColors.swift in Sources */,
 				005BE28326B7460B00ECC849 /* KeyboardKeyBackground.swift in Sources */,
 				0064EFA32842F13E000310AF /* SettingsConfiguration.swift in Sources */,
@@ -706,6 +717,7 @@
 				00AE807F27E7DA0100B8F899 /* ErsatzKeyboardTests.swift in Sources */,
 				00AE808827E7DEA600B8F899 /* EnglishKeyboard.swift in Sources */,
 				00573FF329AAADE000EB3781 /* MockKeyboardKeyDelegate.swift in Sources */,
+				00CE3DA129C94BD900650E12 /* TestDeviceProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,7 +848,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = ErsatzDemo/ErsatzDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ErsatzDemo/Assets/ErsatzDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
@@ -868,7 +880,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = ErsatzDemo/ErsatzDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ErsatzDemo/Assets/ErsatzDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -896,7 +908,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "English Keyboard/English Keyboard.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "English Keyboard/Assets/English Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JZ3WYZWA8F;
@@ -926,7 +938,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "English Keyboard/English Keyboard.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "English Keyboard/Assets/English Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

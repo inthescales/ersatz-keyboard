@@ -79,8 +79,8 @@ class ShapeView: UIView {
         self.shapeLayer = self.layer as? CAShapeLayer
         
         // optimization: off by default to ensure quick mode transitions; re-enable during rotations
-        //self.layer.shouldRasterize = true
-        //self.layer.rasterizationScale = UIScreen.mainScreen().scale
+        // self.layer.shouldRasterize = true
+        // self.layer.rasterizationScale = UIScreen.mainScreen().scale
     }
     
     required init?(coder aDecoder: NSCoder) {
