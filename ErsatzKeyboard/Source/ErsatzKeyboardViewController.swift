@@ -36,6 +36,9 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         settingsVC.view.isHidden = true
         return settingsVC
     }()
+    
+    /// The settings key. Used for setting voiceover focus when closing settings. May not work if there is more than one settings key.
+    private var settingsKey: KeyboardKey?
 
     // MARK: - Metrics
 
@@ -268,6 +271,11 @@ open class ErsatzKeyboardViewController: UIInputViewController {
         forwardingView.backgroundColor = GlobalColors.keyboardBackgroundColor
     }
     
+    override open func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIAccessibility.post(notification: .screenChanged, argument: nil)
+    }
+    
     override open func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         self.forwardingView.resetTrackedViews()
         self.shiftStartingState = nil
@@ -371,6 +379,7 @@ open class ErsatzKeyboardViewController: UIInputViewController {
                             keyView.addTarget(self,
                                               action: #selector(ErsatzKeyboardViewController.toggleSettings),
                                               for: .touchUpInside)
+                            settingsKey = keyView
                         default:
                             break
                         }
@@ -711,14 +720,21 @@ open class ErsatzKeyboardViewController: UIInputViewController {
     @IBAction open func toggleSettings() {
         if settingsVC.parent == nil {
             addChild(settingsVC)
-            self.view.addEdgeMatchedSubview(settingsVC.view)
+            view.addEdgeMatchedSubview(settingsVC.view)
         }
         
-        let hidden = settingsVC.view.isHidden
-        settingsVC.view.isHidden = !hidden
-        self.forwardingView.isHidden = hidden
-        self.forwardingView.isUserInteractionEnabled = !hidden
-        self.bannerView?.isHidden = hidden
+        let showSettings = settingsVC.view.isHidden
+        
+        settingsVC.view.isHidden = !showSettings
+        self.forwardingView.isHidden = showSettings
+        self.forwardingView.isUserInteractionEnabled = !showSettings
+        self.bannerView?.isHidden = showSettings
+        
+        if showSettings {
+            settingsVC.setVoiceoverFocus()
+        } else {
+            UIAccessibility.post(notification: .screenChanged, argument: settingsKey)
+        }
     }
     
     public func updateCapsIfNeeded() {

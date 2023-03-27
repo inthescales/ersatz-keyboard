@@ -106,6 +106,11 @@ final class SettingsViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func setVoiceoverFocus() {
+        let header = tableView.headerView(forSection: 0)
+        UIAccessibility.post(notification: .screenChanged, argument: header)
+    }
+    
     /// Called when a setting has been toggled
     private func toggled(setting key: String, to value: Bool) {
         settingsProvider.setValue(for: key, to: value)
@@ -131,7 +136,11 @@ extension SettingsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.settingsConfig.sections[section].title
+        return settingsConfig.sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.accessibilityLabel = settingsConfig.sections[section].accessibilityText
     }
 }
 
@@ -143,6 +152,7 @@ extension SettingsViewController: UITableViewDataSource {
             cell.configure(
                 key: row.setting.key,
                 text: row.title,
+                accessibilityText: row.accessibilityText,
                 note: nil,
                 isToggledOn: settingsProvider.value(for: row.setting.key),
                 didToggle: { [weak self] key, toggleOn in
